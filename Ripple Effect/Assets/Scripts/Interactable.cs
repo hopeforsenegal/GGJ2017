@@ -31,6 +31,12 @@ public class Interactable : MonoBehaviour
 			return string.Format (kInteractText, m_InteractionText, name);
 		}
 	}
+		
+	public string TextToDisplay {
+		get {
+			return m_TextToDisplay;
+		}
+	}
 
 	public AudioClip InteractSound {
 		get {
@@ -49,6 +55,10 @@ public class Interactable : MonoBehaviour
 	[Tooltip ("Text describing the interaction with the player. Press 'E' to {0} {1}")]
 	[SerializeField]
 	private string m_InteractionText;
+
+	[Tooltip ("Text that shows when the player interacts")]
+	[SerializeField]
+	private string m_TextToDisplay;
 
 	[Tooltip ("")]
 	[SerializeField]

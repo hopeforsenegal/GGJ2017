@@ -31,6 +31,10 @@ public class PlayerInteractionController : MonoBehaviour
 	[SerializeField]
 	private Text m_PromptText;
 
+	[Tooltip ("")]
+	[SerializeField]
+	private InfoPanel m_InfoPanel;
+
 	#endregion
 
 	#region Private Member Variables
@@ -53,10 +57,17 @@ public class PlayerInteractionController : MonoBehaviour
 		if (m_PromptText == null) {
 			Debug.LogWarning ("m_PromptText is null");
 		}
+		if (m_InfoPanel == null) {
+			Debug.LogWarning ("m_InfoPanel is null");
+		}
 	}
 
 	void Update ()
 	{
+		if (Input.anyKeyDown && m_InfoPanel.IsShowing) {
+			m_InfoPanel.Hide ();
+			return;
+		}
 		if (Input.GetButtonDown ("Fire1")) {
 			Debug.Log ("im firing my stuff");
 		}
@@ -80,6 +91,7 @@ public class PlayerInteractionController : MonoBehaviour
 				}
 				if (Input.GetButtonDown ("Fire1")) {
 					Debug.Log ("I hit my target");
+					m_InfoPanel.Show (CurrentTarget.TextToDisplay);
 				}
 			} else {
 				m_PromptText.enabled = false;
