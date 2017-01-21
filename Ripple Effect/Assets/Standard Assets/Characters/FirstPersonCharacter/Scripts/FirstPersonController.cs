@@ -239,6 +239,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_MouseLook.LookRotation (transform, m_Camera.transform);
         }
 
+		public void UpdateView(Transform t){
+			m_MouseLook.LookRotation (transform, t);
+		}
+
 
         private void OnControllerColliderHit(ControllerColliderHit hit)
         {

@@ -16,7 +16,7 @@ public class FocusCamera : MonoBehaviour
 
 	#region Properties
 
-	public Vector3 Target {
+	public Transform Target {
 		get {
 			return m_Target;
 		}
@@ -25,7 +25,7 @@ public class FocusCamera : MonoBehaviour
 		}
 	}
 
-	private Vector3 m_Target;
+	private Transform m_Target;
 
 	#endregion
 
@@ -50,7 +50,7 @@ public class FocusCamera : MonoBehaviour
 	protected void Start ()
 	{
 		if (m_TransformTarget != null) {
-			m_Target = m_TransformTarget.position;
+			m_Target = m_TransformTarget;
 		} else {
 			Debug.LogWarning ("Not set go check");
 		}
@@ -58,7 +58,7 @@ public class FocusCamera : MonoBehaviour
 
 	protected void Update ()
 	{
-		SmoothLook (m_Target);
+		SmoothLook (m_Target.position);
 	}
 
 	protected void OnEnable ()

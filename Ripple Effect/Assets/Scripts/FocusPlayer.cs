@@ -1,5 +1,6 @@
 ﻿
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 using System.Collections;
 
 [DisallowMultipleComponent]
@@ -55,7 +56,13 @@ public class FocusPlayer : MonoBehaviour
 	{
 		FocusCamera fcamera = coll.gameObject.GetComponentInChildren<FocusCamera> ();
 		if (fcamera != null) {
+			Debug.Log ("FocusPlayer");
 			fcamera.enabled = true;
+		}
+		FirstPersonController player = coll.gameObject.GetComponentInChildren<FirstPersonController> ();
+		if (player != null) {
+			Debug.Log ("FocusPlayer");
+			player.enabled = false;
 		}
 	}
 
@@ -63,7 +70,14 @@ public class FocusPlayer : MonoBehaviour
 	{
 		FocusCamera fcamera = coll.gameObject.GetComponentInChildren<FocusCamera> ();
 		if (fcamera != null) {
+			Debug.Log ("UnFocusPlayer");
 			fcamera.enabled = false;
+		}
+		FirstPersonController player = coll.gameObject.GetComponentInChildren<FirstPersonController> ();
+		if (player != null) {
+			Debug.Log ("UnFocusPlayer");
+			player.enabled = true;
+			player.UpdateView (fcamera.Target);
 		}
 	}
 
