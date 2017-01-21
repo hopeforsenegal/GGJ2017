@@ -8,6 +8,10 @@ public class Interactable : MonoBehaviour
 {
 	#region Enums and Constants
 
+	private static readonly string kInteractText = "Press 'E' to {0} {1}";
+
+	public static readonly string kInteractableTag = "Item";
+
 	#endregion
 
 	#region Events
@@ -22,9 +26,9 @@ public class Interactable : MonoBehaviour
 		}
 	}
 
-	public string PromptText{
-		get{
-			return m_PromptText;
+	public string PromptText {
+		get {
+			return string.Format (kInteractText, m_InteractionText, name);
 		}
 	}
 
@@ -42,9 +46,9 @@ public class Interactable : MonoBehaviour
 	[SerializeField]
 	private int m_ID;
 
-	[Tooltip ("The text display when the player is highliting on it")]
+	[Tooltip ("Text describing the interaction with the player")]
 	[SerializeField]
-	private string m_PromptText;
+	private string m_InteractionText;
 
 	[Tooltip ("")]
 	[SerializeField]
@@ -72,6 +76,7 @@ public class Interactable : MonoBehaviour
 	protected void Start ()
 	{
 		m_StartColor = m_Renderer.material.color;
+		tag = kInteractableTag;
 	}
 
 	protected void Update ()

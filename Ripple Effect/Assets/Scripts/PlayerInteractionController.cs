@@ -29,15 +29,7 @@ public class PlayerInteractionController : MonoBehaviour
 
 	[Tooltip ("")]
 	[SerializeField]
-	private Animator m_PromptAnimator;
-
-	[Tooltip ("")]
-	[SerializeField]
-	private Animator m_cachedFaderAnimator;
-
-	[Tooltip ("")]
-	[SerializeField]
-	private Text m_promptText;
+	private Text m_PromptText;
 
 	#endregion
 
@@ -52,6 +44,16 @@ public class PlayerInteractionController : MonoBehaviour
 	#region Monobehaviours
 
 	#endregion
+
+	protected void Start ()
+	{
+		if (m_PlayerCamera == null) {
+			Debug.LogWarning ("m_PlayerCamera is null");
+		}
+		if (m_PromptText == null) {
+			Debug.LogWarning ("m_PromptText is null");
+		}
+	}
 
 	void Update ()
 	{
@@ -72,10 +74,18 @@ public class PlayerInteractionController : MonoBehaviour
 			CurrentTarget = hit.collider.GetComponentInParent<Interactable> ();
 			if (CurrentTarget != null) {
 				CurrentTarget.Highlight ();
+				if (!string.IsNullOrEmpty (CurrentTarget.PromptText)) {
+					m_PromptText.text = CurrentTarget.PromptText;
+					m_PromptText.enabled = true;
+				}
 				if (Input.GetButtonDown ("Fire1")) {
 					Debug.Log ("I hit my target");
 				}
+			} else {
+				m_PromptText.enabled = false;
 			}
+		} else {
+			m_PromptText.enabled = false;
 		}
 	}
 
@@ -88,17 +98,16 @@ public class PlayerInteractionController : MonoBehaviour
 
 	void OnTriggerEnter (Collider coll)
 	{
-		if (coll.tag == "Item") {
+		if (coll.tag == Interactable.kInteractableTag) {
 			Interactable interact = coll.GetComponentInChildren<Interactable> ();
 		}
 	}
 
 	void OnTriggerExit (Collider coll)
 	{
-		if (coll.tag == "Item") {
+		if (coll.tag == Interactable.kInteractableTag) {
 			Interactable interact = coll.GetComponentInChildren<Interactable> ();
-			m_promptText.text = "";
-			m_PromptAnimator.SetBool ("HasPrompt", false);
+			m_PromptText.text = string.Empty;
 		}
 	}
 
