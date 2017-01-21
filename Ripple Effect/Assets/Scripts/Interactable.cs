@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Collections;
 
 [DisallowMultipleComponent]
+[RequireComponent (typeof(Renderer))]
 public class Interactable : MonoBehaviour
 {
 	#region Enums and Constants
@@ -15,13 +16,21 @@ public class Interactable : MonoBehaviour
 
 	#region Properties
 
+	public int ID {
+		get {
+			return m_ID;
+		}
+	}
+
+	public AudioClip InteractSound {
+		get {
+			return m_InteractSound;
+		}
+	}
+
 	#endregion
 
 	#region Inspectables
-
-	#endregion
-
-	#region Private Member Variables
 
 	[Tooltip ("")]
 	[SerializeField]
@@ -29,11 +38,15 @@ public class Interactable : MonoBehaviour
 
 	[Tooltip ("")]
 	[SerializeField]
-	private string m_SceneToLoad;
-
-	[Tooltip ("")]
-	[SerializeField]
 	private AudioClip m_InteractSound;
+
+	#endregion
+
+	#region Private Member Variables
+
+	private float m_FocusDurationRemaining;
+	private Renderer m_Renderer;
+	private Color m_StartColor;
 
 	#endregion
 
@@ -41,14 +54,24 @@ public class Interactable : MonoBehaviour
 
 	protected void Awake ()
 	{
+		m_Renderer = GetComponent<Renderer> ();
+
+		Debug.Assert (m_Renderer != null);
 	}
 
 	protected void Start ()
 	{
+		m_StartColor = m_Renderer.material.color;
 	}
 
 	protected void Update ()
 	{
+		m_FocusDurationRemaining -= Time.deltaTime;
+
+		if (m_FocusDurationRemaining <= 0f) {
+			m_FocusDurationRemaining = 0f;
+			Unhighlight ();
+		}
 	}
 
 	protected void OnEnable ()
@@ -72,6 +95,18 @@ public class Interactable : MonoBehaviour
 	#endregion
 
 	#region Public Methods
+
+	public void Highlight ()
+	{
+		m_Renderer.material.color = Color.blue;
+
+		m_FocusDurationRemaining = 0.1f;
+	}
+
+	public void Unhighlight ()
+	{
+		m_Renderer.material.color = m_StartColor;
+	}
 
 	#endregion
 

@@ -71,6 +71,7 @@ public class PlayerInteractionController : MonoBehaviour
 		if (hitInteractable) {
 			CurrentTarget = hit.collider.GetComponentInParent<Interactable> ();
 			if (CurrentTarget != null) {
+				CurrentTarget.Highlight ();
 				if (Input.GetButtonDown ("Fire1")) {
 					Debug.Log ("I hit my target");
 				}
