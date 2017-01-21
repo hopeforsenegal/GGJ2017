@@ -781,7 +781,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ID: 0
   m_InteractionText: read
-  m_TextToDisplay: MATE! \rThat was over 20 years ago!!! What the hell is wrong wid
+  m_TextToDisplay: MATE! That was over 20 years ago!!! What the hell is wrong wid
     u bruv?
   m_InteractSound: {fileID: 0}
 --- !u!23 &1437441528
