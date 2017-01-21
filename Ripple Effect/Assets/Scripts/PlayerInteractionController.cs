@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine.UI;
 
+[RequireComponent (typeof(Player))]
 public class PlayerInteractionController : MonoBehaviour
 {
 	#region Enums and Constants
@@ -42,12 +43,20 @@ public class PlayerInteractionController : MonoBehaviour
 	private static Interactable CurrentTarget;
 
 	private string lastPromptPlayed;
+	private Player m_Player;
 
 	#endregion
 
 	#region Monobehaviours
 
 	#endregion
+
+	protected void Awake ()
+	{
+		m_Player = GetComponent<Player> ();
+
+		Debug.Assert (m_Player != null);
+	}
 
 	protected void Start ()
 	{
@@ -66,6 +75,7 @@ public class PlayerInteractionController : MonoBehaviour
 	{
 		if (Input.anyKeyDown && m_InfoPanel.IsShowing) {
 			m_InfoPanel.Hide ();
+			m_Player.EnableControls ();
 			return;
 		}
 		if (Input.GetButtonDown ("Fire1")) {
@@ -92,6 +102,7 @@ public class PlayerInteractionController : MonoBehaviour
 				if (Input.GetButtonDown ("Fire1")) {
 					Debug.Log ("I hit my target");
 					m_InfoPanel.Show (CurrentTarget.TextToDisplay);
+					m_Player.KillControls ();
 				}
 			} else {
 				m_PromptText.enabled = false;

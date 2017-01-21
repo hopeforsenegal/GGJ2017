@@ -86,14 +86,25 @@ public class Player : MonoBehaviour
 	{
 		Debug.Log ("FocusPlayer");
 		m_FocusCamera.enabled = true;
-		m_FirstPersonController.enabled = false;
 		m_FocusDurationRemaining = 5f;
+		KillControls ();
 	}
 
 	public void UnFocusCamera ()
 	{
 		Debug.Log ("UnFocusPlayer");
 		m_FocusCamera.enabled = false;
+		m_FirstPersonController.enabled = true;
+		EnableControls ();
+	}
+
+	public void KillControls()
+	{
+		m_FirstPersonController.enabled = false;
+	}
+
+	public void EnableControls()
+	{
 		m_FirstPersonController.enabled = true;
 	}
 
