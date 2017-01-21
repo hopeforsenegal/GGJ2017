@@ -3,11 +3,11 @@ using UnityEngine;
 using System.Collections;
 
 [DisallowMultipleComponent]
-public class Interactable : MonoBehaviour 
+public class Interactable : MonoBehaviour
 {
 	#region Enums and Constants
 
-	#endregion 
+	#endregion
 
 	#region Events
 
@@ -15,7 +15,7 @@ public class Interactable : MonoBehaviour
 
 	#region Properties
 
-	#endregion 
+	#endregion
 
 	#region Inspectables
 
@@ -36,17 +36,17 @@ public class Interactable : MonoBehaviour
 	private AudioClip m_InteractSound;
 
 	#endregion
-	
-    #region Monobehaviours
 
-	protected void Awake () 
+	#region Monobehaviours
+
+	protected void Awake ()
 	{
 	}
 
-	protected void Start () 
+	protected void Start ()
 	{
 	}
-	
+
 	protected void Update ()
 	{
 	}
@@ -58,7 +58,7 @@ public class Interactable : MonoBehaviour
 	protected void OnDisable ()
 	{
 	}
-	
+
 	protected void OnBecameVisible ()
 	{
 		enabled = true;
@@ -68,7 +68,7 @@ public class Interactable : MonoBehaviour
 	{
 		enabled = false;
 	}
-	
+
 	#endregion
 
 	#region Public Methods
