@@ -136,6 +136,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe79b4253cf74f06983582640c6cba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_MainGameScene: main
+  m_StartGame: {fileID: 1219417721}
+  m_ExitGame: {fileID: 1769000260}
 --- !u!1 &770816840
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,7 +581,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'End Game
+  m_Text: 'Exit Game
 
 '
 --- !u!222 &1719691010
