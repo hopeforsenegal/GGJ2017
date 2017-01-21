@@ -54,6 +54,10 @@ public class FocusCamera : MonoBehaviour
 		} else {
 			Debug.LogWarning ("Not set go check");
 		}
+
+		if (m_Target == null) {
+			Debug.LogWarning ("m_Target is null");
+		}
 	}
 
 	protected void Update ()
