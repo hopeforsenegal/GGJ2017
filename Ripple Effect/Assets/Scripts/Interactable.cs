@@ -8,6 +8,10 @@ public class Interactable : MonoBehaviour
 {
 	#region Enums and Constants
 
+	private static readonly string kInteractText = "Press 'E' to {0} {1}";
+
+	public static readonly string kInteractableTag = "Item";
+
 	#endregion
 
 	#region Events
@@ -19,6 +23,12 @@ public class Interactable : MonoBehaviour
 	public int ID {
 		get {
 			return m_ID;
+		}
+	}
+
+	public string PromptText {
+		get {
+			return string.Format (kInteractText, m_InteractionText, name);
 		}
 	}
 
@@ -35,6 +45,10 @@ public class Interactable : MonoBehaviour
 	[Tooltip ("")]
 	[SerializeField]
 	private int m_ID;
+
+	[Tooltip ("Text describing the interaction with the player. Press 'E' to {0} {1}")]
+	[SerializeField]
+	private string m_InteractionText;
 
 	[Tooltip ("")]
 	[SerializeField]
@@ -62,6 +76,7 @@ public class Interactable : MonoBehaviour
 	protected void Start ()
 	{
 		m_StartColor = m_Renderer.material.color;
+		tag = kInteractableTag;
 	}
 
 	protected void Update ()
