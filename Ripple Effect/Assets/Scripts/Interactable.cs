@@ -46,7 +46,7 @@ public class Interactable : MonoBehaviour
 	[SerializeField]
 	private int m_ID;
 
-	[Tooltip ("Text describing the interaction with the player")]
+	[Tooltip ("Text describing the interaction with the player. Press 'E' to {0} {1}")]
 	[SerializeField]
 	private string m_InteractionText;
 

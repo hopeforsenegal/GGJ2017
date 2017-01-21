@@ -75,8 +75,9 @@ public class PlayerInteractionController : MonoBehaviour
 			if (CurrentTarget != null) {
 				CurrentTarget.Highlight ();
 				if (!string.IsNullOrEmpty (CurrentTarget.PromptText)) {
-					m_PromptText.text = CurrentTarget.PromptText;
+					Debug.Log (CurrentTarget.PromptText);
 					m_PromptText.enabled = true;
+					m_PromptText.text = CurrentTarget.PromptText;
 				}
 				if (Input.GetButtonDown ("Fire1")) {
 					Debug.Log ("I hit my target");
