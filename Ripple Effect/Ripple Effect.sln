@@ -1,9 +1,13 @@
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2008
-
-Project("{12F3125D-3207-7E5E-12BA-0D362E127A9C}") = "Ripple Effect", "Assembly-CSharp-firstpass.csproj", "{206AFB30-E6A4-722A-0FC1-F29B7A975667}"
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ripple Effect.Plugins", "Ripple Effect.Plugins.csproj", "{7DF09DBB-C57A-48A8-FD2C-DABCAB787A1A}"
 EndProject
-Project("{12F3125D-3207-7E5E-12BA-0D362E127A9C}") = "Ripple Effect", "Assembly-CSharp-Editor-firstpass.csproj", "{969921B3-1570-898D-C58F-3B1BCABAA83C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ripple Effect", "Ripple Effect.csproj", "{76F959C7-BE15-FA72-A8AA-55E34D3510B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ripple Effect.Editor.Plugins", "Ripple Effect.Editor.Plugins.csproj", "{99646467-4447-79FE-5FC5-E99281838853}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ripple Effect.Editor", "Ripple Effect.Editor.csproj", "{CA9324D6-F7DF-8F10-718F-4B68043CE00B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,19 +15,24 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{206AFB30-E6A4-722A-0FC1-F29B7A975667}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{206AFB30-E6A4-722A-0FC1-F29B7A975667}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{206AFB30-E6A4-722A-0FC1-F29B7A975667}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{206AFB30-E6A4-722A-0FC1-F29B7A975667}.Release|Any CPU.Build.0 = Release|Any CPU
-		{969921B3-1570-898D-C58F-3B1BCABAA83C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{969921B3-1570-898D-C58F-3B1BCABAA83C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{969921B3-1570-898D-C58F-3B1BCABAA83C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{969921B3-1570-898D-C58F-3B1BCABAA83C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DF09DBB-C57A-48A8-FD2C-DABCAB787A1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DF09DBB-C57A-48A8-FD2C-DABCAB787A1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DF09DBB-C57A-48A8-FD2C-DABCAB787A1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DF09DBB-C57A-48A8-FD2C-DABCAB787A1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76F959C7-BE15-FA72-A8AA-55E34D3510B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76F959C7-BE15-FA72-A8AA-55E34D3510B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76F959C7-BE15-FA72-A8AA-55E34D3510B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76F959C7-BE15-FA72-A8AA-55E34D3510B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99646467-4447-79FE-5FC5-E99281838853}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99646467-4447-79FE-5FC5-E99281838853}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99646467-4447-79FE-5FC5-E99281838853}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99646467-4447-79FE-5FC5-E99281838853}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA9324D6-F7DF-8F10-718F-4B68043CE00B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA9324D6-F7DF-8F10-718F-4B68043CE00B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA9324D6-F7DF-8F10-718F-4B68043CE00B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA9324D6-F7DF-8F10-718F-4B68043CE00B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal
