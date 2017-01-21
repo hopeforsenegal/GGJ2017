@@ -75,7 +75,6 @@ public class PlayerInteractionController : MonoBehaviour
 			if (CurrentTarget != null) {
 				CurrentTarget.Highlight ();
 				if (!string.IsNullOrEmpty (CurrentTarget.PromptText)) {
-					Debug.Log (CurrentTarget.PromptText);
 					m_PromptText.enabled = true;
 					m_PromptText.text = CurrentTarget.PromptText;
 				}
