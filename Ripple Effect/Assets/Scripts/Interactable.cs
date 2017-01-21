@@ -22,6 +22,12 @@ public class Interactable : MonoBehaviour
 		}
 	}
 
+	public string PromptText{
+		get{
+			return m_PromptText;
+		}
+	}
+
 	public AudioClip InteractSound {
 		get {
 			return m_InteractSound;
@@ -35,6 +41,10 @@ public class Interactable : MonoBehaviour
 	[Tooltip ("")]
 	[SerializeField]
 	private int m_ID;
+
+	[Tooltip ("The text display when the player is highliting on it")]
+	[SerializeField]
+	private string m_PromptText;
 
 	[Tooltip ("")]
 	[SerializeField]

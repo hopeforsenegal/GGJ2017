@@ -88,14 +88,14 @@ public class PlayerInteractionController : MonoBehaviour
 
 	void OnTriggerEnter (Collider coll)
 	{
-		if (coll.tag == "Interactables") {
+		if (coll.tag == "Item") {
 			Interactable interact = coll.GetComponentInChildren<Interactable> ();
 		}
 	}
 
 	void OnTriggerExit (Collider coll)
 	{
-		if (coll.tag == "Interactables") {
+		if (coll.tag == "Item") {
 			Interactable interact = coll.GetComponentInChildren<Interactable> ();
 			m_promptText.text = "";
 			m_PromptAnimator.SetBool ("HasPrompt", false);
