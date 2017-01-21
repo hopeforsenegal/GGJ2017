@@ -51,6 +51,8 @@ public class FocusCamera : MonoBehaviour
 	{
 		if (m_TransformTarget != null) {
 			m_Target = m_TransformTarget.position;
+		} else {
+			Debug.LogWarning ("Not set go check");
 		}
 	}
 
