@@ -54,30 +54,17 @@ public class FocusPlayer : MonoBehaviour
 
 	protected void OnTriggerEnter (Collider coll)
 	{
-		FocusCamera fcamera = coll.gameObject.GetComponentInChildren<FocusCamera> ();
-		if (fcamera != null) {
-			Debug.Log ("FocusPlayer");
-			fcamera.enabled = true;
-		}
-		FirstPersonController player = coll.gameObject.GetComponentInChildren<FirstPersonController> ();
+		Player player = coll.gameObject.GetComponentInChildren<Player> ();
 		if (player != null) {
-			Debug.Log ("FocusPlayer");
-			player.enabled = false;
+			player.FocusCamera ();
 		}
 	}
 
 	protected void OnTriggerExit (Collider coll)
 	{
-		FocusCamera fcamera = coll.gameObject.GetComponentInChildren<FocusCamera> ();
-		if (fcamera != null) {
-			Debug.Log ("UnFocusPlayer");
-			fcamera.enabled = false;
-		}
-		FirstPersonController player = coll.gameObject.GetComponentInChildren<FirstPersonController> ();
+		Player player = coll.gameObject.GetComponentInChildren<Player> ();
 		if (player != null) {
-			Debug.Log ("UnFocusPlayer");
-			player.enabled = true;
-			player.UpdateView (fcamera.Target);
+			player.UnFocusCamera ();
 		}
 	}
 

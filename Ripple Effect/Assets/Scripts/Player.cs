@@ -34,6 +34,8 @@ public class Player : MonoBehaviour
 
 	#region Private Member Variables
 
+	private float m_FocusDurationRemaining;
+
 	#endregion
 
 	#region Monobehaviours
@@ -57,6 +59,15 @@ public class Player : MonoBehaviour
 
 	protected void Update ()
 	{
+		m_FocusDurationRemaining -= Time.deltaTime;
+
+		if (m_FocusDurationRemaining <= 0f) {
+			m_FocusDurationRemaining = 0f;
+		}
+
+		if (m_FocusCamera.enabled && Mathf.Approximately (m_FocusDurationRemaining, 0f)) {
+			UnFocusCamera ();
+		}
 	}
 
 	protected void OnEnable ()
@@ -76,6 +87,7 @@ public class Player : MonoBehaviour
 		Debug.Log ("FocusPlayer");
 		m_FocusCamera.enabled = true;
 		m_FirstPersonController.enabled = false;
+		m_FocusDurationRemaining = 5f;
 	}
 
 	public void UnFocusCamera ()
