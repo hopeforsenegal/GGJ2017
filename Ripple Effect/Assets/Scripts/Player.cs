@@ -95,7 +95,6 @@ public class Player : MonoBehaviour
 		Debug.Log ("UnFocusPlayer");
 		m_FocusCamera.enabled = false;
 		m_FirstPersonController.enabled = true;
-		m_FirstPersonController.UpdateView (m_FocusCamera.Target);
 	}
 
 	#endregion
