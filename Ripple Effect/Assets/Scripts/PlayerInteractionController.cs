@@ -95,12 +95,13 @@ public class PlayerInteractionController : MonoBehaviour
 			CurrentTarget = hit.collider.GetComponentInParent<Interactable> ();
 			if (CurrentTarget != null) {
 				CurrentTarget.Highlight ();
-				if (!string.IsNullOrEmpty (CurrentTarget.PromptText)) {
+				if (!string.IsNullOrEmpty (CurrentTarget.PromptText) && !m_InfoPanel.IsShowing) {
 					m_PromptText.enabled = true;
 					m_PromptText.text = CurrentTarget.PromptText;
 				}
 				if (Input.GetButtonDown ("Fire1")) {
 					Debug.Log ("I hit my target");
+					m_PromptText.enabled = false;
 					m_InfoPanel.Show (CurrentTarget.TextToDisplay);
 					m_Player.KillControls ();
 				}
