@@ -217,6 +217,18 @@ MonoBehaviour:
   maxBlurSize: 5
   downsample: 0
   tiltShiftShader: {fileID: 4800000, guid: bf34d2a25450349699e8ae6456fa7ca9, type: 3}
+--- !u!114 &1467730295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1467730289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58799754c378a4cbcb6d697f20c78f99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Duration: 1
 --- !u!1 &1482906531
 GameObject:
   m_ObjectHideFlags: 0

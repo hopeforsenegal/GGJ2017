@@ -28,7 +28,8 @@ public class BlurCamera : MonoBehaviour
 
 	#region Private Member Variables
 
-	private bool m_Blurring = false;
+	private bool m_DoAction = false;
+	private bool m_Blur;
 	private float m_DurationRemaining;
 	private TiltShift m_TiltShift;
 
@@ -49,17 +50,21 @@ public class BlurCamera : MonoBehaviour
 
 	protected void Update ()
 	{
-		if (m_Blurring) {
+		if (m_DoAction) {
 			// animate the position of the game object...
-			m_TiltShift.blurArea = Mathf.Lerp (1f, 15f, (m_Duration - m_DurationRemaining) / m_Duration);
+			if (m_Blur) {
+				m_TiltShift.blurArea = Mathf.Lerp (1f, 15f, (m_Duration - m_DurationRemaining) / m_Duration);
+			} else {
+				m_TiltShift.blurArea = Mathf.Lerp (15f, 1f, (m_Duration - m_DurationRemaining) / m_Duration);
+			}
 			Debug.LogFormat ("blurArea:{0} m_Duration:{1} m_DurationRemaining:{2} {3}", m_TiltShift.blurArea, m_Duration, m_DurationRemaining, (m_Duration - m_DurationRemaining) / m_Duration);
 
 			m_DurationRemaining -= Time.deltaTime;
 
 			if (m_DurationRemaining <= 0f) {
 				m_DurationRemaining = 0f;
-				m_Blurring = false;
-				Debug.Log ("No BlurVision");
+				m_DoAction = false;
+				Debug.Log ("Reached BlurVision");
 			}
 		} else {
 			if (Input.GetKey (KeyCode.H)) {
@@ -84,7 +89,16 @@ public class BlurCamera : MonoBehaviour
 	{
 		Debug.Log ("BlurVision");
 		m_DurationRemaining = m_Duration;
-		m_Blurring = true;
+		m_DoAction = true;
+		m_Blur = true;
+	}
+
+	public void ClearVision ()
+	{
+		Debug.Log ("BlurVision");
+		m_DurationRemaining = m_Duration;
+		m_DoAction = true;
+		m_Blur = false;
 	}
 
 	#endregion
