@@ -56,9 +56,9 @@ public class PlayerInteractionController : MonoBehaviour
 	void Update ()
 	{
 		if (Input.GetButtonDown ("Fire1")) {
-			FireRayToInteractable ();
 			Debug.Log ("im firing my stuff");
 		}
+		FireRayToInteractable ();
 	}
 
 	private void FireRayToInteractable ()
@@ -70,7 +70,11 @@ public class PlayerInteractionController : MonoBehaviour
 
 		if (hitInteractable) {
 			CurrentTarget = hit.collider.GetComponentInParent<Interactable> ();
-			Debug.Log ("I hit my target");
+			if (CurrentTarget != null) {
+				if (Input.GetButtonDown ("Fire1")) {
+					Debug.Log ("I hit my target");
+				}
+			}
 		}
 	}
 
