@@ -44,7 +44,7 @@ public class BlurCamera : MonoBehaviour
 	protected void Update ()
 	{
 		// animate the position of the game object...
-		transform.position = new Vector3 (Mathf.Lerp (1, 15, m_DurationRemaining / m_Duration), 0, 0);
+		transform.position = new Vector3 (Mathf.Lerp (1, 15, m_Duration / m_DurationRemaining), 0, 0);
 
 		m_DurationRemaining -= Time.deltaTime;
 
@@ -52,7 +52,7 @@ public class BlurCamera : MonoBehaviour
 			m_DurationRemaining = 0f;
 		}
 
-		if (Input.GetKeyDown (KeyCode.A)) {
+		if (Input.GetKeyDown (KeyCode.H)) {
 			BlurVision ();
 		}
 	}
@@ -71,6 +71,7 @@ public class BlurCamera : MonoBehaviour
 
 	public void BlurVision ()
 	{
+		Debug.Log ("BlurVision");
 		m_DurationRemaining = m_Duration;
 	}
 
