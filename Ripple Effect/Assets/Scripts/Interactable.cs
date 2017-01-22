@@ -39,25 +39,21 @@ public class Interactable : MonoBehaviour
 
 	public string TextToShowsOnInteraction {
 		get {
-			return m_TextToShowsOnInteraction;
-		}
-	}
-
-	public string TextToShowsOnInteraction2 {
-		get {
-			return m_TextToShowsOnInteraction2;
+			if (m_InteractionAttempts % 5 == 0) {
+				return m_TextToShowsOnInteraction;
+			} else {
+				return m_TextToShowsOnInteraction2;
+			}
 		}
 	}
 
 	public AudioClip AudioToPlayOnInteraction {
 		get {
-			return m_AudioToPlayOnInteraction;
-		}
-	}
-
-	public AudioClip AudioToPlayOnInteraction2 {
-		get {
-			return m_AudioToPlayOnInteraction2;
+			if (m_InteractionAttempts % 5 == 0) {
+				return m_AudioToPlayOnInteraction;
+			} else {
+				return m_AudioToPlayOnInteraction;
+			}
 		}
 	}
 
@@ -97,6 +93,7 @@ public class Interactable : MonoBehaviour
 	private Renderer m_Renderer;
 	private Color m_StartColor;
 	private string m_ID;
+	private int m_InteractionAttempts = 0;
 
 	#endregion
 
@@ -105,7 +102,7 @@ public class Interactable : MonoBehaviour
 	protected void Awake ()
 	{
 		m_Renderer = GetComponent<Renderer> ();
-		m_ID = System.Guid.NewGuid().ToString();
+		m_ID = System.Guid.NewGuid ().ToString ();
 
 		Debug.Assert (m_Renderer != null);
 	}
@@ -168,6 +165,7 @@ public class Interactable : MonoBehaviour
 		if (InvokeDoInteractEvent != null) {
 			InvokeDoInteractEvent (this);
 		}
+		m_InteractionAttempts++;
 	}
 
 	#endregion
