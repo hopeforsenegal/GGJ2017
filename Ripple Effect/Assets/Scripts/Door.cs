@@ -3,11 +3,11 @@ using UnityEngine;
 using System.Collections;
 
 [DisallowMultipleComponent]
-public class Door : MonoBehaviour 
+public class Door : MonoBehaviour
 {
 	#region Enums and Constants
 
-	#endregion 
+	#endregion
 
 	#region Events
 
@@ -15,26 +15,34 @@ public class Door : MonoBehaviour
 
 	#region Properties
 
-	#endregion 
+	#endregion
 
 	#region Inspectables
+
+	[Tooltip ("The transform of where we pull a room to")]
+	[SerializeField]
+	private Transform m_Transform;
 
 	#endregion
 
 	#region Private Member Variables
 
+
 	#endregion
-	
-    #region Monobehaviours
 
-	protected void Awake () 
+	#region Monobehaviours
+
+	protected void Awake ()
 	{
 	}
 
-	protected void Start () 
+	protected void Start ()
 	{
+		if (m_Transform == null) {
+			Debug.LogWarning ("m_Transform is null");
+		}
 	}
-	
+
 	protected void Update ()
 	{
 	}
@@ -46,20 +54,20 @@ public class Door : MonoBehaviour
 	protected void OnDisable ()
 	{
 	}
-	
-	protected void OnBecameVisible ()
-	{
-		enabled = true;
-	}
 
-	protected void OnBecameInvisible ()
-	{
-		enabled = false;
-	}
-	
 	#endregion
 
 	#region Public Methods
+
+	public void RoomTransfer ()
+	{
+		GameController gameController;
+		if (GameController.TryGetInstance (out gameController)) {
+			gameController.Room.transform.position = m_Transform.position;
+			gameController.Room.transform.rotation = m_Transform.rotation;
+			gameController.Room.transform.localScale = m_Transform.localScale;
+		}
+	}
 
 	#endregion
 
