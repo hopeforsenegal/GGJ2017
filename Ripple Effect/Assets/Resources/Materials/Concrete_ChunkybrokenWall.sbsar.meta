@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 95c4f78b5e1b57a4d9d87aeec6e326cb
-timeCreated: 1485057260
+timeCreated: 1485102128
 licenseType: Pro
 SubstanceImporter:
   serializedVersion: 5
@@ -234,7 +234,7 @@ SubstanceImporter:
     materialInformation:
       serializedVersion: 5
       offset: {x: 0, y: 0}
-      scale: {x: 3.1, y: 1}
+      scale: {x: 1, y: 1}
       generateMipmaps: 1
       generateAllOutputs: 0
       animationUpdateRate: 42
@@ -269,13 +269,13 @@ SubstanceImporter:
           name: _EmissionMap
         second:
           texture: {instanceID: 0}
-          scale: {x: 3.1, y: 1}
+          scale: {x: 1, y: 1}
           offset: {x: 0, y: 0}
       - first:
           name: _MainTex
         second:
           texture: {instanceID: 0}
-          scale: {x: 3.1, y: 1}
+          scale: {x: 1, y: 1}
           offset: {x: 0, y: 0}
       - first:
           name: _MetallicGlossMap
