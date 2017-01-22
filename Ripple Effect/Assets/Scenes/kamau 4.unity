@@ -249,7 +249,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 319896216}
-  m_RootOrder: 7
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &77952267
 MonoBehaviour:
@@ -264,8 +264,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_IDHash: 
   m_InteractionText: inspect
-  m_TextToShowsOnInteraction: 
-  m_TextToShowsOnInteraction2: 
+  m_TextToShowsOnInteraction: "Missing his ring finger. Looks like it\u2019s been
+    cut off."
+  m_TextToShowsOnInteraction2: "Maybe it\u2019s meant to be a message. Was he married?"
   m_AudioToPlayOnInteraction: {fileID: 0}
   m_AudioToPlayOnInteraction2: {fileID: 0}
 --- !u!23 &77952268
@@ -435,7 +436,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 319896216}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &185763605
 MonoBehaviour:
@@ -451,8 +452,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_IDHash: 
   m_InteractionText: inspect
-  m_TextToShowsOnInteraction: 
-  m_TextToShowsOnInteraction2: 
+  m_TextToShowsOnInteraction: "Missing his ring finger. Looks like it\u2019s been
+    cut off."
+  m_TextToShowsOnInteraction2: "Maybe it\u2019s meant to be a message. Was he married?"
   m_AudioToPlayOnInteraction: {fileID: 0}
   m_AudioToPlayOnInteraction2: {fileID: 0}
 --- !u!23 &185763606
@@ -945,7 +947,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 319896216}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &713579388
 MonoBehaviour:
@@ -960,8 +962,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_IDHash: 
   m_InteractionText: inspect
-  m_TextToShowsOnInteraction: 
-  m_TextToShowsOnInteraction2: 
+  m_TextToShowsOnInteraction: His throat has been cut. Slight signs of a struggle.
+  m_TextToShowsOnInteraction2: "It seems his head was held down. Poor guy didn\u2019t
+    have a chance."
   m_AudioToPlayOnInteraction: {fileID: 0}
   m_AudioToPlayOnInteraction2: {fileID: 0}
 --- !u!23 &713579389
@@ -1850,7 +1853,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 319896216}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1581945155
 MonoBehaviour:
@@ -1865,8 +1868,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_IDHash: 
   m_InteractionText: inspect
-  m_TextToShowsOnInteraction: 
-  m_TextToShowsOnInteraction2: 
+  m_TextToShowsOnInteraction: The blood is almost dried into his shirt. Time of death
+    - 8pm?
+  m_TextToShowsOnInteraction2: I put the time of death at about 8pm.
   m_AudioToPlayOnInteraction: {fileID: 0}
   m_AudioToPlayOnInteraction2: {fileID: 0}
 --- !u!23 &1581945156
