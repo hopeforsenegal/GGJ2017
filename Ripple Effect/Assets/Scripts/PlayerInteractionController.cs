@@ -78,7 +78,7 @@ public class PlayerInteractionController : MonoBehaviour
 		if (i.tag == Interactable.kInteractableTag) {
 			Debug.Log ("tag");
 			m_PromptText.enabled = false;
-			m_InfoPanel.Show (CurrentTarget.TextToDisplay);
+			m_InfoPanel.Show (CurrentTarget.TextToShowsOnInteraction);
 			m_Player.KillControls ();
 		} else if (i.tag == Interactable.kDoorTag) {
 			Debug.Log ("Hit door");

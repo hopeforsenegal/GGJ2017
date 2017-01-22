@@ -37,15 +37,27 @@ public class Interactable : MonoBehaviour
 		}
 	}
 
-	public string TextToDisplay {
+	public string TextToShowsOnInteraction {
 		get {
 			return m_TextToShowsOnInteraction;
 		}
 	}
 
-	public AudioClip InteractSound {
+	public string TextToShowsOnInteraction2 {
+		get {
+			return m_TextToShowsOnInteraction2;
+		}
+	}
+
+	public AudioClip AudioToPlayOnInteraction {
 		get {
 			return m_AudioToPlayOnInteraction;
+		}
+	}
+
+	public AudioClip AudioToPlayOnInteraction2 {
+		get {
+			return m_AudioToPlayOnInteraction2;
 		}
 	}
 
