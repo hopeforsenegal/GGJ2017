@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine.UI;
 
+[RequireComponent (typeof(Player))]
 public class PlayerInteractionController : MonoBehaviour
 {
 	#region Enums and Constants
@@ -31,6 +32,10 @@ public class PlayerInteractionController : MonoBehaviour
 	[SerializeField]
 	private Text m_PromptText;
 
+	[Tooltip ("")]
+	[SerializeField]
+	private InfoPanel m_InfoPanel;
+
 	#endregion
 
 	#region Private Member Variables
@@ -38,12 +43,20 @@ public class PlayerInteractionController : MonoBehaviour
 	private static Interactable CurrentTarget;
 
 	private string lastPromptPlayed;
+	private Player m_Player;
 
 	#endregion
 
 	#region Monobehaviours
 
 	#endregion
+
+	protected void Awake ()
+	{
+		m_Player = GetComponent<Player> ();
+
+		Debug.Assert (m_Player != null);
+	}
 
 	protected void Start ()
 	{
@@ -53,10 +66,18 @@ public class PlayerInteractionController : MonoBehaviour
 		if (m_PromptText == null) {
 			Debug.LogWarning ("m_PromptText is null");
 		}
+		if (m_InfoPanel == null) {
+			Debug.LogWarning ("m_InfoPanel is null");
+		}
 	}
 
 	void Update ()
 	{
+		if (Input.anyKeyDown && m_InfoPanel.IsShowing) {
+			m_InfoPanel.Hide ();
+			m_Player.EnableControls ();
+			return;
+		}
 		if (Input.GetButtonDown ("Fire1")) {
 			Debug.Log ("im firing my stuff");
 		}
@@ -74,12 +95,15 @@ public class PlayerInteractionController : MonoBehaviour
 			CurrentTarget = hit.collider.GetComponentInParent<Interactable> ();
 			if (CurrentTarget != null) {
 				CurrentTarget.Highlight ();
-				if (!string.IsNullOrEmpty (CurrentTarget.PromptText)) {
+				if (!string.IsNullOrEmpty (CurrentTarget.PromptText) && !m_InfoPanel.IsShowing) {
 					m_PromptText.enabled = true;
 					m_PromptText.text = CurrentTarget.PromptText;
 				}
 				if (Input.GetButtonDown ("Fire1")) {
 					Debug.Log ("I hit my target");
+					m_PromptText.enabled = false;
+					m_InfoPanel.Show (CurrentTarget.TextToDisplay);
+					m_Player.KillControls ();
 				}
 			} else {
 				m_PromptText.enabled = false;

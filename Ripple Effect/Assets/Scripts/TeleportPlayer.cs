@@ -3,11 +3,11 @@ using UnityEngine;
 using System.Collections;
 
 [DisallowMultipleComponent]
-public class TeleportPlayer : MonoBehaviour 
+public class TeleportPlayer : MonoBehaviour
 {
 	#region Enums and Constants
 
-	#endregion 
+	#endregion
 
 	#region Events
 
@@ -15,30 +15,35 @@ public class TeleportPlayer : MonoBehaviour
 
 	#region Properties
 
-	#endregion 
+	#endregion
 
 	#region Inspectables
 
-	[Tooltip ("The teleport location")]
+	[Tooltip ("The linked teleport location")]
 	[SerializeField]
-	private Vector3 m_TeleportLocation;
+	private TeleportPlayer m_TeleportLocation;
 
 	#endregion
 
 	#region Private Member Variables
 
+	private static int sLastTeleportedHashCode = 0;
+
 	#endregion
-	
-    #region Monobehaviours
 
-	protected void Awake () 
+	#region Monobehaviours
+
+	protected void Awake ()
 	{
 	}
 
-	protected void Start () 
+	protected void Start ()
 	{
+		if (m_TeleportLocation == null) {
+			Debug.LogWarning ("m_TeleportLocation is null");
+		}
 	}
-	
+
 	protected void Update ()
 	{
 	}
@@ -50,7 +55,7 @@ public class TeleportPlayer : MonoBehaviour
 	protected void OnDisable ()
 	{
 	}
-	
+
 	protected void OnBecameVisible ()
 	{
 		enabled = true;
@@ -60,17 +65,23 @@ public class TeleportPlayer : MonoBehaviour
 	{
 		enabled = false;
 	}
-	
+
 	#endregion
 
 	#region Trigger Collider
 
 	protected void OnTriggerEnter (Collider coll)
 	{
+		if (sLastTeleportedHashCode > 0 && this.GetHashCode () != sLastTeleportedHashCode) {
+			sLastTeleportedHashCode = 0;
+			return;
+		}
+
 		CharacterController player = coll.gameObject.GetComponent<CharacterController> ();
 		if (player != null) {
 			Transform pTransform = player.GetComponent<Transform> ();
-			pTransform.position = m_TeleportLocation;
+			pTransform.position = m_TeleportLocation.transform.position;
+			sLastTeleportedHashCode = this.GetHashCode ();
 		}
 	}
 

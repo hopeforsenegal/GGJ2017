@@ -1,26 +1,16 @@
 fileFormatVersion: 2
 guid: d2f0bf651e7654640ae2e9564b07c0d4
 timeCreated: 1469113377
-licenseType: Store
+licenseType: Pro
 PluginImporter:
   serializedVersion: 1
   iconMap: {}
   executionOrder: {}
   isPreloaded: 0
-  isOverridable: 0
   platformData:
     Any:
-      enabled: 1
-      settings:
-        Exclude Editor: 0
-        Exclude Linux: 0
-        Exclude Linux64: 0
-        Exclude LinuxUniversal: 0
-        Exclude OSXIntel: 0
-        Exclude OSXIntel64: 0
-        Exclude OSXUniversal: 0
-        Exclude Win: 0
-        Exclude Win64: 0
+      enabled: 0
+      settings: {}
     Editor:
       enabled: 1
       settings:
