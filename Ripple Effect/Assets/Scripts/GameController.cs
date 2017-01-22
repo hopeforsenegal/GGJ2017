@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using UnityStandardAssets.Characters.FirstPerson;
 
 [DisallowMultipleComponent]
-[
 public class GameController : MonoBehaviour
 {
 	#region Singleton
