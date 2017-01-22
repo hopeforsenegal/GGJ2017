@@ -63,9 +63,9 @@ public class Door : MonoBehaviour
 	{
 		GameController gameController;
 		if (GameController.TryGetInstance (out gameController)) {
-			gameController.Room.transform.position = m_Transform.position;
-			gameController.Room.transform.rotation = m_Transform.rotation;
-			gameController.Room.transform.localScale = m_Transform.localScale;
+			gameController.CurrentRoom.transform.position = m_Transform.position;
+			gameController.CurrentRoom.transform.rotation = m_Transform.rotation;
+			gameController.CurrentRoom.transform.localScale = m_Transform.localScale;
 		}
 	}
 
