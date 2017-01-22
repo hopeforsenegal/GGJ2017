@@ -316,6 +316,8 @@ public class GameController : MonoBehaviour
 	{
 		Debug.LogFormat ("EnterRoom m_Room:{0} m_HasFoundStairwellItemsRoom1:{1} m_HasFoundAllItemsRoom1:{2}", m_CurrentRoom, m_HasFoundStairwellItemsRoom1, m_HasFoundAllItemsRoom1);
 
+		m_CurrentRoom = m_NextRoom;
+
 		m_DoorUnlocked = false;
 		m_IsInStairwell = false;
 		m_FirstPersonController.IsInStairwell = false;

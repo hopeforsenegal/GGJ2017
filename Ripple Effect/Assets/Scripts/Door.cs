@@ -116,7 +116,7 @@ public class Door : MonoBehaviour
 			}
 		}
 
-		if (m_Interactable != null && m_Interactable.ID == i.ID) {
+		if (m_Interactable != null && m_Interactable.ID == i.ID && gameController.IsInStairwell) {
 			if (gameController != null) {
 				Debug.LogFormat ("Teleporting room {0}", gameController.CurrentRoom);
 				gameController.CurrentRoom.SetActive (true);
@@ -141,7 +141,7 @@ public class Door : MonoBehaviour
 			m_Animator.Update (0.0f);
 		}
 	}
-
+	 
 	private void GameController_DoorUnlockedEvent ()
 	{
 		GameController gameController;

@@ -101,7 +101,7 @@ public class PlayerInteractionController : MonoBehaviour
 		Interactable.DoInteractEvent -= HandleOnDoInteractHandler;
 	}
 
-	private void Update ()
+	private void Update () 
 	{
 		if (Input.anyKeyDown && m_InfoPanel != null && m_InfoPanel.IsShowing) {
 			m_InfoPanel.Hide ();
