@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 [DisallowMultipleComponent]
+[RequireComponent (typeof(AudioSource))]
 public class MainMenuScreen : MonoBehaviour
 {
 	#region Singleton
@@ -50,6 +51,10 @@ public class MainMenuScreen : MonoBehaviour
 	[SerializeField]
 	private Button m_ExitGame;
 
+	[Tooltip ("")]
+	[SerializeField]
+	private AudioClip m_AudioSound;
+
 	#endregion
 
 	#region Inspectables
@@ -57,6 +62,8 @@ public class MainMenuScreen : MonoBehaviour
 	#endregion
 
 	#region Private Member Variables
+
+	private AudioSource m_AudioSource;
 
 	#endregion
 
@@ -67,6 +74,10 @@ public class MainMenuScreen : MonoBehaviour
 		if (sInstance == null) {
 			sInstance = this;
 		}
+
+		m_AudioSource = GetComponent<AudioSource> ();
+
+		Debug.Assert (m_AudioSource != null);
 	}
 
 	protected void Start ()
@@ -87,6 +98,13 @@ public class MainMenuScreen : MonoBehaviour
 			m_ExitGame.onClick.AddListener (() => {
 				ExitGame ();
 			});
+		}
+
+		if (m_AudioSound == null) {
+			Debug.LogWarning ("m_AudioSound is null");
+		} else {
+			m_AudioSource.clip = m_AudioSound;
+			m_AudioSource.Play ();
 		}
 	}
 
