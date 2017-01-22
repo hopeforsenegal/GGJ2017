@@ -130,18 +130,18 @@ public class Door : MonoBehaviour
 
 	private void ToggleDoor ()
 	{
-		Debug.Log ( "OpenDoorState" );
+		Debug.Log ("OpenDoorState");
 		if (m_Animator != null && m_Animator.isActiveAndEnabled) {
 			if (!m_IsDoorOpen) {
 				StartCoroutine (OpenDoorTask ());
 			} else {
-				m_Animator.SetInteger ( "OpenDoorState", 0);
+				m_Animator.SetInteger ("OpenDoorState", 0);
 				m_IsDoorOpen = false;
 			}
 			m_Animator.Update (0.0f);
 		}
 	}
-	 
+
 	private void GameController_DoorUnlockedEvent ()
 	{
 		GameController gameController;
@@ -166,7 +166,7 @@ public class Door : MonoBehaviour
 			}
 		}
 		yield return new WaitForSeconds (1.2f);
-		m_Animator.SetInteger ( "OpenDoorState", explodeDoor );
+		m_Animator.SetInteger ("OpenDoorState", explodeDoor);
 		m_IsDoorOpen = true;
 	}
 
@@ -177,7 +177,12 @@ public class Door : MonoBehaviour
 
 	private void OnReenterRoom_ReenterRoomEvent ()
 	{
-		CloseDoor ();
+		GameController gameController;
+		if (GameController.TryGetInstance (out gameController)) {
+			if (gameController.IsInStairwell) {
+				CloseDoor ();
+			}
+		}
 	}
 
 	private void CloseDoor ()
@@ -185,7 +190,7 @@ public class Door : MonoBehaviour
 		Debug.Log ("CloseDoor");
 		if (m_Animator != null && m_Animator.isActiveAndEnabled) {
 			if (m_IsDoorOpen) {
-				m_Animator.SetInteger ( "OpenDoorState", 0);
+				m_Animator.SetInteger ("OpenDoorState", 0);
 				m_IsDoorOpen = false;
 			}
 			m_Animator.Update (0.0f);
