@@ -130,7 +130,7 @@ public class GameController : MonoBehaviour
 
 	[Tooltip ("")]
 	[SerializeField]
-	private OnReenterRoom m_OnReenterRoom;
+	private OnReenterRoom[] m_OnReenterRooms;
 
 	[Tooltip ("")]
 	[SerializeField]
@@ -204,7 +204,7 @@ public class GameController : MonoBehaviour
 		} else {
 			m_Room3.SetActive (false);
 		}
-		if (m_OnReenterRoom == null) {
+		if (m_OnReenterRooms == null) {
 			Debug.LogWarning ("m_OnReenterRoom is null");
 		}
 		if (m_OnBedroomTeleport == null) {
@@ -280,7 +280,9 @@ public class GameController : MonoBehaviour
 		m_IsInStairwell = true;
 		m_FirstPersonController.IsInStairwell = true;
 		m_DoorUnlocked = false;
-		m_OnReenterRoom.enabled = true;
+		foreach (var item in m_OnReenterRooms) {
+			item.enabled = true;
+		}
 
 		Debug.LogFormat ("EnterStairWell m_Room:{0} m_HasFoundStairwellItemsRoom1:{1} m_HasFoundAllItemsRoom1:{2}", m_CurrentRoom, m_HasFoundStairwellItemsRoom1, m_HasFoundAllItemsRoom1);
 		

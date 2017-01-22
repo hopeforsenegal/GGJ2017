@@ -2344,6 +2344,18 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a2a641823a18c457b8383f59b14629b7, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &781581243 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114855596865641734, guid: a2a641823a18c457b8383f59b14629b7,
+    type: 2}
+  m_PrefabInternal: {fileID: 781581242}
+  m_Script: {fileID: 11500000, guid: d0647541ceeb348d0b727472f1aa0a56, type: 3}
+--- !u!114 &781581244 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114806280079115252, guid: a2a641823a18c457b8383f59b14629b7,
+    type: 2}
+  m_PrefabInternal: {fileID: 781581242}
+  m_Script: {fileID: 11500000, guid: c5dc7bb7f72804f13bc141d71f90db8c, type: 3}
 --- !u!43 &869879348
 Mesh:
   m_ObjectHideFlags: 0
@@ -2574,6 +2586,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4fa0c746b4ce64cd4af1c30af22560dd, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &887097336 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114800646028162810, guid: 4fa0c746b4ce64cd4af1c30af22560dd,
+    type: 2}
+  m_PrefabInternal: {fileID: 887097335}
+  m_Script: {fileID: 11500000, guid: c5dc7bb7f72804f13bc141d71f90db8c, type: 3}
 --- !u!1 &903216285
 GameObject:
   m_ObjectHideFlags: 0
@@ -3681,6 +3699,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a563e8836282efa4eae8166edc067ae3, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1352581894 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114193402076536338, guid: a563e8836282efa4eae8166edc067ae3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1352581893}
+  m_Script: {fileID: 11500000, guid: c5dc7bb7f72804f13bc141d71f90db8c, type: 3}
 --- !u!1 &1378022432
 GameObject:
   m_ObjectHideFlags: 0
@@ -3724,9 +3748,12 @@ MonoBehaviour:
   m_Room3DieItems: []
   m_Room3WinItems: []
   m_InfoPanel: {fileID: 903216287}
-  m_OnReenterRoom: {fileID: 0}
-  m_OnBedroomTeleport: {fileID: 0}
-  m_BedroomTeleportTransform: {fileID: 0}
+  m_OnReenterRooms:
+  - {fileID: 887097336}
+  - {fileID: 781581244}
+  - {fileID: 1352581894}
+  m_OnBedroomTeleport: {fileID: 781581243}
+  m_BedroomTeleportTransform: {fileID: 227604667}
 --- !u!4 &1378022434
 Transform:
   m_ObjectHideFlags: 0
