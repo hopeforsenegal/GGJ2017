@@ -3210,6 +3210,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1580353668701210
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4993269142353080}
+  - component: {fileID: 33897969648659772}
+  - component: {fileID: 64796413770368912}
+  - component: {fileID: 23202603784828654}
+  - component: {fileID: 114246002382143028}
+  m_Layer: 0
+  m_Name: StairwellTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1589267709778906
 GameObject:
   m_ObjectHideFlags: 1
@@ -8206,6 +8225,7 @@ Transform:
   - {fileID: 4644720646395168}
   - {fileID: 4631584815597282}
   - {fileID: 4430296067648982}
+  - {fileID: 4993269142353080}
   m_Father: {fileID: 4684968442159402}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9839,6 +9859,19 @@ Transform:
   m_Father: {fileID: 4165292561535384}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4993269142353080
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1580353668701210}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -6.5, y: -8, z: 18}
+  m_LocalScale: {x: 5, y: 2, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4588177284039584}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 90, z: -90}
 --- !u!4 &4997658669322846
 Transform:
   m_ObjectHideFlags: 1
@@ -10494,6 +10527,37 @@ MeshRenderer:
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!23 &23202603784828654
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1580353668701210}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_SelectedEditorRenderState: 3
@@ -13962,6 +14026,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1650564166654122}
   m_Mesh: {fileID: 4300000, guid: 46681a32b3fb05f40bce9fab61a7abe1, type: 3}
+--- !u!33 &33897969648659772
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1580353668701210}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &33899468970171036
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -14270,6 +14341,20 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 0}
+--- !u!64 &64796413770368912
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1580353668701210}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!64 &64938850986280012
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -31429,7 +31514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114013544847372026
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -31457,7 +31542,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114018772526882040
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -31485,7 +31570,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114026711659451018
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -31497,9 +31582,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2414594949784681bdc3ca1a6177169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionText: 
-  m_TextToShowsOnInteraction: 
-  m_TextToShowsOnInteraction2: 
+  m_InteractionText: 'open door.                                                              '
+  m_TextToShowsOnInteraction: Door is locked
+  m_TextToShowsOnInteraction2: Door is locked
   m_AudioToPlayOnInteraction: {fileID: 0}
   m_AudioToPlayOnInteraction2: {fileID: 0}
 --- !u!114 &114031624477896366
@@ -39375,7 +39460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114051928040498232
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -39403,7 +39488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114068825907304772
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -39415,7 +39500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114072316963858034
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -47313,7 +47398,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114109047721432038
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -47389,7 +47474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114125134344481260
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -50513,7 +50598,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114141671027895230
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -50525,7 +50610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114142545104754140
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -50537,7 +50622,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114144987341660210
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -58435,7 +58520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114173486642596852
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -58447,7 +58532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114173492737553592
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -58475,7 +58560,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114183555531318170
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -58487,7 +58572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114184179299605920
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -58499,7 +58584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114184185836399788
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -58511,7 +58596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114188652305828974
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -58523,7 +58608,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114191901779404780
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -58567,7 +58652,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114215445596517032
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -66433,7 +66518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114223617638268878
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -66445,7 +66530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114237154754527406
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -66457,9 +66542,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2414594949784681bdc3ca1a6177169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionText: 
-  m_TextToShowsOnInteraction: 
-  m_TextToShowsOnInteraction2: 
+  m_InteractionText: 'open door.                                                              '
+  m_TextToShowsOnInteraction: Door is locked
+  m_TextToShowsOnInteraction2: Door is locked
   m_AudioToPlayOnInteraction: {fileID: 0}
   m_AudioToPlayOnInteraction2: {fileID: 0}
 --- !u!114 &114238024890180658
@@ -66489,7 +66574,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114241124426637226
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -66517,7 +66602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114243713960092828
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -66529,7 +66614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114243952355881200
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -66541,7 +66626,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114245862740179160
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -66553,7 +66638,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
+--- !u!114 &114246002382143028
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1580353668701210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09868191f98124631950bef3553422a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114247292465837736
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -66593,9 +66689,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2414594949784681bdc3ca1a6177169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionText: 
-  m_TextToShowsOnInteraction: 
-  m_TextToShowsOnInteraction2: 
+  m_InteractionText: 'open door.                                                              '
+  m_TextToShowsOnInteraction: Door is locked
+  m_TextToShowsOnInteraction2: Door is locked
   m_AudioToPlayOnInteraction: {fileID: 0}
   m_AudioToPlayOnInteraction2: {fileID: 0}
 --- !u!114 &114258303667996964
@@ -66609,7 +66705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114273971041255608
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -66649,7 +66745,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114297452626534096
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -66673,7 +66769,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114314608607718772
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -66725,7 +66821,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114336675583898324
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -66781,7 +66877,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114379172069198688
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -66793,7 +66889,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114381893095458456
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -66805,7 +66901,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114384476784514602
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -66833,7 +66929,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114387232173400504
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -66857,7 +66953,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114396240480375558
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -66869,7 +66965,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114399239675107122
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -66921,7 +67017,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114418549215136184
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -66933,7 +67029,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114421893605478700
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -66945,7 +67041,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114421986913121270
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -66957,7 +67053,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114426111609462400
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -66969,7 +67065,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114429458523238178
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -66981,7 +67077,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114430840296711984
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -67009,9 +67105,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2414594949784681bdc3ca1a6177169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionText: 
-  m_TextToShowsOnInteraction: 
-  m_TextToShowsOnInteraction2: 
+  m_InteractionText: 'open door.                                                              '
+  m_TextToShowsOnInteraction: Door is locked
+  m_TextToShowsOnInteraction2: Door is locked
   m_AudioToPlayOnInteraction: {fileID: 0}
   m_AudioToPlayOnInteraction2: {fileID: 0}
 --- !u!114 &114439367135712162
@@ -70089,7 +70185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114449478012878276
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -73245,7 +73341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114463012082845044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -76349,9 +76445,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2414594949784681bdc3ca1a6177169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionText: 
-  m_TextToShowsOnInteraction: 
-  m_TextToShowsOnInteraction2: 
+  m_InteractionText: 'open door.                                                              '
+  m_TextToShowsOnInteraction: Door is locked
+  m_TextToShowsOnInteraction2: Door is locked
   m_AudioToPlayOnInteraction: {fileID: 0}
   m_AudioToPlayOnInteraction2: {fileID: 0}
 --- !u!114 &114485135649743798
@@ -76365,7 +76461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114485168730401430
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -79517,7 +79613,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114515588860450074
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -79529,7 +79625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114515811560924936
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -79541,7 +79637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114517177277824304
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -79597,7 +79693,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114529436774914580
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -79609,9 +79705,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2414594949784681bdc3ca1a6177169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionText: 
-  m_TextToShowsOnInteraction: 
-  m_TextToShowsOnInteraction2: 
+  m_InteractionText: 'open door.                                                              '
+  m_TextToShowsOnInteraction: Door is locked
+  m_TextToShowsOnInteraction2: Door is locked
   m_AudioToPlayOnInteraction: {fileID: 0}
   m_AudioToPlayOnInteraction2: {fileID: 0}
 --- !u!114 &114531664889213326
@@ -79657,7 +79753,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114544796266160316
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -79669,7 +79765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114553892976971374
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -79681,9 +79777,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2414594949784681bdc3ca1a6177169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionText: 
-  m_TextToShowsOnInteraction: 
-  m_TextToShowsOnInteraction2: 
+  m_InteractionText: 'open door.                                                              '
+  m_TextToShowsOnInteraction: Door is locked
+  m_TextToShowsOnInteraction2: Door is locked
   m_AudioToPlayOnInteraction: {fileID: 0}
   m_AudioToPlayOnInteraction2: {fileID: 0}
 --- !u!114 &114553911585895900
@@ -79713,7 +79809,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114572036611914606
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -79757,7 +79853,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114596973199374428
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -79785,7 +79881,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114606086257783456
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -79829,7 +79925,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114624976313773134
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -79841,7 +79937,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114624998536226938
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -79853,7 +79949,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114630032635187514
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -79881,7 +79977,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114634654400492370
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -79893,7 +79989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114648688400600862
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -79937,7 +80033,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114670768610652910
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -79949,7 +80045,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114671559582307960
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -79973,7 +80069,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114698917055820298
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -80017,7 +80113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114713336402144508
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -80029,7 +80125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114716699841857338
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -80327,7 +80423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114723790246397668
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -80355,7 +80451,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114739994669644326
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -86539,7 +86635,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114766693117713830
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -86551,7 +86647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114767159957048506
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -86579,7 +86675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114770229552202444
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -86591,7 +86687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114775778136075488
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -86603,7 +86699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114776057819705662
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -86723,7 +86819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114794662686366632
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -86763,7 +86859,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114821950607078292
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -86803,7 +86899,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114841597881237022
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -86831,9 +86927,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2414594949784681bdc3ca1a6177169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionText: 
-  m_TextToShowsOnInteraction: 
-  m_TextToShowsOnInteraction2: 
+  m_InteractionText: 'open door.                                                              '
+  m_TextToShowsOnInteraction: Door is locked
+  m_TextToShowsOnInteraction2: Door is locked
   m_AudioToPlayOnInteraction: {fileID: 0}
   m_AudioToPlayOnInteraction2: {fileID: 0}
 --- !u!114 &114842735493651396
@@ -102551,7 +102647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114854512192729878
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -102579,7 +102675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114860911363892668
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -102591,7 +102687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114874764563311858
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -102603,7 +102699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114888403265398882
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -102631,7 +102727,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114893843647505172
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -105767,7 +105863,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114913013497886008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -105779,7 +105875,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114916490919184218
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -105791,7 +105887,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114918501234601706
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -105819,7 +105915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114938104166670414
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -105831,9 +105927,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2414594949784681bdc3ca1a6177169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionText: 
-  m_TextToShowsOnInteraction: 
-  m_TextToShowsOnInteraction2: 
+  m_InteractionText: 'open door.                                                              '
+  m_TextToShowsOnInteraction: Door is locked
+  m_TextToShowsOnInteraction2: Door is locked
   m_AudioToPlayOnInteraction: {fileID: 0}
   m_AudioToPlayOnInteraction2: {fileID: 0}
 --- !u!114 &114938761612915860
@@ -105895,7 +105991,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114950798192713754
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -108971,7 +109067,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114958863007444580
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -108999,7 +109095,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114961673735654560
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -109011,7 +109107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114978653229181926
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -109023,7 +109119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114979210958693140
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -125009,7 +125105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}
 --- !u!114 &114998005905079148
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -132859,4 +132955,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 0}
+  m_Transform: {fileID: 0}

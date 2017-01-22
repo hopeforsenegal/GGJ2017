@@ -115,12 +115,14 @@ public class Door : MonoBehaviour
 		}
 
 		if (m_Interactable != null && m_Interactable.ID == i.ID) {
-			OpenDoor ();
 			if (gameController != null) {
+				Debug.LogFormat ("Teleporting room {0}", gameController.CurrentRoom);
+				gameController.CurrentRoom.SetActive (true);
 				gameController.CurrentRoom.transform.position = m_Transform.position;
 				gameController.CurrentRoom.transform.rotation = m_Transform.rotation;
 				gameController.CurrentRoom.transform.localScale = m_Transform.localScale;
 			}
+			OpenDoor ();
 		}
 	}
 
@@ -150,9 +152,14 @@ public class Door : MonoBehaviour
 
 	private IEnumerator OpenDoorTask ()
 	{
-		Player player;
-		if (Player.TryGetInstance (out player)) {
-			player.FocusCamera ();
+		GameController gameController;
+		if (GameController.TryGetInstance (out gameController)) {
+			if (!gameController.IsInStairwell) {
+				Player player;
+				if (Player.TryGetInstance (out player)) {
+					player.FocusCamera ();
+				}
+			}
 		}
 		yield return new WaitForSeconds (1.2f);
 		m_Animator.SetBool ("OpenDoor", true);
