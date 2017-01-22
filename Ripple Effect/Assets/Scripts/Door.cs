@@ -22,6 +22,9 @@ public class Door : MonoBehaviour
 
 	#region Inspectables
 
+	[Tooltip ("")]
+	[SerializeField]
+	private Player m_Player;
 
 	#endregion
 
@@ -31,7 +34,6 @@ public class Door : MonoBehaviour
 	private Interactable m_Interactable;
 	private AudioSource[] m_Sources;
 	private Animator m_Animator;
-
 
 	#endregion
 
@@ -51,7 +53,6 @@ public class Door : MonoBehaviour
 
 	protected void Start ()
 	{
-
 	}
 
 	protected void Update ()
@@ -117,8 +118,7 @@ public class Door : MonoBehaviour
 		Debug.Log ("OpenDoor");
 		if (m_Animator != null && m_Animator.isActiveAndEnabled) {
 			if (!m_IsDoorOpen) {
-				m_Animator.SetBool ("OpenDoor", true);
-				m_IsDoorOpen = true;
+				StartCoroutine (OpenDoorTask ());
 			} else {
 				m_Animator.SetBool ("OpenDoor", false);
 				m_IsDoorOpen = false;
@@ -131,10 +131,20 @@ public class Door : MonoBehaviour
 	{
 		GameController gameController;
 		if (GameController.TryGetInstance (out gameController)) {
-			if (this.m_Interactable.ID == gameController.FirstRoomDoor.m_Interactable.ID) {
+			if (m_Interactable.ID == gameController.FirstRoomDoor.m_Interactable.ID) {
 				OpenDoor ();
 			}
 		}
+	}
+
+	private IEnumerator OpenDoorTask ()
+	{
+		if (m_Player != null) {
+			m_Player.FocusCamera ();
+		}
+		yield return new WaitForSeconds (1.2f);
+		m_Animator.SetBool ("OpenDoor", true);
+		m_IsDoorOpen = true;
 	}
 
 	#endregion

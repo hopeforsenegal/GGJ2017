@@ -6,6 +6,27 @@ using UnityStandardAssets.Characters.FirstPerson;
 [DisallowMultipleComponent]
 public class Player : MonoBehaviour
 {
+	#region Singleton
+
+	public static Player Instance {
+		get {
+			return sInstance;
+		}
+	}
+
+	public static bool TryGetInstance (out Player returnVal)
+	{
+		returnVal = sInstance;
+		if (returnVal == null) {
+			Debug.LogWarning (string.Format ("Couldn't access {0}", typeof(Player).Name));
+		}
+		return (returnVal != null);
+	}
+
+	private static Player sInstance;
+
+	#endregion
+
 	#region Enums and Constants
 
 	#endregion
@@ -43,6 +64,9 @@ public class Player : MonoBehaviour
 
 	protected void Awake ()
 	{
+		if (sInstance == null) {
+			sInstance = this;
+		}
 	}
 
 	protected void Start ()
@@ -89,6 +113,11 @@ public class Player : MonoBehaviour
 	{
 	}
 
+	protected void OnDestroy ()
+	{
+		sInstance = null;
+	}
+
 	#endregion
 
 	#region Public Methods
@@ -97,7 +126,7 @@ public class Player : MonoBehaviour
 	{
 		Debug.Log ("FocusPlayer");
 		m_FocusCamera.enabled = true;
-		m_FocusDurationRemaining = 5f;
+		m_FocusDurationRemaining = 1f;
 		KillControls ();
 	}
 
@@ -122,12 +151,12 @@ public class Player : MonoBehaviour
 	public void WalkForward ()
 	{
 		Debug.Log ("WalkForward");
-		StartCoroutine(WalkForwardFunc());
+		StartCoroutine (WalkForwardFunc ());
 	}
 
-	private IEnumerator WalkForwardFunc()
+	private IEnumerator WalkForwardFunc ()
 	{
-		yield return new WaitForSeconds(1.5f);
+		yield return new WaitForSeconds (1.5f);
 		m_WalkDurationRemaining = 1f;
 	}
 
