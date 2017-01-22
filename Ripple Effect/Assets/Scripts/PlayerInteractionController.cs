@@ -76,14 +76,14 @@ public class PlayerInteractionController : MonoBehaviour
 	private void HandleOnDoInteractHandler (Interactable i)
 	{
 		Debug.Log ("HandleOnDoInteractHandler");
-		if (i.tag == Interactable.kInteractableTag) {
+		if (i.tag == Interactable.kInteractableTag && m_PromptText != null ) {
 			m_PromptText.enabled = false;
 			m_InfoPanel.Show (CurrentTarget.TextToShowsOnInteraction);
 			m_Player.KillControls ();
 		} else if (i.tag == Interactable.kDoorTag) {
 			Debug.Log (i.tag);
 			GameController gameController;
-			if (GameController.TryGetInstance (out gameController) && gameController.FirstRoomDoor.GetComponent<Interactable> () == i) {
+			if (GameController.TryGetInstance (out gameController) && gameController.FirstRoomDoor.GetComponent<Interactable> () == i && m_PromptText != null ) {
 				m_PromptText.enabled = false;
 				m_InfoPanel.Show (CurrentTarget.TextToShowsOnInteraction);
 				m_Player.KillControls ();
@@ -101,7 +101,7 @@ public class PlayerInteractionController : MonoBehaviour
 
 	private void Update ()
 	{
-		if (Input.anyKeyDown && m_InfoPanel.IsShowing) {
+		if (Input.anyKeyDown && m_InfoPanel != null && m_InfoPanel.IsShowing) {
 			m_InfoPanel.Hide ();
 			m_Player.EnableControls ();
 			return;
@@ -120,7 +120,7 @@ public class PlayerInteractionController : MonoBehaviour
 			CurrentTarget = hit.collider.GetComponentInParent<Interactable> ();
 			if (CurrentTarget != null) {
 				CurrentTarget.Highlight ();
-				if (!string.IsNullOrEmpty (CurrentTarget.PromptText) && !m_InfoPanel.IsShowing) {
+				if (m_PromptText != null && !string.IsNullOrEmpty (CurrentTarget.PromptText) && m_InfoPanel != null && !m_InfoPanel.IsShowing) {
 					m_PromptText.enabled = true;
 					m_PromptText.text = CurrentTarget.PromptText;
 				}
@@ -128,10 +128,10 @@ public class PlayerInteractionController : MonoBehaviour
 					Debug.Log ("interact");
 					CurrentTarget.DoInteract ();
 				}
-			} else {
+			} else if ( m_PromptText != null ){
 				m_PromptText.enabled = false;
 			}
-		} else {
+		} else if ( m_PromptText != null ) {
 			m_PromptText.enabled = false;
 		}
 	}
