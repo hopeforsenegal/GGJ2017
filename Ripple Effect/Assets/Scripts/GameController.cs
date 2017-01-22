@@ -314,7 +314,9 @@ public class GameController : MonoBehaviour
 
 	public void EnterRoom ()
 	{
-		Debug.LogFormat ("EnterRoom m_Room:{0} m_HasFoundStairwellItemsRoom1:{1} m_HasFoundAllItemsRoom1:{2}", m_CurrentRoom, m_HasFoundStairwellItemsRoom1, m_HasFoundAllItemsRoom1);
+		Debug.LogFormat ("EnterRoom m_CurrentRoom:{0} m_HasFoundStairwellItemsRoom1:{1} m_HasFoundAllItemsRoom1:{2}", m_CurrentRoom, m_HasFoundStairwellItemsRoom1, m_HasFoundAllItemsRoom1);
+
+		m_CurrentRoom = m_NextRoom;
 
 		m_DoorUnlocked = false;
 		m_IsInStairwell = false;
@@ -349,7 +351,7 @@ public class GameController : MonoBehaviour
 			}
 		}
 
-		if (hasFoundAllItemsRoom1) {
+		if (hasFoundAllItemsRoom1 && !m_InfoPanel.IsShowing) {
 			m_HasFoundAllItemsRoom1 = true;
 			AttemptDoorUnlock ();
 			return true;
