@@ -199,7 +199,7 @@ public class GameController : MonoBehaviour
 		m_FirstPersonController.IsInStairwell = true;
 		m_DoorUnlocked = false;
 
-		Debug.LogFormat ("m_Room:{0} m_HasFoundStairwellItemsRoom1:{1} m_HasFoundAllItemsRoom1:{2}", m_CurrentRoom, m_HasFoundStairwellItemsRoom1, m_HasFoundAllItemsRoom1);
+		Debug.LogFormat ("EnterStairWell m_Room:{0} m_HasFoundStairwellItemsRoom1:{1} m_HasFoundAllItemsRoom1:{2}", m_CurrentRoom, m_HasFoundStairwellItemsRoom1, m_HasFoundAllItemsRoom1);
 		
 		switch (m_CurrentRoom) {
 		case ERoomStates.Room_1:
@@ -227,6 +227,8 @@ public class GameController : MonoBehaviour
 
 	public void EnterRoom ()
 	{
+		Debug.LogFormat ("EnterRoom m_Room:{0} m_HasFoundStairwellItemsRoom1:{1} m_HasFoundAllItemsRoom1:{2}", m_CurrentRoom, m_HasFoundStairwellItemsRoom1, m_HasFoundAllItemsRoom1);
+
 		m_DoorUnlocked = false;
 		m_IsInStairwell = false;
 		m_FirstPersonController.IsInStairwell = false;
@@ -256,17 +258,21 @@ public class GameController : MonoBehaviour
 				break;
 			}
 		}
+
 		if (hasFoundAllItemsRoom1) {
 			m_HasFoundAllItemsRoom1 = true;
+			Debug.Log ("hasFoundAllItemsRoom1");
 			AttemptDoorUnlock ();
 			return true;
 		}
+
 		return false;
 	}
 
 	private bool CheckForDoorOpenItems ()
 	{
 		bool hasFoundStairwellItemsRoom1 = false;
+
 		foreach (var item in m_Room1OpenDoorItems) {
 			if (m_HasInteracted.ContainsKey (item) && m_HasInteracted [item] == true) {
 				hasFoundStairwellItemsRoom1 = true;
@@ -275,11 +281,12 @@ public class GameController : MonoBehaviour
 				break;
 			}
 		}
+
 		if (hasFoundStairwellItemsRoom1) {
 			m_HasFoundStairwellItemsRoom1 = true;
+			Debug.Log ("hasFoundStairwellItemsRoom1");
 			AttemptDoorUnlock ();
 			return true;
-			;
 		}
 
 		return false;
@@ -287,7 +294,9 @@ public class GameController : MonoBehaviour
 
 	private void AttemptDoorUnlock ()
 	{
+		Debug.Log ("Door unlocked!");
 		if (!m_DoorUnlocked) {
+			Debug.Log ("Door unlocked!");
 			m_DoorUnlocked = true;
 			var InvokeDoorUnlockedEvent = DoorUnlockedEvent;
 			if (InvokeDoorUnlockedEvent != null) {
