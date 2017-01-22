@@ -354,6 +354,7 @@ public class GameController : MonoBehaviour
 		
 		switch (m_CurrentRoom) {
 		case ERoomStates.Room_1:
+			m_Room1.SetActive (false);
 			if (m_HasFoundAllItemsRoom1) {
 				m_NextRoom = ERoomStates.Room_2;
 			} else {
@@ -396,7 +397,7 @@ public class GameController : MonoBehaviour
 		bool hasFoundAllItemsRoom1 = false;
 
 		foreach (var item in m_AllRoom1Items) {
-			if (m_HasInteracted.ContainsKey (item) && m_HasInteracted [item] == true) {
+			if (item != null && m_HasInteracted.ContainsKey (item) && m_HasInteracted [item] == true) {
 				hasFoundAllItemsRoom1 = true;
 			} else {
 				hasFoundAllItemsRoom1 = false;
@@ -418,7 +419,7 @@ public class GameController : MonoBehaviour
 		bool hasFoundStairwellItemsRoom1 = false;
 
 		foreach (var item in m_Room1OpenDoorItems) {
-			if (m_HasInteracted.ContainsKey (item) && m_HasInteracted [item] == true) {
+			if (item != null && m_HasInteracted.ContainsKey (item) && m_HasInteracted [item] == true) {
 				hasFoundStairwellItemsRoom1 = true;
 			} else {
 				hasFoundStairwellItemsRoom1 = false;
@@ -440,7 +441,7 @@ public class GameController : MonoBehaviour
 		bool hasFoundDieItems = false;
 
 		foreach (var item in m_Room3DieItems) {
-			if (m_HasInteracted.ContainsKey (item) && m_HasInteracted [item] == true) {
+			if (item != null && m_HasInteracted.ContainsKey (item) && m_HasInteracted [item] == true) {
 				hasFoundDieItems = true;
 			} else {
 				hasFoundDieItems = false;
@@ -456,7 +457,7 @@ public class GameController : MonoBehaviour
 		bool hasFoundWinItems = false;
 
 		foreach (var item in m_Room3WinItems) {
-			if (m_HasInteracted.ContainsKey (item) && m_HasInteracted [item] == true) {
+			if (item != null && m_HasInteracted.ContainsKey (item) && m_HasInteracted [item] == true) {
 				hasFoundWinItems = true;
 			} else {
 				hasFoundWinItems = false;
