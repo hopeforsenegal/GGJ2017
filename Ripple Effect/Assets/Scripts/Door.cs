@@ -22,6 +22,10 @@ public class Door : MonoBehaviour
 
 	#region Inspectables
 
+	[Tooltip ("")]
+	[SerializeField]
+	private Transform m_Transform;
+
 	#endregion
 
 	#region Private Member Variables
@@ -99,14 +103,12 @@ public class Door : MonoBehaviour
 
 		if (m_Interactable != null && m_Interactable.ID == i.ID) {
 			OpenDoor ();
+			if (gameController != null) {
+				gameController.CurrentRoom.transform.position = m_Transform.position;
+				gameController.CurrentRoom.transform.rotation = m_Transform.rotation;
+				gameController.CurrentRoom.transform.localScale = m_Transform.localScale;
+			}
 		}
-
-//		GameController gameController;
-//		if (GameController.TryGetInstance (out gameController)) {
-//			gameController.CurrentRoom.transform.position = m_Transform.position;
-//			gameController.CurrentRoom.transform.rotation = m_Transform.rotation;
-//			gameController.CurrentRoom.transform.localScale = m_Transform.localScale;
-//		}
 	}
 
 	private void OpenDoor ()
