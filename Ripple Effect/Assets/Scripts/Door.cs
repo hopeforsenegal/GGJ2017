@@ -110,6 +110,7 @@ public class Door : MonoBehaviour
 			gameController.CurrentRoom.transform.position = m_Transform.position;
 			gameController.CurrentRoom.transform.rotation = m_Transform.rotation;
 			gameController.CurrentRoom.transform.localScale = m_Transform.localScale;
+		}
 	}
 	#endregion
 }
