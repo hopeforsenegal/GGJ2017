@@ -50,7 +50,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.6153545, y: 1.92, z: -1.5635004}
+  m_LocalPosition: {x: 6.5, y: 12, z: 9.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400002}
@@ -193,7 +193,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -303,6 +303,17 @@ MonoBehaviour:
     BobAmount: 0.1
   m_StepInterval: 5
   m_FootstepSounds:
+  - {fileID: 8300000, guid: 01a231611f99d9446ab062a5a1c7e402, type: 3}
+  - {fileID: 8300000, guid: b4acbaaa683e6634cb1832f7a5ff038e, type: 3}
+  - {fileID: 8300000, guid: 5b55afce0511d8349a499f565db8ff65, type: 3}
+  - {fileID: 8300000, guid: 53e27c855226c564c96b61a7361d99c7, type: 3}
+  - {fileID: 8300000, guid: bc01a5a018692aa43951fded163b01ef, type: 3}
+  - {fileID: 8300000, guid: dbc8daa4f56599a4e900b9a9d9948f71, type: 3}
+  - {fileID: 8300000, guid: 4204e913c75229b41a4296431f286b89, type: 3}
+  - {fileID: 8300000, guid: ed6c284bc5624d64697b91c0f4eae60c, type: 3}
+  - {fileID: 8300000, guid: 02784921fb00a574992a8ce642825e9a, type: 3}
+  - {fileID: 8300000, guid: a0237fbe3cf73d04da8e567f18045195, type: 3}
+  m_FootstepStairsSounds:
   - {fileID: 8300000, guid: 5b614ecb654a5485d913710e8f8f92c9, type: 3}
   - {fileID: 8300000, guid: a46fc1f2449264f67bd54aaedc239cbf, type: 3}
   - {fileID: 8300000, guid: 3aec9d197a4294cc0aa3c7a1b4187472, type: 3}
@@ -419,7 +430,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:

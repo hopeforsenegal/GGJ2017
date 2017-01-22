@@ -18,15 +18,29 @@ public class Door : MonoBehaviour
 
 	#region Properties
 
+	public bool IsDoorOpen {
+		get {
+			return m_IsDoorOpen;
+		}
+		set {
+			m_IsDoorOpen = value;
+		}
+	}
+
+	private bool m_IsDoorOpen;
+
 	#endregion
 
 	#region Inspectables
+
+	[Tooltip ("")]
+	[SerializeField]
+	private Transform m_Transform;
 
 	#endregion
 
 	#region Private Member Variables
 
-	private bool m_IsDoorOpen = false;
 	private Interactable m_Interactable;
 	private AudioSource[] m_Sources;
 	private Animator m_Animator;
@@ -45,6 +59,7 @@ public class Door : MonoBehaviour
 
 		Interactable.DoInteractEvent += Interactable_DoInteractEvent;
 		GameController.DoorUnlockedEvent += GameController_DoorUnlockedEvent;
+		OnStairWell.EnterStairWellEvent += OnStairWell_EnterStairWellEvent;
 	}
 
 	protected void Start ()
@@ -65,6 +80,7 @@ public class Door : MonoBehaviour
 
 	protected void OnDestroy ()
 	{
+		OnStairWell.EnterStairWellEvent -= OnStairWell_EnterStairWellEvent;
 		Interactable.DoInteractEvent -= Interactable_DoInteractEvent;
 		GameController.DoorUnlockedEvent -= GameController_DoorUnlockedEvent;
 	}
@@ -99,14 +115,12 @@ public class Door : MonoBehaviour
 
 		if (m_Interactable != null && m_Interactable.ID == i.ID) {
 			OpenDoor ();
+			if (gameController != null) {
+				gameController.CurrentRoom.transform.position = m_Transform.position;
+				gameController.CurrentRoom.transform.rotation = m_Transform.rotation;
+				gameController.CurrentRoom.transform.localScale = m_Transform.localScale;
+			}
 		}
-
-//		GameController gameController;
-//		if (GameController.TryGetInstance (out gameController)) {
-//			gameController.CurrentRoom.transform.position = m_Transform.position;
-//			gameController.CurrentRoom.transform.rotation = m_Transform.rotation;
-//			gameController.CurrentRoom.transform.localScale = m_Transform.localScale;
-//		}
 	}
 
 	private void OpenDoor ()
@@ -142,6 +156,18 @@ public class Door : MonoBehaviour
 		yield return new WaitForSeconds (1.2f);
 		m_Animator.SetBool ("OpenDoor", true);
 		m_IsDoorOpen = true;
+	}
+
+	private void OnStairWell_EnterStairWellEvent ()
+	{
+		Debug.Log ("CloseDoor");
+		if (m_Animator != null && m_Animator.isActiveAndEnabled) {
+			if (m_IsDoorOpen) {
+				m_Animator.SetBool ("OpenDoor", false);
+				m_IsDoorOpen = false;
+			}
+			m_Animator.Update (0.0f);
+		}
 	}
 
 	#endregion

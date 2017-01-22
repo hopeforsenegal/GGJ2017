@@ -194,12 +194,33 @@ public class GameController : MonoBehaviour
 		}
 
 		Interactable.DoInteractEvent += Interactable_DoInteractEvent;
+		OnStairWell.EnterStairWellEvent += OnStairWell_EnterStairWellEvent;
+	}
+
+	private void OnStairWell_EnterStairWellEvent ()
+	{
+		EnterStairWell ();
+		switch (NextRoom) {
+		case ERoomStates.Room_1_Loop:
+			FirstRoomDoor.IsDoorOpen = false;
+			break;
+		case GameController.ERoomStates.Room_2:
+			FirstRoomDoor.IsDoorOpen = false;
+			break;
+		case GameController.ERoomStates.Room_3:
+			break;
+		default:
+			throw new UnityException (string.Format ("invalid case:{0}", NextRoom));
+		}
 	}
 
 	protected void Update ()
 	{
 		switch (m_CurrentRoom) {
 		case ERoomStates.Room_1:
+			if (IsInStairwell)
+				return;
+				
 			if (CheckForAllItems ())
 				return;
 
@@ -207,6 +228,9 @@ public class GameController : MonoBehaviour
 				return;
 			break;
 		case ERoomStates.Room_1_Loop:
+			if (IsInStairwell)
+				return;
+			
 			if (CheckForAllItems ())
 				return;
 			break;
