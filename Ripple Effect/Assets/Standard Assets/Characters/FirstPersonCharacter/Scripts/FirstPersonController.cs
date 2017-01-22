@@ -20,6 +20,17 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
 		private bool m_inputSwitcher;
 
+		public bool IsInStairwell {
+			get {
+				return m_IsInStairwell;
+			}
+			set {
+				m_IsInStairwell = value;
+			}
+		}
+
+		private bool m_IsInStairwell;
+
         [SerializeField] private bool m_IsWalking;
         [SerializeField] private float m_WalkSpeed;
         [SerializeField] private float m_RunSpeed;
@@ -33,7 +44,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private CurveControlledBob m_HeadBob = new CurveControlledBob();
         [SerializeField] private LerpControlledBob m_JumpBob = new LerpControlledBob();
         [SerializeField] private float m_StepInterval;
-        [SerializeField] private AudioClip[] m_FootstepSounds;    // an array of footstep sounds that will be randomly selected from.
+		[SerializeField] private AudioClip[] m_FootstepSounds;    // an array of footstep sounds that will be randomly selected from.
+		[SerializeField] private AudioClip[] m_FootstepStairsSounds;    // an array of footstep sounds that will be randomly selected from.
         [SerializeField] private AudioClip m_JumpSound;           // the sound played when character leaves the ground.
         [SerializeField] private AudioClip m_LandSound;           // the sound played when character touches back on ground.
 
@@ -164,19 +176,26 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			m_AudioToggle = !m_AudioToggle;
             // pick & play a random footstep sound from the array,
             // excluding sound at index 0
-            int n = Random.Range(1, m_FootstepSounds.Length);
+			AudioClip[] clips;
+			if (m_IsInStairwell) {
+				clips = m_FootstepStairsSounds;
+			} else {
+				clips = m_FootstepSounds;
+			}
+
+			int n = Random.Range(1, clips.Length);
 			if (m_AudioToggle) {
-				m_AudioSource1.clip = m_FootstepSounds [n];
+				m_AudioSource1.clip = clips [n];
 				m_AudioSource1.PlayOneShot (m_AudioSource1.clip);
 				// move picked sound to index 0 so it's not picked next time
-				m_FootstepSounds[n] = m_FootstepSounds[0];
-				m_FootstepSounds[0] = m_AudioSource1.clip;
+				clips[n] = clips[0];
+				clips[0] = m_AudioSource1.clip;
 			} else {
-				m_AudioSource2.clip = m_FootstepSounds [n];
+				m_AudioSource2.clip = clips [n];
 				m_AudioSource2.PlayOneShot (m_AudioSource2.clip);
 				// move picked sound to index 0 so it's not picked next time
-				m_FootstepSounds[n] = m_FootstepSounds[0];
-				m_FootstepSounds[0] = m_AudioSource2.clip;
+				clips[n] = clips[0];
+				clips[0] = m_AudioSource2.clip;
 			}
         }
 
