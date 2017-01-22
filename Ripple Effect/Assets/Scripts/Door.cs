@@ -60,6 +60,7 @@ public class Door : MonoBehaviour
 		Interactable.DoInteractEvent += Interactable_DoInteractEvent;
 		GameController.DoorUnlockedEvent += GameController_DoorUnlockedEvent;
 		OnStairWell.EnterStairWellEvent += OnStairWell_EnterStairWellEvent;
+		OnReenterRoom.ReenterRoomEvent += OnReenterRoom_ReenterRoomEvent;
 	}
 
 	protected void Start ()
@@ -80,6 +81,7 @@ public class Door : MonoBehaviour
 
 	protected void OnDestroy ()
 	{
+		OnReenterRoom.ReenterRoomEvent -= OnReenterRoom_ReenterRoomEvent;
 		OnStairWell.EnterStairWellEvent -= OnStairWell_EnterStairWellEvent;
 		Interactable.DoInteractEvent -= Interactable_DoInteractEvent;
 		GameController.DoorUnlockedEvent -= GameController_DoorUnlockedEvent;
@@ -169,6 +171,16 @@ public class Door : MonoBehaviour
 	}
 
 	private void OnStairWell_EnterStairWellEvent ()
+	{
+		CloseDoor ();
+	}
+
+	private void OnReenterRoom_ReenterRoomEvent ()
+	{
+		CloseDoor ();
+	}
+
+	private void CloseDoor ()
 	{
 		Debug.Log ("CloseDoor");
 		if (m_Animator != null && m_Animator.isActiveAndEnabled) {
