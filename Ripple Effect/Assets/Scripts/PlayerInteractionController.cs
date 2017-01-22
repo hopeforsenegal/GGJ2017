@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine.UI;
 
+[DisallowMultipleComponent]
 [RequireComponent (typeof(Player))]
 public class PlayerInteractionController : MonoBehaviour
 {

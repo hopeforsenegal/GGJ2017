@@ -22,10 +22,6 @@ public class Door : MonoBehaviour
 
 	#region Inspectables
 
-	[Tooltip ("")]
-	[SerializeField]
-	private Player m_Player;
-
 	#endregion
 
 	#region Private Member Variables
@@ -139,8 +135,9 @@ public class Door : MonoBehaviour
 
 	private IEnumerator OpenDoorTask ()
 	{
-		if (m_Player != null) {
-			m_Player.FocusCamera ();
+		Player player;
+		if (Player.TryGetInstance (out player)) {
+			player.FocusCamera ();
 		}
 		yield return new WaitForSeconds (1.2f);
 		m_Animator.SetBool ("OpenDoor", true);

@@ -124,6 +124,10 @@ public class GameController : MonoBehaviour
 	[SerializeField]
 	private Interactable[] m_Room3WinItems;
 
+	[Tooltip ("")]
+	[SerializeField]
+	private InfoPanel m_InfoPanel;
+
 	#endregion
 
 	#region Private Member Variables
@@ -171,6 +175,9 @@ public class GameController : MonoBehaviour
 		}
 		if (m_FirstRoomsDoor == null) {
 			Debug.LogWarning ("m_FirstRoomsDoor is null");
+		}
+		if (m_InfoPanel == null) {
+			Debug.LogWarning ("m_InfoPanel is null");
 		}
 
 		Interactable.DoInteractEvent += Interactable_DoInteractEvent;
@@ -318,7 +325,7 @@ public class GameController : MonoBehaviour
 			}
 		}
 
-		if (hasFoundStairwellItemsRoom1) {
+		if (hasFoundStairwellItemsRoom1 && !m_InfoPanel.IsShowing) {
 			m_HasFoundStairwellItemsRoom1 = true;
 			AttemptDoorUnlock ();
 			return true;
