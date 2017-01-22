@@ -240,6 +240,10 @@ public class GameController : MonoBehaviour
 
 	protected void Update ()
 	{
+		if (Input.GetKeyDown (KeyCode.P)) {
+			
+		}
+
 		switch (m_CurrentRoom) {
 		case ERoomStates.Room_1:
 			if (IsInStairwell)
@@ -261,30 +265,45 @@ public class GameController : MonoBehaviour
 		case ERoomStates.Room_2:
 			break;
 		case ERoomStates.Room_3:
-			Player player;
-			if (Player.TryGetInstance (out player)) {
-				if (CheckForDieItems ()) {				
-					Debug.Log ("Game over");
-					Debug.Log ("You lost");
-					player.PlaySoundDelay (m_LooseRM, 0f);
-					player.PlaySoundDelay (m_LooseVO, 2f);
-					player.PlaySoundDelay (m_LooseSFX, 4f);
-
-					SceneManager.LoadScene ("win");
-
-				} else if (CheckForWinItems ()) {
-					Debug.Log ("Game over");
-					Debug.Log ("You won");
-					player.PlaySoundDelay (m_WinVO, 0f);
-					player.PlaySoundDelay (m_WinSFX, 2f);
-
-					SceneManager.LoadScene ("lose");
-				}
+			if (CheckForDieItems ()) {	
+				Lost ();
+			} else if (CheckForWinItems ()) {
+				Win ();
 			}
 			break;
 		default:
 			throw new UnityException (string.Format ("invalid case:{0}", m_CurrentRoom));
 		}
+	}
+
+	private void Lost ()
+	{
+		Player player;
+		if (Player.TryGetInstance (out player)) {
+
+			Debug.Log ("Game over");
+			Debug.Log ("You lost");
+			player.PlaySoundDelay (m_LooseRM, 0f);
+			player.PlaySoundDelay (m_LooseVO, 2f);
+			player.PlaySoundDelay (m_LooseSFX, 4f);
+
+			SceneManager.LoadScene ("lose");
+		}
+
+	}
+
+	private void Win ()
+	{
+		Player player;
+		if (Player.TryGetInstance (out player)) {
+			Debug.Log ("Game over");
+			Debug.Log ("You won");
+			player.PlaySoundDelay (m_WinVO, 0f);
+			player.PlaySoundDelay (m_WinSFX, 2f);
+
+			SceneManager.LoadScene ("win");
+		}
+
 	}
 
 	protected void OnEnable ()
