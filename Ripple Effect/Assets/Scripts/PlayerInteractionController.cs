@@ -75,13 +75,22 @@ public class PlayerInteractionController : MonoBehaviour
 
 	private void HandleOnDoInteractHandler (Interactable i)
 	{
+		Debug.Log ("HandleOnDoInteractHandler");
 		if (i.tag == Interactable.kInteractableTag) {
 			m_PromptText.enabled = false;
 			m_InfoPanel.Show (CurrentTarget.TextToShowsOnInteraction);
 			m_Player.KillControls ();
 		} else if (i.tag == Interactable.kDoorTag) {
-			i.GetComponentInParent<Animator> ().enabled = true;
-			m_Player.WalkForward ();
+			Debug.Log (i.tag);
+			GameController gameController;
+			if (GameController.TryGetInstance (out gameController) && gameController.FirstRoomDoor.GetComponent<Interactable> () == i) {
+				m_PromptText.enabled = false;
+				m_InfoPanel.Show (CurrentTarget.TextToShowsOnInteraction);
+				m_Player.KillControls ();
+			} else {
+				i.GetComponentInParent<Animator> ().enabled = true;
+				m_Player.WalkForward ();
+			}
 		}
 	}
 
@@ -116,6 +125,7 @@ public class PlayerInteractionController : MonoBehaviour
 					m_PromptText.text = CurrentTarget.PromptText;
 				}
 				if (Input.GetButtonDown ("Fire1")) {
+					Debug.Log ("interact");
 					CurrentTarget.DoInteract ();
 				}
 			} else {

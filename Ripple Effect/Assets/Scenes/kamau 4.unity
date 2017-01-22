@@ -804,6 +804,46 @@ Prefab:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 994334450}
+    - target: {fileID: 1203608569784432, guid: 9264f3f6ad6d2c04da5591ef74a6e878, type: 2}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075183564267426, guid: 9264f3f6ad6d2c04da5591ef74a6e878, type: 2}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 1089576549160804, guid: 9264f3f6ad6d2c04da5591ef74a6e878, type: 2}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 1902222973114500, guid: 9264f3f6ad6d2c04da5591ef74a6e878, type: 2}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 1226169371951952, guid: 9264f3f6ad6d2c04da5591ef74a6e878, type: 2}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 1945840407845976, guid: 9264f3f6ad6d2c04da5591ef74a6e878, type: 2}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780571928735406, guid: 9264f3f6ad6d2c04da5591ef74a6e878, type: 2}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 1315300152298790, guid: 9264f3f6ad6d2c04da5591ef74a6e878, type: 2}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 1163808000866700, guid: 9264f3f6ad6d2c04da5591ef74a6e878, type: 2}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 1950437074629708, guid: 9264f3f6ad6d2c04da5591ef74a6e878, type: 2}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9264f3f6ad6d2c04da5591ef74a6e878, type: 2}
   m_IsPrefabParent: 0
@@ -1551,6 +1591,46 @@ Prefab:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1770378322}
+    - target: {fileID: 1945840407845976, guid: 9264f3f6ad6d2c04da5591ef74a6e878, type: 2}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 1315300152298790, guid: 9264f3f6ad6d2c04da5591ef74a6e878, type: 2}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 1203608569784432, guid: 9264f3f6ad6d2c04da5591ef74a6e878, type: 2}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 1950437074629708, guid: 9264f3f6ad6d2c04da5591ef74a6e878, type: 2}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075183564267426, guid: 9264f3f6ad6d2c04da5591ef74a6e878, type: 2}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 1163808000866700, guid: 9264f3f6ad6d2c04da5591ef74a6e878, type: 2}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 1902222973114500, guid: 9264f3f6ad6d2c04da5591ef74a6e878, type: 2}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780571928735406, guid: 9264f3f6ad6d2c04da5591ef74a6e878, type: 2}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 1226169371951952, guid: 9264f3f6ad6d2c04da5591ef74a6e878, type: 2}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 1089576549160804, guid: 9264f3f6ad6d2c04da5591ef74a6e878, type: 2}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9264f3f6ad6d2c04da5591ef74a6e878, type: 2}
   m_IsPrefabParent: 0
@@ -2634,6 +2714,46 @@ Prefab:
         type: 2}
       propertyPath: m_InteractionText
       value: 'open door.                                                              '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1203608569784432, guid: 9264f3f6ad6d2c04da5591ef74a6e878, type: 2}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 1945840407845976, guid: 9264f3f6ad6d2c04da5591ef74a6e878, type: 2}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 1315300152298790, guid: 9264f3f6ad6d2c04da5591ef74a6e878, type: 2}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075183564267426, guid: 9264f3f6ad6d2c04da5591ef74a6e878, type: 2}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 1226169371951952, guid: 9264f3f6ad6d2c04da5591ef74a6e878, type: 2}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 1163808000866700, guid: 9264f3f6ad6d2c04da5591ef74a6e878, type: 2}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 1089576549160804, guid: 9264f3f6ad6d2c04da5591ef74a6e878, type: 2}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 1902222973114500, guid: 9264f3f6ad6d2c04da5591ef74a6e878, type: 2}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780571928735406, guid: 9264f3f6ad6d2c04da5591ef74a6e878, type: 2}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 1950437074629708, guid: 9264f3f6ad6d2c04da5591ef74a6e878, type: 2}
+      propertyPath: m_TagString
+      value: Door
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9264f3f6ad6d2c04da5591ef74a6e878, type: 2}
