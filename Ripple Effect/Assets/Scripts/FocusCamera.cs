@@ -39,6 +39,8 @@ public class FocusCamera : MonoBehaviour
 
 	#region Private Member Variables
 
+	private float m_FocusDuration;
+
 	#endregion
 
 	#region Monobehaviours
@@ -62,14 +64,20 @@ public class FocusCamera : MonoBehaviour
 
 	protected void Update ()
 	{
-		if ( m_Target != null )
-		{
-			SmoothLook( m_Target.position );
+		m_FocusDuration -= Time.deltaTime;
+
+		if (m_FocusDuration <= 0f) {
+			m_FocusDuration = 0f;
+		}
+
+		if (m_Target != null) {
+			SmoothLook (m_Target.position - transform.position);
 		}
 	}
 
 	protected void OnEnable ()
 	{
+		m_FocusDuration = 1f;
 	}
 
 	protected void OnDisable ()
@@ -86,7 +94,7 @@ public class FocusCamera : MonoBehaviour
 
 	private void SmoothLook (Vector3 newDirection)
 	{
-		transform.rotation = Quaternion.Lerp (transform.rotation, Quaternion.LookRotation (newDirection), Time.deltaTime);
+		transform.rotation = Quaternion.Lerp (Quaternion.LookRotation (newDirection), transform.rotation, m_FocusDuration);
 	}
 
 	#endregion
