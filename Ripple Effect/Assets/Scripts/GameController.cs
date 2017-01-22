@@ -78,8 +78,8 @@ public class GameController : MonoBehaviour
 		}
 	}
 
-	public Door FirstRoomDoor{
-		get{
+	public Door FirstRoomDoor {
+		get {
 			return m_FirstRoomsDoor;
 		}
 	}
@@ -123,6 +123,10 @@ public class GameController : MonoBehaviour
 	[Tooltip ("The Room3 win items")]
 	[SerializeField]
 	private Interactable[] m_Room3WinItems;
+
+	[Tooltip ("")]
+	[SerializeField]
+	private InfoPanel m_InfoPanel;
 
 	#endregion
 
@@ -171,6 +175,22 @@ public class GameController : MonoBehaviour
 		}
 		if (m_FirstRoomsDoor == null) {
 			Debug.LogWarning ("m_FirstRoomsDoor is null");
+		}
+		if (m_InfoPanel == null) {
+			Debug.LogWarning ("m_InfoPanel is null");
+		}
+		if (m_Room1 == null) {
+			Debug.LogWarning ("m_Room1 is null");
+		} 
+		if (m_Room2 == null) {
+			Debug.LogWarning ("m_Room2 is null");
+		} else {
+			m_Room2.SetActive (false);
+		}
+		if (m_Room3 == null) {
+			Debug.LogWarning ("m_Room3 is null");
+		} else {
+			m_Room3.SetActive (false);
 		}
 
 		Interactable.DoInteractEvent += Interactable_DoInteractEvent;
@@ -318,7 +338,7 @@ public class GameController : MonoBehaviour
 			}
 		}
 
-		if (hasFoundStairwellItemsRoom1) {
+		if (hasFoundStairwellItemsRoom1 && !m_InfoPanel.IsShowing) {
 			m_HasFoundStairwellItemsRoom1 = true;
 			AttemptDoorUnlock ();
 			return true;

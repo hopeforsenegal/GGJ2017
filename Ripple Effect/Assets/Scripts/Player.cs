@@ -130,7 +130,7 @@ public class Player : MonoBehaviour
 	{
 		Debug.Log ("FocusPlayer");
 		m_FocusCamera.enabled = true;
-		m_FocusDurationRemaining = 1f;
+		m_FocusDurationRemaining = 4f;
 		KillControls ();
 	}
 
