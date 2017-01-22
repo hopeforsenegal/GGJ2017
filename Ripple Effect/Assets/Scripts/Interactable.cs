@@ -103,8 +103,6 @@ public class Interactable : MonoBehaviour
 	{
 		m_Renderer = GetComponent<Renderer> ();
 		m_ID = System.Guid.NewGuid ().ToString ();
-
-		Debug.Assert (m_Renderer != null);
 	}
 
 	protected void Start ()

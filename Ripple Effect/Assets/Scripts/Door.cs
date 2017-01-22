@@ -22,19 +22,16 @@ public class Door : MonoBehaviour
 
 	#region Inspectables
 
-	private Interactable m_Interactable;
 
 	#endregion
 
 	#region Private Member Variables
 
+	private bool m_IsDoorOpen = false;
+	private Interactable m_Interactable;
 	private AudioSource[] m_Sources;
-
 	private Animator m_Animator;
 
-	private bool m_IsDoorOpen = false;
-
-	
 
 	#endregion
 
@@ -45,7 +42,11 @@ public class Door : MonoBehaviour
 		m_Sources = GetComponents<AudioSource> ();
 		m_Interactable = GetComponent<Interactable> ();
 		m_Animator = GetComponent<Animator> ();
+
+		Debug.Assert (m_Interactable != null, name);
+
 		Interactable.DoInteractEvent += Interactable_DoInteractEvent;
+		GameController.DoorUnlockedEvent += GameController_DoorUnlockedEvent;
 	}
 
 	protected void Start ()
@@ -63,6 +64,12 @@ public class Door : MonoBehaviour
 
 	protected void OnDisable ()
 	{
+	}
+
+	protected void OnDestroy ()
+	{
+		Interactable.DoInteractEvent -= Interactable_DoInteractEvent;
+		GameController.DoorUnlockedEvent -= GameController_DoorUnlockedEvent;
 	}
 
 	#endregion
@@ -87,16 +94,7 @@ public class Door : MonoBehaviour
 	private void Interactable_DoInteractEvent (Interactable i)
 	{
 		if (m_Interactable != null && m_Interactable.ID == i.ID) {
-			if (m_Animator != null && m_Animator.isActiveAndEnabled) {
-				if (!m_IsDoorOpen) {
-					m_Animator.SetBool ("OpenDoor", true);
-					m_IsDoorOpen = true;
-				} else {
-					m_Animator.SetBool ("OpenDoor", false);
-					m_IsDoorOpen = false;
-				}
-				m_Animator.Update (0.0f);
-			}
+			OpenDoor ();
 		}
 
 //		GameController gameController;
@@ -105,6 +103,32 @@ public class Door : MonoBehaviour
 //			gameController.CurrentRoom.transform.rotation = m_Transform.rotation;
 //			gameController.CurrentRoom.transform.localScale = m_Transform.localScale;
 //		}
+	}
+
+	private void OpenDoor ()
+	{
+		Debug.Log ("OpenDoor");
+		if (m_Animator != null && m_Animator.isActiveAndEnabled) {
+			if (!m_IsDoorOpen) {
+				m_Animator.SetBool ("OpenDoor", true);
+				m_IsDoorOpen = true;
+			} else {
+				m_Animator.SetBool ("OpenDoor", false);
+				m_IsDoorOpen = false;
+			}
+			m_Animator.Update (0.0f);
+		}
+	}
+
+	private void GameController_DoorUnlockedEvent ()
+	{
+		GameController gameController;
+		if (GameController.TryGetInstance (out gameController)) {
+			if (this.m_Interactable.ID == gameController.FirstRoomDoor.m_Interactable.ID) {
+				OpenDoor ();
+			}
+		}
+
 	}
 
 	#endregion

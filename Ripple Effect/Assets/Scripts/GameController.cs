@@ -78,6 +78,12 @@ public class GameController : MonoBehaviour
 		}
 	}
 
+	public Door FirstRoomDoor{
+		get{
+			return m_FirstRoomsDoor;
+		}
+	}
+
 	#endregion
 
 	#region Inspectables
@@ -85,6 +91,10 @@ public class GameController : MonoBehaviour
 	[Tooltip ("")]
 	[SerializeField]
 	private FirstPersonController m_FirstPersonController;
+
+	[Tooltip ("First Rooms door")]
+	[SerializeField]
+	private Door m_FirstRoomsDoor;
 
 	[Tooltip ("")]
 	[SerializeField]
@@ -159,6 +169,9 @@ public class GameController : MonoBehaviour
 		if (m_Room3WinItems == null) {
 			Debug.LogWarning ("m_Room3WinItems is null");
 		}
+		if (m_FirstRoomsDoor == null) {
+			Debug.LogWarning ("m_FirstRoomsDoor is null");
+		}
 
 		Interactable.DoInteractEvent += Interactable_DoInteractEvent;
 	}
@@ -187,12 +200,6 @@ public class GameController : MonoBehaviour
 				Debug.Log ("Game over");
 				Debug.Log ("You won");
 			}
-//			check
-//			if(Check){
-//				trigger game over
-//			}else if(knife && whiskey &&  wine glass && note){
-//				you win
-//			}
 			break;
 		default:
 			throw new UnityException (string.Format ("invalid case:{0}", m_CurrentRoom));
