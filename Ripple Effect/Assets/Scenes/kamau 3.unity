@@ -993,11 +993,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2414594949784681bdc3ca1a6177169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ID: 0
+  m_IDHash: 
   m_InteractionText: inspect
-  m_TextToDisplay: MATE! That was over 20 years ago!!! What the hell is wrong wid
-    u bruv?
-  m_InteractSound: {fileID: 0}
+  m_TextToShowsOnInteraction: 
+  m_TextToShowsOnInteraction2: 
+  m_AudioToPlayOnInteraction: {fileID: 0}
+  m_AudioToPlayOnInteraction2: {fileID: 0}
 --- !u!23 &1005365131
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1539,10 +1540,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2414594949784681bdc3ca1a6177169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ID: 0
+  m_IDHash: 
   m_InteractionText: 
-  m_TextToDisplay: 
-  m_InteractSound: {fileID: 0}
+  m_TextToShowsOnInteraction: 
+  m_TextToShowsOnInteraction2: 
+  m_AudioToPlayOnInteraction: {fileID: 0}
+  m_AudioToPlayOnInteraction2: {fileID: 0}
 --- !u!23 &1240272875
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1598,7 +1601,8 @@ MeshFilter:
 --- !u!1 &1250541460
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_PrefabParentObject: {fileID: 1287217177933576, guid: 6ae3ee2d2bdc3427c960be756697808c,
+    type: 2}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
@@ -1617,7 +1621,8 @@ GameObject:
 --- !u!114 &1250541461
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_PrefabParentObject: {fileID: 114863845000268534, guid: 6ae3ee2d2bdc3427c960be756697808c,
+    type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1250541460}
   m_Enabled: 1
@@ -1625,15 +1630,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2414594949784681bdc3ca1a6177169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ID: 0
-  m_InteractionText: Inspect
-  m_TextToDisplay: MATE! That was over 20 years ago!!! What the hell is wrong wid
-    u bruv?
-  m_InteractSound: {fileID: 0}
+  m_IDHash: 
+  m_InteractionText: inspect
+  m_TextToShowsOnInteraction: 
+  m_TextToShowsOnInteraction2: 
+  m_AudioToPlayOnInteraction: {fileID: 0}
+  m_AudioToPlayOnInteraction2: {fileID: 0}
 --- !u!23 &1250541462
 MeshRenderer:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_PrefabParentObject: {fileID: 23107723533691936, guid: 6ae3ee2d2bdc3427c960be756697808c,
+    type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1250541460}
   m_Enabled: 1
@@ -1664,7 +1671,8 @@ MeshRenderer:
 --- !u!64 &1250541463
 MeshCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_PrefabParentObject: {fileID: 64369814272104680, guid: 6ae3ee2d2bdc3427c960be756697808c,
+    type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1250541460}
   m_Material: {fileID: 0}
@@ -1678,14 +1686,16 @@ MeshCollider:
 --- !u!33 &1250541464
 MeshFilter:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_PrefabParentObject: {fileID: 33582416402425214, guid: 6ae3ee2d2bdc3427c960be756697808c,
+    type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1250541460}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &1250541465
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_PrefabParentObject: {fileID: 4209719877191460, guid: 6ae3ee2d2bdc3427c960be756697808c,
+    type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1250541460}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
@@ -1794,11 +1804,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2414594949784681bdc3ca1a6177169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ID: 0
-  m_InteractionText: read
-  m_TextToDisplay: MATE! That was over 20 years ago!!! What the hell is wrong wid
-    u bruv?
-  m_InteractSound: {fileID: 0}
+  m_IDHash: 
+  m_InteractionText: inspect
+  m_TextToShowsOnInteraction: 
+  m_TextToShowsOnInteraction2: 
+  m_AudioToPlayOnInteraction: {fileID: 0}
+  m_AudioToPlayOnInteraction2: {fileID: 0}
 --- !u!23 &1437441528
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2123,6 +2134,8 @@ MonoBehaviour:
   - {fileID: 1437441527}
   - {fileID: 1899907112}
   - {fileID: 1005365130}
+  m_Room3DieItems: []
+  m_Room3WinItems: []
 --- !u!4 &1723305126
 Transform:
   m_ObjectHideFlags: 0
@@ -2194,11 +2207,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2414594949784681bdc3ca1a6177169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ID: 0
+  m_IDHash: 
   m_InteractionText: inspect
-  m_TextToDisplay: MATE! That was over 20 years ago!!! What the hell is wrong wid
-    u bruv?
-  m_InteractSound: {fileID: 0}
+  m_TextToShowsOnInteraction: 
+  m_TextToShowsOnInteraction2: 
+  m_AudioToPlayOnInteraction: {fileID: 0}
+  m_AudioToPlayOnInteraction2: {fileID: 0}
 --- !u!23 &1899907113
 MeshRenderer:
   m_ObjectHideFlags: 0
