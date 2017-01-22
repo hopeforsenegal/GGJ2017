@@ -270,7 +270,7 @@ public class GameController : MonoBehaviour
 	{
 		if (i.tag == Interactable.kInteractableTag) {
 			if (!m_HasInteracted.ContainsKey (i) || m_HasInteracted [i] == false) {
-				Debug.Log ("Interacted with " + i.name);
+				Debug.LogFormat ("Interacted with {0}", i.name);
 			}
 			m_HasInteracted [i] = true;
 		}

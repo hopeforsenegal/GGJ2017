@@ -96,7 +96,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-254618
+  m_Name: pb_Mesh-271904
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -1469,9 +1469,9 @@ MonoBehaviour:
   m_Room2: {fileID: 97415149}
   m_Room3: {fileID: 97415149}
   m_Room1OpenDoorItems:
-  - {fileID: 77952267}
   - {fileID: 185763605}
   - {fileID: 713579388}
+  - {fileID: 1581945155}
   m_AllRoom1Items:
   - {fileID: 77952267}
   - {fileID: 185763605}
@@ -1563,7 +1563,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-254606
+  m_Name: pb_Mesh-271892
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -1691,7 +1691,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh42208
+  m_Name: pb_Mesh49132
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -2314,7 +2314,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-254602
+  m_Name: pb_Mesh-271888
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -2442,7 +2442,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-254620
+  m_Name: pb_Mesh-271906
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -2843,7 +2843,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-254616
+  m_Name: pb_Mesh-271902
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2

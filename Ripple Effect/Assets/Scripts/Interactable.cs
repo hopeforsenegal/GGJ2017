@@ -90,10 +90,10 @@ public class Interactable : MonoBehaviour
 	#region Private Member Variables
 
 	private float m_FocusDurationRemaining;
-	private Renderer m_Renderer;
-	private Color m_StartColor;
 	private string m_ID;
 	private int m_InteractionAttempts = 0;
+	private Renderer m_Renderer;
+	private Color m_StartColor;
 
 	#endregion
 

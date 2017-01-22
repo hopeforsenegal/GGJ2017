@@ -76,12 +76,10 @@ public class PlayerInteractionController : MonoBehaviour
 	private void HandleOnDoInteractHandler (Interactable i)
 	{
 		if (i.tag == Interactable.kInteractableTag) {
-			Debug.Log ("tag");
 			m_PromptText.enabled = false;
 			m_InfoPanel.Show (CurrentTarget.TextToShowsOnInteraction);
 			m_Player.KillControls ();
 		} else if (i.tag == Interactable.kDoorTag) {
-			Debug.Log ("Hit door");
 			i.GetComponentInParent<Animator> ().enabled = true;
 			m_Player.WalkForward ();
 		}
@@ -98,9 +96,6 @@ public class PlayerInteractionController : MonoBehaviour
 			m_InfoPanel.Hide ();
 			m_Player.EnableControls ();
 			return;
-		}
-		if (Input.GetButtonDown ("Fire1")) {
-			Debug.Log ("im firing my stuff");
 		}
 		FireRayToInteractable ();
 	}
