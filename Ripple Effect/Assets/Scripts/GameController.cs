@@ -4,6 +4,7 @@ using System.Collections;
 using UnityStandardAssets.Characters.FirstPerson;
 
 [DisallowMultipleComponent]
+
 public class GameController : MonoBehaviour
 {
 	#region Singleton
@@ -91,7 +92,7 @@ public class GameController : MonoBehaviour
 
 	#region Private Member Variables
 
-	private ERoom m_Room;
+	private ERoom m_Room = ERoom.Room_1;
 	private bool m_IsInStairwell;
 
 	#endregion
@@ -119,6 +120,16 @@ public class GameController : MonoBehaviour
 
 	protected void Update ()
 	{
+		switch (m_Room) {
+		case ERoom.Room_1:
+			break;
+		case ERoom.Room_2:
+			break;
+		case ERoom.Room_3:
+			break;
+		default:
+			throw new UnityException (string.Format ("invalid case:{0}", m_Room));
+		}
 	}
 
 	protected void OnEnable ()
