@@ -172,4 +172,12 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_GenerateMotionCurves: 0
   m_IsEmpty: 0
-  m_Events: []
+  m_Events:
+  - time: 0.5
+    functionName: PlaySound
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: 1381c9273594fe04a94882456fb6df97,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
