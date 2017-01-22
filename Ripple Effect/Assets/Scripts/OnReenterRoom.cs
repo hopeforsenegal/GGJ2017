@@ -58,10 +58,6 @@ public class OnReenterRoom : MonoBehaviour
 	protected void OnTriggerEnter (Collider coll)
 	{
 		Debug.Log ("===OnTriggerEnter");
-		if (!enabled)
-			return;
-
-		Debug.Log ("===OnTriggerEnter2");
 		Player player = coll.gameObject.GetComponentInChildren<Player> ();
 		if (player != null) {
 
@@ -71,8 +67,6 @@ public class OnReenterRoom : MonoBehaviour
 			if (InvokeReenterRoomEvent != null) {
 				InvokeReenterRoomEvent ();
 			}
-
-			enabled = false;
 		}
 	}
 

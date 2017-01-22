@@ -57,10 +57,6 @@ public class OnBedroomTeleport : MonoBehaviour
 	protected void OnTriggerEnter (Collider coll)
 	{
 		Debug.Log ("OnTriggerEnter---");
-		if (!enabled)
-			return;
-
-		Debug.Log ("OnTriggerEnter2---");
 		Player player = coll.gameObject.GetComponentInChildren<Player> ();
 		if (player != null) {
 
@@ -70,8 +66,6 @@ public class OnBedroomTeleport : MonoBehaviour
 			if (InvokeBedroomTeleportEvent != null) {
 				InvokeBedroomTeleportEvent ();
 			}
-
-			enabled = false;
 		}
 	}
 

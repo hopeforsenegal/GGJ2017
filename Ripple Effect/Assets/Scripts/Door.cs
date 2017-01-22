@@ -118,7 +118,7 @@ public class Door : MonoBehaviour
 
 		if (m_Interactable != null && m_Interactable.ID == i.ID && gameController.IsInStairwell) {
 			if (gameController != null) {
-				Debug.LogFormat ("Teleporting room {0}/{1}", gameController.NextRoomGameObject, gameController.NextRoom);
+				Debug.LogFormat ("Teleporting room from stairwell {0}/{1}", gameController.NextRoomGameObject, gameController.NextRoom);
 				gameController.NextRoomGameObject.SetActive (true);
 				gameController.NextRoomGameObject.transform.position = m_Transform.position;
 				gameController.NextRoomGameObject.transform.rotation = m_Transform.rotation;
@@ -130,18 +130,18 @@ public class Door : MonoBehaviour
 
 	private void ToggleDoor ()
 	{
-		Debug.Log ( "OpenDoorState" );
+		Debug.Log ("OpenDoorState");
 		if (m_Animator != null && m_Animator.isActiveAndEnabled) {
 			if (!m_IsDoorOpen) {
 				StartCoroutine (OpenDoorTask ());
 			} else {
-				m_Animator.SetInteger ( "OpenDoorState", 0);
+				m_Animator.SetInteger ("OpenDoorState", 0);
 				m_IsDoorOpen = false;
 			}
 			m_Animator.Update (0.0f);
 		}
 	}
-	 
+
 	private void GameController_DoorUnlockedEvent ()
 	{
 		GameController gameController;
@@ -166,7 +166,7 @@ public class Door : MonoBehaviour
 			}
 		}
 		yield return new WaitForSeconds (1.2f);
-		m_Animator.SetInteger ( "OpenDoorState", explodeDoor );
+		m_Animator.SetInteger ("OpenDoorState", explodeDoor);
 		m_IsDoorOpen = true;
 	}
 
@@ -177,7 +177,18 @@ public class Door : MonoBehaviour
 
 	private void OnReenterRoom_ReenterRoomEvent ()
 	{
-		CloseDoor ();
+		StartCoroutine (ReenterRoomCloseDoorTask ());
+	}
+
+	private IEnumerator ReenterRoomCloseDoorTask ()
+	{
+		yield return null;
+		GameController gameController;
+		if (GameController.TryGetInstance (out gameController)) {
+			if (!gameController.IsInStairwell) {
+				CloseDoor ();
+			}
+		}
 	}
 
 	private void CloseDoor ()
@@ -185,7 +196,7 @@ public class Door : MonoBehaviour
 		Debug.Log ("CloseDoor");
 		if (m_Animator != null && m_Animator.isActiveAndEnabled) {
 			if (m_IsDoorOpen) {
-				m_Animator.SetInteger ( "OpenDoorState", 0);
+				m_Animator.SetInteger ("OpenDoorState", 0);
 				m_IsDoorOpen = false;
 			}
 			m_Animator.Update (0.0f);

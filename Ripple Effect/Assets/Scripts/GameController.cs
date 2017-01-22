@@ -214,6 +214,7 @@ public class GameController : MonoBehaviour
 		Interactable.DoInteractEvent += Interactable_DoInteractEvent;
 		OnStairWell.EnterStairWellEvent += OnStairWell_EnterStairWellEvent;
 		OnBedroomTeleport.BedroomTeleportEvent += OnBedroomTeleport_BedroomTeleportEvent;
+		OnReenterRoom.ReenterRoomEvent += OnReenterRoom_ReenterRoomEvent;
 	}
 
 	protected void Update ()
@@ -448,6 +449,11 @@ public class GameController : MonoBehaviour
 			Transform pTransform = player.GetComponent<Transform> ();
 			pTransform.position = m_BedroomTeleportTransform.position;
 		}
+	}
+
+	private void OnReenterRoom_ReenterRoomEvent ()
+	{
+		EnterRoom ();
 	}
 
 	#endregion
