@@ -190,5 +190,22 @@ public class Player : MonoBehaviour
 			}
 		}
 	}
+
+	public void PlaySoundDelay( AudioClip[] audio, float delay )
+	{
+		int n = Random.Range(0, audio.Length);
+		PlaySoundDelay (audio[n], delay);
+	}
+
+	public void PlaySoundDelay( AudioClip audio, float delay )
+	{
+		StartCoroutine (SoundPlaying (audio, delay));
+	}
+
+	private IEnumerator SoundPlaying(AudioClip audio, float delay)
+	{
+		yield return new WaitForSeconds (delay);
+		PlaySound (audio);
+	}
 	#endregion
 }

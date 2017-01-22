@@ -140,6 +140,26 @@ public class GameController : MonoBehaviour
 	[SerializeField]
 	private Transform m_BedroomTeleportTransform;
 
+	[Tooltip ("")]
+	[SerializeField]
+	private AudioClip[] m_LooseRM;
+
+	[Tooltip ("")]
+	[SerializeField]
+	private AudioClip m_LooseSFX;
+
+	[Tooltip ("")]
+	[SerializeField]
+	private AudioClip m_LooseVO;
+
+	[Tooltip ("")]
+	[SerializeField]
+	private AudioClip m_WinSFX;
+
+	[Tooltip ("")]
+	[SerializeField]
+	private AudioClip m_WinVO;
+
 	#endregion
 
 	#region Private Member Variables
@@ -240,12 +260,21 @@ public class GameController : MonoBehaviour
 		case ERoomStates.Room_2:
 			break;
 		case ERoomStates.Room_3:
-			if (CheckForDieItems ()) {
-				Debug.Log ("Game over");
-				Debug.Log ("You lost");
-			} else if (CheckForWinItems ()) {
-				Debug.Log ("Game over");
-				Debug.Log ("You won");
+			Player player;
+			if (Player.TryGetInstance (out player)) {
+				if (CheckForDieItems ()) {				
+					Debug.Log ("Game over");
+					Debug.Log ("You lost");
+					player.PlaySoundDelay (m_LooseRM, 0f);
+					player.PlaySoundDelay (m_LooseVO, 2f);
+					player.PlaySoundDelay (m_LooseSFX, 4f);
+
+				} else if (CheckForWinItems ()) {
+					Debug.Log ("Game over");
+					Debug.Log ("You won");
+					player.PlaySoundDelay (m_WinVO, 0f);
+					player.PlaySoundDelay (m_WinSFX, 2f);
+				}
 			}
 			break;
 		default:
@@ -289,7 +318,6 @@ public class GameController : MonoBehaviour
 		
 		switch (m_CurrentRoom) {
 		case ERoomStates.Room_1:
-			m_Room1.SetActive (false);
 			if (m_HasFoundAllItemsRoom1) {
 				m_NextRoom = ERoomStates.Room_2;
 			} else {
@@ -444,11 +472,14 @@ public class GameController : MonoBehaviour
 
 	private void OnBedroomTeleport_BedroomTeleportEvent ()
 	{
+		Debug.Log ("OnBedroomTeleport_BedroomTeleportEvent");
 		Player player;
 		if (Player.TryGetInstance (out player)) {
 			Transform pTransform = player.GetComponent<Transform> ();
 			pTransform.position = m_BedroomTeleportTransform.position;
 		}
+
+		EnterStairWell ();
 	}
 
 	private void OnReenterRoom_ReenterRoomEvent ()
