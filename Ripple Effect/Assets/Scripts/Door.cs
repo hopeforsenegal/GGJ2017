@@ -151,9 +151,14 @@ public class Door : MonoBehaviour
 
 	private IEnumerator OpenDoorTask ()
 	{
-		Player player;
-		if (Player.TryGetInstance (out player)) {
-			player.FocusCamera ();
+		GameController gameController;
+		if (GameController.TryGetInstance (out gameController)) {
+			if (!gameController.IsInStairwell) {
+				Player player;
+				if (Player.TryGetInstance (out player)) {
+					player.FocusCamera ();
+				}
+			}
 		}
 		yield return new WaitForSeconds (1.2f);
 		m_Animator.SetBool ("OpenDoor", true);
