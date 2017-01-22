@@ -323,6 +323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_sceneToLoad: credits
   m_LoopTime: 7
+  m_TransitionAfterClip: 1
 --- !u!114 &957531302
 MonoBehaviour:
   m_ObjectHideFlags: 0

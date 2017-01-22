@@ -446,8 +446,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e495c4d4a053b464cb45e8643762ca9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_sceneToLoad: 
+  m_sceneToLoad: main_menu
   m_LoopTime: 33
+  m_TransitionAfterClip: 1
 --- !u!114 &1878021122
 MonoBehaviour:
   m_ObjectHideFlags: 0

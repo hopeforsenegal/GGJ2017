@@ -31,6 +31,10 @@ public class MoviePlayer : MonoBehaviour
 	[SerializeField]
 	private float m_LoopTime;
 
+	[Tooltip ("")]
+	[SerializeField]
+	private bool m_TransitionAfterClip = false;
+
 	#endregion
 
 	#region Private Member Variables
@@ -82,9 +86,15 @@ public class MoviePlayer : MonoBehaviour
 
 	#region Private Methods
 
-	protected void OnMouseDown()
+	protected void OnMouseDown ()
+	{
+		SceneTransition ();
+	}
+
+	private void SceneTransition ()
 	{
 		if (!string.IsNullOrEmpty (m_sceneToLoad)) {
+			StopAllCoroutines ();
 			SceneManager.LoadScene (m_sceneToLoad);
 		}
 	}
@@ -95,7 +105,11 @@ public class MoviePlayer : MonoBehaviour
 		yield return new WaitForSeconds (m_LoopTime);
 		m_MovieTexture.Stop ();
 		yield return null;
-		StartCoroutine (PlayMovieTask ());
+		if (m_TransitionAfterClip) {
+			SceneTransition ();
+		} else {
+			StartCoroutine (PlayMovieTask ());
+		}
 	}
 
 	#endregion
