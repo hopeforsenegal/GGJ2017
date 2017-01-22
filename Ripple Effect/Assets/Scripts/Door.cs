@@ -3,6 +3,9 @@ using UnityEngine;
 using System.Collections;
 
 [DisallowMultipleComponent]
+[RequireComponent( typeof( Animator ) )]
+[RequireComponent( typeof( AudioSource ) )]
+[RequireComponent( typeof( Interactable ) )]
 public class Door : MonoBehaviour
 {
 	#region Enums and Constants
@@ -19,14 +22,18 @@ public class Door : MonoBehaviour
 
 	#region Inspectables
 
-	[Tooltip ("The transform of where we pull a room to")]
-	[SerializeField]
-	private Transform m_Transform;
+	private Interactable m_Interactable;
 
 	#endregion
 
 	#region Private Member Variables
+	private AudioSource[] m_Sources;
 
+	private Animator m_Animator;
+
+	private bool m_IsDoorOpen = false;
+
+	
 
 	#endregion
 
@@ -34,13 +41,15 @@ public class Door : MonoBehaviour
 
 	protected void Awake ()
 	{
+		m_Sources = GetComponents<AudioSource>();
+		m_Interactable = GetComponent<Interactable>();
+		m_Animator = GetComponent<Animator>();
+		Interactable.DoInteractEvent += Interactable_DoInteractEvent;
 	}
 
 	protected void Start ()
 	{
-		if (m_Transform == null) {
-			Debug.LogWarning ("m_Transform is null");
-		}
+
 	}
 
 	protected void Update ()
@@ -59,13 +68,16 @@ public class Door : MonoBehaviour
 
 	#region Public Methods
 
-	public void RoomTransfer ()
+	public void PlaySound( Object audio )
 	{
-		GameController gameController;
-		if (GameController.TryGetInstance (out gameController)) {
-			gameController.Room.transform.position = m_Transform.position;
-			gameController.Room.transform.rotation = m_Transform.rotation;
-			gameController.Room.transform.localScale = m_Transform.localScale;
+		foreach ( AudioSource source in m_Sources )
+		{
+			if ( !source.isPlaying )
+			{
+				source.clip = audio as AudioClip;
+				source.Play();
+				break;
+			}
 		}
 	}
 
@@ -73,5 +85,25 @@ public class Door : MonoBehaviour
 
 	#region Private Methods
 
+	private void Interactable_DoInteractEvent( Interactable i )
+	{
+		if ( m_Interactable != null && m_Interactable.ID == i.ID )
+		{
+			if ( m_Animator != null && m_Animator.isActiveAndEnabled )
+			{
+				if ( !m_IsDoorOpen )
+				{
+					m_Animator.SetBool( "OpenDoor", true );
+					m_IsDoorOpen = true;
+				} 
+				else
+				{
+					m_Animator.SetBool( "OpenDoor", false );
+					m_IsDoorOpen = false;
+				}
+				m_Animator.Update( 0.0f );
+			}
+		}
+	}
 	#endregion
 }

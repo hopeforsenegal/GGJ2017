@@ -62,7 +62,10 @@ public class FocusCamera : MonoBehaviour
 
 	protected void Update ()
 	{
-		SmoothLook (m_Target.position);
+		if ( m_Target != null )
+		{
+			SmoothLook( m_Target.position );
+		}
 	}
 
 	protected void OnEnable ()

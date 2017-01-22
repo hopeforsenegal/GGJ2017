@@ -55,7 +55,7 @@ public class Interactable : MonoBehaviour
 
 	[Tooltip ("")]
 	[SerializeField]
-	private int m_ID;
+	private string m_IDHash;
 
 	[Tooltip ("Text describing the interaction with the player. Press 'E' to {0} {1}")]
 	[SerializeField]
@@ -76,6 +76,7 @@ public class Interactable : MonoBehaviour
 	private float m_FocusDurationRemaining;
 	private Renderer m_Renderer;
 	private Color m_StartColor;
+	private int m_ID;
 
 	#endregion
 
@@ -84,6 +85,10 @@ public class Interactable : MonoBehaviour
 	protected void Awake ()
 	{
 		m_Renderer = GetComponent<Renderer> ();
+		if ( m_IDHash != string.Empty )
+		{
+			m_ID = m_IDHash.GetHashCode();
+		}
 
 		Debug.Assert (m_Renderer != null);
 	}
