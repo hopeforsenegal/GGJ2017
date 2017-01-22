@@ -130,12 +130,12 @@ public class Door : MonoBehaviour
 
 	private void OpenDoor ()
 	{
-		Debug.Log ("OpenDoor");
+		Debug.Log ( "OpenDoorState" );
 		if (m_Animator != null && m_Animator.isActiveAndEnabled) {
 			if (!m_IsDoorOpen) {
 				StartCoroutine (OpenDoorTask ());
 			} else {
-				m_Animator.SetBool ("OpenDoor", false);
+				m_Animator.SetInteger ( "OpenDoorState", 0);
 				m_IsDoorOpen = false;
 			}
 			m_Animator.Update (0.0f);
@@ -154,17 +154,19 @@ public class Door : MonoBehaviour
 
 	private IEnumerator OpenDoorTask ()
 	{
+		int explodeDoor = 2; //no explode
 		GameController gameController;
 		if (GameController.TryGetInstance (out gameController)) {
 			if (!gameController.IsInStairwell) {
 				Player player;
 				if (Player.TryGetInstance (out player)) {
 					player.FocusCamera ();
+					explodeDoor = 1; //explode
 				}
 			}
 		}
 		yield return new WaitForSeconds (1.2f);
-		m_Animator.SetBool ("OpenDoor", true);
+		m_Animator.SetInteger ( "OpenDoorState", explodeDoor );
 		m_IsDoorOpen = true;
 	}
 
@@ -183,7 +185,7 @@ public class Door : MonoBehaviour
 		Debug.Log ("CloseDoor");
 		if (m_Animator != null && m_Animator.isActiveAndEnabled) {
 			if (m_IsDoorOpen) {
-				m_Animator.SetBool ("OpenDoor", false);
+				m_Animator.SetInteger ( "OpenDoorState", 0);
 				m_IsDoorOpen = false;
 			}
 			m_Animator.Update (0.0f);
