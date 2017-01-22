@@ -235,7 +235,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
 				m_Input.Normalize();
 			}
 
-			Debug.LogFormat ("m_UseFovKick:{0} sqrMagnitude:{1}",m_UseFovKick, m_CharacterController.velocity.sqrMagnitude);
 			// handle speed change to give an fov kick
 			// only if the player is going to a run, is running and the fovkick is to be used
 			if (m_UseFovKick && m_CharacterController.velocity.sqrMagnitude > 0)

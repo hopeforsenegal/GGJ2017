@@ -117,6 +117,7 @@ public class Door : MonoBehaviour
 		if (m_Interactable != null && m_Interactable.ID == i.ID) {
 			if (gameController != null) {
 				Debug.LogFormat ("Teleporting room {0}", gameController.CurrentRoom);
+				gameController.CurrentRoom.SetActive (true);
 				gameController.CurrentRoom.transform.position = m_Transform.position;
 				gameController.CurrentRoom.transform.rotation = m_Transform.rotation;
 				gameController.CurrentRoom.transform.localScale = m_Transform.localScale;
