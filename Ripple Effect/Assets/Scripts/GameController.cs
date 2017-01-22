@@ -2,6 +2,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityStandardAssets.Characters.FirstPerson;
 
 [DisallowMultipleComponent]
@@ -269,11 +270,15 @@ public class GameController : MonoBehaviour
 					player.PlaySoundDelay (m_LooseVO, 2f);
 					player.PlaySoundDelay (m_LooseSFX, 4f);
 
+					SceneManager.LoadScene ("win");
+
 				} else if (CheckForWinItems ()) {
 					Debug.Log ("Game over");
 					Debug.Log ("You won");
 					player.PlaySoundDelay (m_WinVO, 0f);
 					player.PlaySoundDelay (m_WinSFX, 2f);
+
+					SceneManager.LoadScene ("lose");
 				}
 			}
 			break;

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 [DisallowMultipleComponent]
 public class MoviePlayer : MonoBehaviour
@@ -21,6 +22,10 @@ public class MoviePlayer : MonoBehaviour
 	#endregion
 
 	#region Inspectables
+
+	[Tooltip ("")]
+	[SerializeField]
+	private string m_sceneToLoad;
 
 	#endregion
 
@@ -72,6 +77,13 @@ public class MoviePlayer : MonoBehaviour
 	#endregion
 
 	#region Private Methods
+
+	protected void OnMouseDown()
+	{
+		if (!string.IsNullOrEmpty (m_sceneToLoad)) {
+			SceneManager.LoadScene (m_sceneToLoad);
+		}
+	}
 
 	private IEnumerator PlayMovieTask ()
 	{
