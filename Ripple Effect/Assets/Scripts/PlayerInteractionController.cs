@@ -117,7 +117,6 @@ public class PlayerInteractionController : MonoBehaviour
 				}
 				if (Input.GetButtonDown ("Fire1")) {
 					CurrentTarget.DoInteract ();
-					Debug.Log ("I hit my target");
 				}
 			} else {
 				m_PromptText.enabled = false;
