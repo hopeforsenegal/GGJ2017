@@ -52,7 +52,7 @@ public class Interactable : MonoBehaviour
 			if (m_InteractionAttempts % 5 == 0) {
 				return m_AudioToPlayOnInteraction;
 			} else {
-				return m_AudioToPlayOnInteraction;
+				return m_AudioToPlayOnInteraction2;
 			}
 		}
 	}
@@ -60,10 +60,6 @@ public class Interactable : MonoBehaviour
 	#endregion
 
 	#region Inspectables
-
-	[Tooltip ("")]
-	[SerializeField]
-	private string m_IDHash;
 
 	[Tooltip ("Text describing the interaction with the player. Press 'E' to {0} {1}")]
 	[SerializeField]

@@ -4,6 +4,7 @@ using System.Collections;
 using UnityStandardAssets.Characters.FirstPerson;
 
 [DisallowMultipleComponent]
+[RequireComponent( typeof( AudioSource) )]
 public class Player : MonoBehaviour
 {
 	#region Singleton
@@ -58,6 +59,8 @@ public class Player : MonoBehaviour
 	private float m_FocusDurationRemaining;
 	private float m_WalkDurationRemaining;
 
+	private AudioSource[] m_AudioSources;
+
 	#endregion
 
 	#region Monobehaviours
@@ -80,6 +83,7 @@ public class Player : MonoBehaviour
 		if (m_FocusCamera == null) {
 			Debug.LogWarning ("m_FocusCamera is null");
 		}
+		m_AudioSources = GetComponents<AudioSource>();
 	}
 
 	protected void Update ()
@@ -164,5 +168,26 @@ public class Player : MonoBehaviour
 
 	#region Private Methods
 
+	public void PlaySound( AudioClip audio )
+	{
+		bool soundPlayed = false;
+		foreach ( AudioSource source in m_AudioSources )
+		{
+			if (!source.isPlaying)
+			{
+				source.clip = audio;
+				source.Play();
+				soundPlayed = true;
+				break;
+			}
+		}
+		if (!soundPlayed)
+		{
+			AudioSource soundSource = gameObject.AddComponent<AudioSource>();
+			soundSource.clip = audio;
+			soundSource.Play();
+			m_AudioSources = GetComponents<AudioSource>();
+		}
+	}
 	#endregion
 }

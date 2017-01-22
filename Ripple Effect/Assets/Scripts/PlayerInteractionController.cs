@@ -79,6 +79,7 @@ public class PlayerInteractionController : MonoBehaviour
 		if (i.tag == Interactable.kInteractableTag && m_PromptText != null ) {
 			m_PromptText.enabled = false;
 			m_InfoPanel.Show (CurrentTarget.TextToShowsOnInteraction);
+			m_Player.PlaySound( i.AudioToPlayOnInteraction );
 			m_Player.KillControls ();
 		} else if (i.tag == Interactable.kDoorTag) {
 			Debug.Log (i.tag);
@@ -86,6 +87,7 @@ public class PlayerInteractionController : MonoBehaviour
 			if (GameController.TryGetInstance (out gameController) && gameController.FirstRoomDoor.GetComponent<Interactable> () == i && m_PromptText != null ) {
 				m_PromptText.enabled = false;
 				m_InfoPanel.Show (CurrentTarget.TextToShowsOnInteraction);
+				m_Player.PlaySound( i.AudioToPlayOnInteraction );
 				m_Player.KillControls ();
 			} else {
 				i.GetComponentInParent<Animator> ().enabled = true;

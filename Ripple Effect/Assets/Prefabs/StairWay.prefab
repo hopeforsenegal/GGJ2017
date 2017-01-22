@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 114889855187904402}
   m_Layer: 8
   m_Name: RE_PassageDoor07
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 114628454613917576}
   m_Layer: 8
   m_Name: RE_PassageDoor04
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -155,6 +155,22 @@ GameObject:
   - component: {fileID: 114688414046765810}
   m_Layer: 8
   m_Name: RE_PassageDoor00
+  m_TagString: Door
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1192872340830520
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4477399175919034}
+  - component: {fileID: 108450527879569940}
+  m_Layer: 0
+  m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -193,7 +209,7 @@ GameObject:
   - component: {fileID: 114500972734928780}
   m_Layer: 8
   m_Name: RE_PassageDoor01
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -231,7 +247,7 @@ GameObject:
   - component: {fileID: 114468627559248226}
   m_Layer: 8
   m_Name: RE_PassageDoor08
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -269,7 +285,7 @@ GameObject:
   - component: {fileID: 114722886259737704}
   m_Layer: 8
   m_Name: RE_PassageDoor06
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -447,7 +463,7 @@ GameObject:
   - component: {fileID: 114594368117691600}
   m_Layer: 8
   m_Name: RE_PassageDoor03
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -515,7 +531,7 @@ GameObject:
   - component: {fileID: 114709197385038390}
   m_Layer: 8
   m_Name: RE_PassageDoor05
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -553,7 +569,7 @@ GameObject:
   - component: {fileID: 114831342946902600}
   m_Layer: 8
   m_Name: RE_PassageDoor02
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -576,7 +592,7 @@ GameObject:
   - component: {fileID: 114817353031529312}
   m_Layer: 8
   m_Name: RE_PassageDoor09
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -644,8 +660,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1945840407845976}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 4.5, y: -9, z: 19.5}
-  m_LocalScale: {x: 2.65277, y: 1, z: 0.95267093}
+  m_LocalPosition: {x: 4.5, y: -9.04, z: 19.5}
+  m_LocalScale: {x: 2.65277, y: 1, z: 0.9760415}
   m_Children: []
   m_Father: {fileID: 4924186904859300}
   m_RootOrder: 0
@@ -692,8 +708,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1950437074629708}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.652773, y: 1, z: 0.9526708}
+  m_LocalPosition: {x: 0, y: -0.04, z: 0}
+  m_LocalScale: {x: 2.652773, y: 1, z: 0.9760414}
   m_Children: []
   m_Father: {fileID: 4341959319453292}
   m_RootOrder: 0
@@ -772,8 +788,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1075183564267426}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.65277, y: 1, z: 0.9526699}
+  m_LocalPosition: {x: 0, y: -0.04, z: 0}
+  m_LocalScale: {x: 2.65277, y: 1, z: 0.9760405}
   m_Children: []
   m_Father: {fileID: 4454088536167476}
   m_RootOrder: 0
@@ -785,8 +801,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1089576549160804}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.65277, y: 1, z: 0.9526719}
+  m_LocalPosition: {x: 0, y: -0.04, z: 0}
+  m_LocalScale: {x: 2.65277, y: 1, z: 0.97604245}
   m_Children: []
   m_Father: {fileID: 4657440548205474}
   m_RootOrder: 0
@@ -826,8 +842,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1902222973114500}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.652774, y: 1, z: 0.9526718}
+  m_LocalPosition: {x: 0, y: -0.04, z: 0}
+  m_LocalScale: {x: 2.652774, y: 1, z: 0.9760424}
   m_Children: []
   m_Father: {fileID: 4828789022368984}
   m_RootOrder: 0
@@ -872,6 +888,19 @@ Transform:
   m_Father: {fileID: 4152462169155178}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4477399175919034
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1192872340830520}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -3.5, z: 16.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4490495562182122}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4490495562182122
 Transform:
   m_ObjectHideFlags: 1
@@ -886,6 +915,7 @@ Transform:
   - {fileID: 4469975110639492}
   - {fileID: 4497737405531718}
   - {fileID: 4152462169155178}
+  - {fileID: 4477399175919034}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -933,8 +963,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1780571928735406}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 9.5, y: -9, z: 19.5}
-  m_LocalScale: {x: 2.65277, y: 1, z: 0.95267093}
+  m_LocalPosition: {x: 9.5, y: -9.04, z: 19.5}
+  m_LocalScale: {x: 2.65277, y: 1, z: 0.9760415}
   m_Children: []
   m_Father: {fileID: 4229420696074982}
   m_RootOrder: 0
@@ -946,8 +976,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1163808000866700}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -5.5, y: -9, z: 19.5}
-  m_LocalScale: {x: 2.6527658, y: 1, z: 0.95267427}
+  m_LocalPosition: {x: -5.5, y: -9.04, z: 19.5}
+  m_LocalScale: {x: 2.6527658, y: 1, z: 0.97604495}
   m_Children: []
   m_Father: {fileID: 4560403974548490}
   m_RootOrder: 0
@@ -959,8 +989,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1226169371951952}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.652773, y: 1, z: 0.9526709}
+  m_LocalPosition: {x: 0, y: -0.04, z: 0}
+  m_LocalScale: {x: 2.652773, y: 1, z: 0.97604144}
   m_Children: []
   m_Father: {fileID: 4256777456649490}
   m_RootOrder: 0
@@ -1026,8 +1056,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1315300152298790}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.65277, y: 1, z: 0.95267045}
+  m_LocalPosition: {x: 0, y: -0.04, z: 0}
+  m_LocalScale: {x: 2.65277, y: 1, z: 0.9760411}
   m_Children: []
   m_Father: {fileID: 4298004767798712}
   m_RootOrder: 0
@@ -1080,8 +1110,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1203608569784432}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.5, y: -9, z: 19.5}
-  m_LocalScale: {x: 2.65277, y: 1, z: 0.95267093}
+  m_LocalPosition: {x: -0.5, y: -9.04, z: 19.5}
+  m_LocalScale: {x: 2.65277, y: 1, z: 0.9760415}
   m_Children: []
   m_Father: {fileID: 4937844300022010}
   m_RootOrder: 0
@@ -3460,6 +3490,40 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!108 &108450527879569940
+Light:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1192872340830520}
+  m_Enabled: 1
+  serializedVersion: 7
+  m_Type: 2
+  m_Color: {r: 1, g: 0.97058827, b: 0.5735294, a: 1}
+  m_Intensity: 1
+  m_Range: 6.587983
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 1
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.171
+    m_NormalBias: 0.31
+    m_NearPlane: 0.33
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!114 &114001050469843692
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3471,6 +3535,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Player: {fileID: 0}
 --- !u!114 &114043788101604790
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3482,6 +3547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Player: {fileID: 0}
 --- !u!114 &114085521710998276
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3493,6 +3559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Player: {fileID: 0}
 --- !u!114 &114168604215168954
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3504,6 +3571,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Player: {fileID: 0}
 --- !u!114 &114313194066485476
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3527,6 +3595,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Player: {fileID: 0}
 --- !u!114 &114393991399827700
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3538,6 +3607,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Player: {fileID: 0}
 --- !u!114 &114446069392307638
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3549,6 +3619,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Player: {fileID: 0}
 --- !u!114 &114468627559248226
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3560,10 +3631,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2414594949784681bdc3ca1a6177169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IDHash: RE_PassageDoor08
   m_InteractionText: 
-  m_TextToDisplay: 
-  m_InteractSound: {fileID: 0}
+  m_TextToShowsOnInteraction: 
+  m_TextToShowsOnInteraction2: 
+  m_AudioToPlayOnInteraction: {fileID: 0}
+  m_AudioToPlayOnInteraction2: {fileID: 0}
 --- !u!114 &114469900251723030
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3575,6 +3647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Player: {fileID: 0}
 --- !u!114 &114500972734928780
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3586,10 +3659,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2414594949784681bdc3ca1a6177169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IDHash: RE_PassageDoor01
   m_InteractionText: 
-  m_TextToDisplay: 
-  m_InteractSound: {fileID: 0}
+  m_TextToShowsOnInteraction: 
+  m_TextToShowsOnInteraction2: 
+  m_AudioToPlayOnInteraction: {fileID: 0}
+  m_AudioToPlayOnInteraction2: {fileID: 0}
 --- !u!114 &114538336163215816
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14489,9 +14563,17 @@ MonoBehaviour:
     areaError: 15
   asset_guid: 
   dontDestroyMeshOnDelete: 0
-  m_selectedFaces: 
-  m_SelectedEdges: []
-  m_selectedTriangles: 
+  m_selectedFaces: 21000000
+  m_SelectedEdges:
+  - x: 134
+    y: 135
+  - x: 133
+    y: 134
+  - x: 132
+    y: 133
+  - x: 135
+    y: 132
+  m_selectedTriangles: 860000008700000085000000840000008500000087000000
 --- !u!114 &114594368117691600
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14503,10 +14585,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2414594949784681bdc3ca1a6177169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IDHash: RE_PassageDoor03
   m_InteractionText: 
-  m_TextToDisplay: 
-  m_InteractSound: {fileID: 0}
+  m_TextToShowsOnInteraction: 
+  m_TextToShowsOnInteraction2: 
+  m_AudioToPlayOnInteraction: {fileID: 0}
+  m_AudioToPlayOnInteraction2: {fileID: 0}
 --- !u!114 &114628454613917576
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14518,10 +14601,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2414594949784681bdc3ca1a6177169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IDHash: RE_PassageDoor04
   m_InteractionText: 
-  m_TextToDisplay: 
-  m_InteractSound: {fileID: 0}
+  m_TextToShowsOnInteraction: 
+  m_TextToShowsOnInteraction2: 
+  m_AudioToPlayOnInteraction: {fileID: 0}
+  m_AudioToPlayOnInteraction2: {fileID: 0}
 --- !u!114 &114688414046765810
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14533,10 +14617,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2414594949784681bdc3ca1a6177169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IDHash: RE_PassageDoor00
-  m_InteractionText: 'blah '
-  m_TextToDisplay: 'blah '
-  m_InteractSound: {fileID: 0}
+  m_InteractionText: 'open door.                                                              '
+  m_TextToShowsOnInteraction: Door is locked
+  m_TextToShowsOnInteraction2: Door is locked
+  m_AudioToPlayOnInteraction: {fileID: 0}
+  m_AudioToPlayOnInteraction2: {fileID: 0}
 --- !u!114 &114709197385038390
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14548,10 +14633,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2414594949784681bdc3ca1a6177169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IDHash: RE_PassageDoor05
   m_InteractionText: 
-  m_TextToDisplay: 
-  m_InteractSound: {fileID: 0}
+  m_TextToShowsOnInteraction: 
+  m_TextToShowsOnInteraction2: 
+  m_AudioToPlayOnInteraction: {fileID: 0}
+  m_AudioToPlayOnInteraction2: {fileID: 0}
 --- !u!114 &114721221521961176
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14563,6 +14649,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Player: {fileID: 0}
 --- !u!114 &114722886259737704
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14574,10 +14661,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2414594949784681bdc3ca1a6177169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IDHash: RE_PassageDoor06
   m_InteractionText: 
-  m_TextToDisplay: 
-  m_InteractSound: {fileID: 0}
+  m_TextToShowsOnInteraction: 
+  m_TextToShowsOnInteraction2: 
+  m_AudioToPlayOnInteraction: {fileID: 0}
+  m_AudioToPlayOnInteraction2: {fileID: 0}
 --- !u!114 &114817353031529312
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14589,10 +14677,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2414594949784681bdc3ca1a6177169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IDHash: RE_PassageDoor09
   m_InteractionText: 
-  m_TextToDisplay: 
-  m_InteractSound: {fileID: 0}
+  m_TextToShowsOnInteraction: 
+  m_TextToShowsOnInteraction2: 
+  m_AudioToPlayOnInteraction: {fileID: 0}
+  m_AudioToPlayOnInteraction2: {fileID: 0}
 --- !u!114 &114831342946902600
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14604,10 +14693,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2414594949784681bdc3ca1a6177169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IDHash: RE_PassageDoor02
   m_InteractionText: 
-  m_TextToDisplay: 
-  m_InteractSound: {fileID: 0}
+  m_TextToShowsOnInteraction: 
+  m_TextToShowsOnInteraction2: 
+  m_AudioToPlayOnInteraction: {fileID: 0}
+  m_AudioToPlayOnInteraction2: {fileID: 0}
 --- !u!114 &114889855187904402
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14619,10 +14709,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2414594949784681bdc3ca1a6177169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IDHash: RE_PassageDoor07
   m_InteractionText: 
-  m_TextToDisplay: 
-  m_InteractSound: {fileID: 0}
+  m_TextToShowsOnInteraction: 
+  m_TextToShowsOnInteraction2: 
+  m_AudioToPlayOnInteraction: {fileID: 0}
+  m_AudioToPlayOnInteraction2: {fileID: 0}
 --- !u!114 &114931901239921766
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14646,3 +14737,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4965301adc5524e9985d4645f629722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Player: {fileID: 0}
