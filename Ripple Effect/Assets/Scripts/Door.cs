@@ -18,6 +18,17 @@ public class Door : MonoBehaviour
 
 	#region Properties
 
+	public bool IsDoorOpen {
+		get {
+			return m_IsDoorOpen;
+		}
+		set {
+			m_IsDoorOpen = value;
+		}
+	}
+
+	private bool m_IsDoorOpen;
+
 	#endregion
 
 	#region Inspectables
@@ -30,7 +41,6 @@ public class Door : MonoBehaviour
 
 	#region Private Member Variables
 
-	private bool m_IsDoorOpen = false;
 	private Interactable m_Interactable;
 	private AudioSource[] m_Sources;
 	private Animator m_Animator;
