@@ -3082,6 +3082,18 @@ Prefab:
       propertyPath: m_Name
       value: RoomBase 1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4711316475230952, guid: a563e8836282efa4eae8166edc067ae3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 2.9999995
+      objectReference: {fileID: 0}
+    - target: {fileID: 4711316475230952, guid: a563e8836282efa4eae8166edc067ae3, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -1.9999987
+      objectReference: {fileID: 0}
+    - target: {fileID: 4711316475230952, guid: a563e8836282efa4eae8166edc067ae3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 2.3600006
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a563e8836282efa4eae8166edc067ae3, type: 2}
   m_IsPrefabParent: 0
