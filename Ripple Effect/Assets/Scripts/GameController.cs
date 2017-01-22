@@ -242,8 +242,10 @@ public class GameController : MonoBehaviour
 	private void Interactable_DoInteractEvent (Interactable i)
 	{
 		if (i.tag == Interactable.kInteractableTag) {
+			if (!m_HasInteracted.ContainsKey (i) || m_HasInteracted [i] == false) {
+				Debug.Log ("Interacted with " + i.name);
+			}
 			m_HasInteracted [i] = true;
-			Debug.Log ("Interacted with " + i.name);
 		}
 	}
 
