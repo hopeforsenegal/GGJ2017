@@ -1364,7 +1364,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 414587837}
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: 33.5, y: 11.998, z: -7.5}
+  m_LocalPosition: {x: 33.5, y: 12, z: -7.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2103469967}
@@ -3618,6 +3618,14 @@ MonoBehaviour:
   - {fileID: 1352581894}
   m_OnBedroomTeleport: {fileID: 781581243}
   m_BedroomTeleportTransform: {fileID: 1321715972}
+  m_LooseRM:
+  - {fileID: 8300000, guid: 7cd7560b3107980409f5f1ca373ffef5, type: 3}
+  - {fileID: 8300000, guid: 75b3132a7af1daf439b571dbeb4eee7e, type: 3}
+  - {fileID: 8300000, guid: ab0f2a1e172a5fb46ba605bc40d28e1f, type: 3}
+  m_LooseSFX: {fileID: 8300000, guid: bb3ddb23c956f4145a2d404c9c4c2da1, type: 3}
+  m_LooseVO: {fileID: 8300000, guid: 81a1d3f91c85e83409f6f4435be27839, type: 3}
+  m_WinSFX: {fileID: 8300000, guid: ece59efcf4cc24721a9038d0effdf5cb, type: 3}
+  m_WinVO: {fileID: 8300000, guid: c9f814d9fd6c76541a4a658182ba2ed7, type: 3}
 --- !u!4 &1378022434
 Transform:
   m_ObjectHideFlags: 0
