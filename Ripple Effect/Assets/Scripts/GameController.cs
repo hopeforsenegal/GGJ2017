@@ -218,6 +218,9 @@ public class GameController : MonoBehaviour
 	{
 		switch (m_CurrentRoom) {
 		case ERoomStates.Room_1:
+			if (IsInStairwell)
+				return;
+				
 			if (CheckForAllItems ())
 				return;
 
@@ -225,6 +228,9 @@ public class GameController : MonoBehaviour
 				return;
 			break;
 		case ERoomStates.Room_1_Loop:
+			if (IsInStairwell)
+				return;
+			
 			if (CheckForAllItems ())
 				return;
 			break;
