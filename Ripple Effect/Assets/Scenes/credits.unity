@@ -447,6 +447,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_sceneToLoad: 
+  m_LoopTime: 33
 --- !u!114 &1878021122
 MonoBehaviour:
   m_ObjectHideFlags: 0

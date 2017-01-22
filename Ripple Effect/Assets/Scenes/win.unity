@@ -322,6 +322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_sceneToLoad: credits
+  m_LoopTime: 7
 --- !u!114 &957531302
 MonoBehaviour:
   m_ObjectHideFlags: 0

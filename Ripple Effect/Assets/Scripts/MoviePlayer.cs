@@ -27,6 +27,10 @@ public class MoviePlayer : MonoBehaviour
 	[SerializeField]
 	private string m_sceneToLoad;
 
+	[Tooltip ("")]
+	[SerializeField]
+	private float m_LoopTime;
+
 	#endregion
 
 	#region Private Member Variables
@@ -88,7 +92,7 @@ public class MoviePlayer : MonoBehaviour
 	private IEnumerator PlayMovieTask ()
 	{
 		m_MovieTexture.Play ();
-		yield return new WaitForSeconds (10f);
+		yield return new WaitForSeconds (m_LoopTime);
 		m_MovieTexture.Stop ();
 		yield return null;
 		StartCoroutine (PlayMovieTask ());
