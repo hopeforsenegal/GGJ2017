@@ -136,6 +136,10 @@ public class GameController : MonoBehaviour
 	[SerializeField]
 	private OnBedroomTeleport m_OnBedroomTeleport;
 
+	[Tooltip ("")]
+	[SerializeField]
+	private Transform m_BedroomTeleportTransform;
+
 	#endregion
 
 	#region Private Member Variables
@@ -437,7 +441,11 @@ public class GameController : MonoBehaviour
 
 	private void OnBedroomTeleport_BedroomTeleportEvent ()
 	{
-
+		Player player;
+		if (Player.TryGetInstance (out player)) {
+			Transform pTransform = player.GetComponent<Transform> ();
+			pTransform.position = m_BedroomTeleportTransform.position;
+		}
 	}
 
 	#endregion
