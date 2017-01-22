@@ -135,7 +135,6 @@ public class Door : MonoBehaviour
 				OpenDoor ();
 			}
 		}
-
 	}
 
 	#endregion

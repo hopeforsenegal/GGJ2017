@@ -125,20 +125,11 @@ public class Interactable : MonoBehaviour
 
 	protected void OnEnable ()
 	{
+		Debug.Log ("Whos doing this?");
 	}
 
 	protected void OnDisable ()
 	{
-	}
-
-	protected void OnBecameVisible ()
-	{
-		enabled = true;
-	}
-
-	protected void OnBecameInvisible ()
-	{
-		enabled = false;
 	}
 
 	#endregion
