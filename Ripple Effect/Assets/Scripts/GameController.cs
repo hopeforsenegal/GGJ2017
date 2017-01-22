@@ -78,8 +78,8 @@ public class GameController : MonoBehaviour
 		}
 	}
 
-	public Door FirstRoomDoor{
-		get{
+	public Door FirstRoomDoor {
+		get {
 			return m_FirstRoomsDoor;
 		}
 	}
@@ -178,6 +178,19 @@ public class GameController : MonoBehaviour
 		}
 		if (m_InfoPanel == null) {
 			Debug.LogWarning ("m_InfoPanel is null");
+		}
+		if (m_Room1 == null) {
+			Debug.LogWarning ("m_Room1 is null");
+		} 
+		if (m_Room2 == null) {
+			Debug.LogWarning ("m_Room2 is null");
+		} else {
+			m_Room2.SetActive (false);
+		}
+		if (m_Room3 == null) {
+			Debug.LogWarning ("m_Room3 is null");
+		} else {
+			m_Room3.SetActive (false);
 		}
 
 		Interactable.DoInteractEvent += Interactable_DoInteractEvent;
