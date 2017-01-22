@@ -132,6 +132,10 @@ public class GameController : MonoBehaviour
 	[SerializeField]
 	private OnReenterRoom m_OnReenterRoom;
 
+	[Tooltip ("")]
+	[SerializeField]
+	private OnBedroomTeleport m_OnBedroomTeleport;
+
 	#endregion
 
 	#region Private Member Variables
@@ -199,26 +203,13 @@ public class GameController : MonoBehaviour
 		if (m_OnReenterRoom == null) {
 			Debug.LogWarning ("m_OnReenterRoom is null");
 		}
+		if (m_OnBedroomTeleport == null) {
+			Debug.LogWarning ("m_OnBedroomTeleport is null");
+		}
 
 		Interactable.DoInteractEvent += Interactable_DoInteractEvent;
 		OnStairWell.EnterStairWellEvent += OnStairWell_EnterStairWellEvent;
-	}
-
-	private void OnStairWell_EnterStairWellEvent ()
-	{
-		EnterStairWell ();
-		switch (NextRoom) {
-		case ERoomStates.Room_1_Loop:
-			FirstRoomDoor.IsDoorOpen = false;
-			break;
-		case GameController.ERoomStates.Room_2:
-			FirstRoomDoor.IsDoorOpen = false;
-			break;
-		case GameController.ERoomStates.Room_3:
-			break;
-		default:
-			throw new UnityException (string.Format ("invalid case:{0}", NextRoom));
-		}
+		OnBedroomTeleport.BedroomTeleportEvent += OnBedroomTeleport_BedroomTeleportEvent;
 	}
 
 	protected void Update ()
@@ -268,6 +259,8 @@ public class GameController : MonoBehaviour
 	protected void OnDestroy ()
 	{
 		Interactable.DoInteractEvent -= Interactable_DoInteractEvent;
+		OnStairWell.EnterStairWellEvent -= OnStairWell_EnterStairWellEvent;
+		OnBedroomTeleport.BedroomTeleportEvent -= OnBedroomTeleport_BedroomTeleportEvent;
 
 		if (sInstance == this) {
 			sInstance = null;
@@ -326,16 +319,6 @@ public class GameController : MonoBehaviour
 	#endregion
 
 	#region Private Methods
-
-	private void Interactable_DoInteractEvent (Interactable i)
-	{
-		if (i.tag == Interactable.kInteractableTag) {
-			if (!m_HasInteracted.ContainsKey (i) || m_HasInteracted [i] == false) {
-				Debug.LogFormat ("Interacted with {0}", i.name);
-			}
-			m_HasInteracted [i] = true;
-		}
-	}
 
 	private bool CheckForAllItems ()
 	{
@@ -423,6 +406,38 @@ public class GameController : MonoBehaviour
 				InvokeDoorUnlockedEvent ();
 			}
 		}
+	}
+
+	private void Interactable_DoInteractEvent (Interactable i)
+	{
+		if (i.tag == Interactable.kInteractableTag) {
+			if (!m_HasInteracted.ContainsKey (i) || m_HasInteracted [i] == false) {
+				Debug.LogFormat ("Interacted with {0}", i.name);
+			}
+			m_HasInteracted [i] = true;
+		}
+	}
+
+	private void OnStairWell_EnterStairWellEvent ()
+	{
+		EnterStairWell ();
+		switch (NextRoom) {
+		case ERoomStates.Room_1_Loop:
+			FirstRoomDoor.IsDoorOpen = false;
+			break;
+		case GameController.ERoomStates.Room_2:
+			FirstRoomDoor.IsDoorOpen = false;
+			break;
+		case GameController.ERoomStates.Room_3:
+			break;
+		default:
+			throw new UnityException (string.Format ("invalid case:{0}", NextRoom));
+		}
+	}
+
+	private void OnBedroomTeleport_BedroomTeleportEvent ()
+	{
+
 	}
 
 	#endregion
