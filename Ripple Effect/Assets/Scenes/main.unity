@@ -2459,6 +2459,46 @@ Prefab:
       propertyPath: m_selectedTriangles.Array.data[0]
       value: 19
       objectReference: {fileID: 0}
+    - target: {fileID: 1080888229876200, guid: 4fa0c746b4ce64cd4af1c30af22560dd, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1704404740650010, guid: 4fa0c746b4ce64cd4af1c30af22560dd, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1651790054290284, guid: 4fa0c746b4ce64cd4af1c30af22560dd, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1586566110294422, guid: 4fa0c746b4ce64cd4af1c30af22560dd, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1701458100444216, guid: 4fa0c746b4ce64cd4af1c30af22560dd, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1080888229876200, guid: 4fa0c746b4ce64cd4af1c30af22560dd, type: 2}
+      propertyPath: m_TagString
+      value: Item
+      objectReference: {fileID: 0}
+    - target: {fileID: 1704404740650010, guid: 4fa0c746b4ce64cd4af1c30af22560dd, type: 2}
+      propertyPath: m_TagString
+      value: Item
+      objectReference: {fileID: 0}
+    - target: {fileID: 1651790054290284, guid: 4fa0c746b4ce64cd4af1c30af22560dd, type: 2}
+      propertyPath: m_TagString
+      value: Item
+      objectReference: {fileID: 0}
+    - target: {fileID: 1586566110294422, guid: 4fa0c746b4ce64cd4af1c30af22560dd, type: 2}
+      propertyPath: m_TagString
+      value: Item
+      objectReference: {fileID: 0}
+    - target: {fileID: 1701458100444216, guid: 4fa0c746b4ce64cd4af1c30af22560dd, type: 2}
+      propertyPath: m_TagString
+      value: Item
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4fa0c746b4ce64cd4af1c30af22560dd, type: 2}
   m_IsPrefabParent: 0
