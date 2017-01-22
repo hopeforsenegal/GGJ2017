@@ -70,7 +70,7 @@ public class TeleportPlayer : MonoBehaviour
 		CharacterController player = coll.gameObject.GetComponent<CharacterController> ();
 		if (player != null) {
 			Transform pTransform = player.GetComponent<Transform> ();
-			pTransform.position = m_TeleportLocation.transform.position;
+			pTransform.position = new Vector3( pTransform.position.x, m_TeleportLocation.transform.position.y, pTransform.position.z );
 			sLastTeleportedHashCode = this.GetHashCode ();
 		}
 	}
