@@ -139,10 +139,10 @@ public class GameController : MonoBehaviour
 		if (m_FirstPersonController == null) {
 			Debug.LogWarning ("m_FirstPersonController is null");
 		}
-		if (m_Room1OpenDoorItems == null || m_Room1OpenDoorItems.Length < 0) {
+		if (m_Room1OpenDoorItems == null || m_Room1OpenDoorItems.Length <= 0) {
 			Debug.LogWarning ("m_Room1OpenDoorItems is null");
 		}
-		if (m_AllRoom1Items == null || m_AllRoom1Items.Length < 0) {
+		if (m_AllRoom1Items == null || m_AllRoom1Items.Length <= 0) {
 			Debug.LogWarning ("m_AllRoom1Items is null");
 		}
 
@@ -243,6 +243,7 @@ public class GameController : MonoBehaviour
 	{
 		if (i.tag == Interactable.kInteractableTag) {
 			m_HasInteracted [i] = true;
+			Debug.Log ("Interacted with " + i.name);
 		}
 	}
 
