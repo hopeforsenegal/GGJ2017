@@ -4,17 +4,17 @@ using UnityEngine;
 using System.Collections;
 
 [DisallowMultipleComponent]
-public class OnStairWell : MonoBehaviour
+public class OnReenterRoom : MonoBehaviour
 {
 	#region Enums and Constants
 
 	#endregion
 
 	#region Events
-	
-	public delegate void OnEnterStairWellHandler ();
 
-	public static event OnEnterStairWellHandler EnterStairWellEvent;
+	public delegate void OnReenterRoomHandler ();
+
+	public static event OnReenterRoomHandler ReenterRoomEvent;
 
 	#endregion
 
@@ -56,19 +56,19 @@ public class OnStairWell : MonoBehaviour
 
 	protected void OnTriggerEnter (Collider coll)
 	{
-		Debug.Log ("OnTriggerEnter");
+		Debug.Log ("===OnTriggerEnter");
 		if (!enabled)
 			return;
 
-		Debug.Log ("OnTriggerEnter2");
+		Debug.Log ("===OnTriggerEnter2");
 		Player player = coll.gameObject.GetComponentInChildren<Player> ();
 		if (player != null) {
 
-			Debug.Log ("OnTriggerEnter3");
+			Debug.Log ("===OnTriggerEnter3");
 
-			var InvokeEnterStairWellEvent = EnterStairWellEvent;
-			if (InvokeEnterStairWellEvent != null) {
-				InvokeEnterStairWellEvent ();
+			var InvokeReenterRoomEvent = ReenterRoomEvent;
+			if (InvokeReenterRoomEvent != null) {
+				InvokeReenterRoomEvent ();
 			}
 
 			enabled = false;
