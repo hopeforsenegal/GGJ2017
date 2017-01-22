@@ -7579,14 +7579,6 @@ MonoBehaviour:
     areaError: 15
   asset_guid: 
   dontDestroyMeshOnDelete: 0
-  m_selectedFaces: 2a000000
-  m_SelectedEdges:
-  - x: 171
-    y: 172
-  - x: 173
-    y: 171
-  - x: 172
-    y: 174
-  - x: 174
-    y: 173
-  m_selectedTriangles: ab000000ac000000ad000000ac000000ae000000ad000000
+  m_selectedFaces: 
+  m_SelectedEdges: []
+  m_selectedTriangles: 
