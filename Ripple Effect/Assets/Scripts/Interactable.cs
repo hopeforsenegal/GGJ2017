@@ -8,7 +8,7 @@ public class Interactable : MonoBehaviour
 {
 	#region Enums and Constants
 
-	private static readonly string kInteractText = "Press 'E' to {0} {1}";
+	private static readonly string kInteractText = "Click to {0} {1}";
 
 	public static readonly string kInteractableTag = "Item";
 	public static readonly string kDoorTag = "Door";
