@@ -76,19 +76,18 @@ public class PlayerInteractionController : MonoBehaviour
 
 	private void HandleOnDoInteractHandler (Interactable i)
 	{
-		Debug.Log ("HandleOnDoInteractHandler");
-		if (i.tag == Interactable.kInteractableTag && m_PromptText != null ) {
+		Debug.LogFormat ("HandleOnDoInteractHandler:{0}", i.tag);
+		if (i.tag == Interactable.kInteractableTag && m_PromptText != null) {
 			m_PromptText.enabled = false;
 			m_InfoPanel.Show (CurrentTarget.TextToShowsOnInteraction);
-			m_Player.PlaySound( i.AudioToPlayOnInteraction );
+			m_Player.PlaySound (i.AudioToPlayOnInteraction);
 			m_Player.KillControls ();
 		} else if (i.tag == Interactable.kDoorTag) {
-			Debug.Log (i.tag);
 			GameController gameController;
-			if (GameController.TryGetInstance (out gameController) && gameController.FirstRoomDoor.GetComponent<Interactable> () == i && m_PromptText != null ) {
+			if (GameController.TryGetInstance (out gameController) && !gameController.IsInStairwell) {
 				m_PromptText.enabled = false;
 				m_InfoPanel.Show (CurrentTarget.TextToShowsOnInteraction);
-				m_Player.PlaySound( i.AudioToPlayOnInteraction );
+				m_Player.PlaySound (i.AudioToPlayOnInteraction);
 				m_Player.KillControls ();
 			} else {
 				i.GetComponentInParent<Animator> ().enabled = true;
@@ -131,10 +130,10 @@ public class PlayerInteractionController : MonoBehaviour
 					Debug.Log ("interact");
 					CurrentTarget.DoInteract ();
 				}
-			} else if ( m_PromptText != null ){
+			} else if (m_PromptText != null) {
 				m_PromptText.enabled = false;
 			}
-		} else if ( m_PromptText != null ) {
+		} else if (m_PromptText != null) {
 			m_PromptText.enabled = false;
 		}
 	}
