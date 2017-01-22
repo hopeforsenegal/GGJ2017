@@ -354,6 +354,7 @@ public class GameController : MonoBehaviour
 		
 		switch (m_CurrentRoom) {
 		case ERoomStates.Room_1:
+			m_Room1.SetActive (false);
 			if (m_HasFoundAllItemsRoom1) {
 				m_NextRoom = ERoomStates.Room_2;
 			} else {
