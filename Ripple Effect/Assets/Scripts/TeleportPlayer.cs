@@ -56,23 +56,13 @@ public class TeleportPlayer : MonoBehaviour
 	{
 	}
 
-	protected void OnBecameVisible ()
-	{
-		enabled = true;
-	}
-
-	protected void OnBecameInvisible ()
-	{
-		enabled = false;
-	}
-
 	#endregion
 
 	#region Trigger Collider
 
 	protected void OnTriggerEnter (Collider coll)
 	{
-		if (sLastTeleportedHashCode > 0 && this.GetHashCode () != sLastTeleportedHashCode) {
+		if (sLastTeleportedHashCode != 0 && this.GetHashCode () != sLastTeleportedHashCode) {
 			sLastTeleportedHashCode = 0;
 			return;
 		}
