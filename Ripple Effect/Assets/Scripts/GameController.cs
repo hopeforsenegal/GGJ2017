@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityStandardAssets.Characters.FirstPerson;
 
 [DisallowMultipleComponent]
-
+[
 public class GameController : MonoBehaviour
 {
 	#region Singleton
@@ -31,9 +31,10 @@ public class GameController : MonoBehaviour
 
 	#region Enums and Constants
 
-	public enum ERoom
+	public enum ERoomStates
 	{
 		Room_1,
+		Room_1_Loop,
 		Room_2,
 		Room_3,
 	}
@@ -59,13 +60,11 @@ public class GameController : MonoBehaviour
 	public GameObject Room {
 		get {
 			switch (m_Room) {
-			case ERoom.Room_1:
-				m_Room = ERoom.Room_2;
+			case ERoomStates.Room_1:
 				return m_Room1;
-			case ERoom.Room_2:
-				m_Room = ERoom.Room_3;
+			case ERoomStates.Room_2:
 				return m_Room2;
-			case ERoom.Room_3:
+			case ERoomStates.Room_3:
 				return m_Room3;
 			default:
 				throw new UnityException (string.Format ("invalid case:{0}", m_Room));
@@ -93,17 +92,23 @@ public class GameController : MonoBehaviour
 	[SerializeField]
 	private GameObject m_Room3;
 
-	[Tooltip ("The Room1 To Room2 Progress Items")]
+	[Tooltip ("The Room1 open door items")]
 	[SerializeField]
-	private Interactable[] m_Room1ToRoom2ProgressItems;
+	private Interactable[] m_Room1OpenDoorItems;
+
+	[Tooltip ("The set of all Room1 items")]
+	[SerializeField]
+	private Interactable[] m_AllRoom1Items;
 
 	#endregion
 
 	#region Private Member Variables
 
+	private bool m_HasFoundStairwellItemsRoom1 = false;
+	private bool m_HasFoundAllItemsRoom1 = false;
 	private bool m_IsInStairwell;
 	private bool m_DoorUnlocked = false;
-	private ERoom m_Room = ERoom.Room_1;
+	private ERoomStates m_Room = ERoomStates.Room_1;
 	private Dictionary<Interactable, bool> m_HasInteracted = new Dictionary<Interactable, bool> ();
 
 	#endregion
@@ -127,8 +132,11 @@ public class GameController : MonoBehaviour
 		if (m_FirstPersonController == null) {
 			Debug.LogWarning ("m_FirstPersonController is null");
 		}
-		if (m_Room1ToRoom2ProgressItems == null || m_Room1ToRoom2ProgressItems.Length < 0) {
-			Debug.LogWarning ("m_Room1ToRoom2ProgressItems is null");
+		if (m_Room1OpenDoorItems == null || m_Room1OpenDoorItems.Length < 0) {
+			Debug.LogWarning ("m_Room1OpenDoorItems is null");
+		}
+		if (m_AllRoom1Items == null || m_AllRoom1Items.Length < 0) {
+			Debug.LogWarning ("m_AllRoom1Items is null");
 		}
 
 		Interactable.DoInteractEvent += Interactable_DoInteractEvent;
@@ -137,25 +145,20 @@ public class GameController : MonoBehaviour
 	protected void Update ()
 	{
 		switch (m_Room) {
-		case ERoom.Room_1:
-			bool hasFoundStairwellItems = false;
-			foreach (var item in m_Room1ToRoom2ProgressItems) {
-				if (m_HasInteracted.ContainsKey (item) && m_HasInteracted [item] == true) {
-					hasFoundStairwellItems = true;
-				}
-			}
-			if (hasFoundStairwellItems) {
-				m_DoorUnlocked = true;
-				var InvokeDoorUnlockedEvent = DoorUnlockedEvent;
-				if (InvokeDoorUnlockedEvent != null) {
-					InvokeDoorUnlockedEvent ();
-				}
+		case ERoomStates.Room_1:
+			if (CheckForAllItems ())
 				return;
-			}
+
+			if (CheckForDoorOpenItems ())
+				return;
 			break;
-		case ERoom.Room_2:
+		case ERoomStates.Room_1_Loop:
+			if (CheckForAllItems ())
+				return;
 			break;
-		case ERoom.Room_3:
+		case ERoomStates.Room_2:
+			break;
+		case ERoomStates.Room_3:
 			break;
 		default:
 			throw new UnityException (string.Format ("invalid case:{0}", m_Room));
@@ -199,11 +202,62 @@ public class GameController : MonoBehaviour
 
 	#region Private Methods
 
-
 	private void Interactable_DoInteractEvent (Interactable i)
 	{
 		if (i.tag == Interactable.kInteractableTag) {
 			m_HasInteracted [i] = true;
+		}
+	}
+
+	private bool CheckForAllItems ()
+	{
+		bool hasFoundAllItemsRoom1 = false;
+
+		foreach (var item in m_AllRoom1Items) {
+			if (m_HasInteracted.ContainsKey (item) && m_HasInteracted [item] == true) {
+				hasFoundAllItemsRoom1 = true;
+			} else {
+				hasFoundAllItemsRoom1 = false;
+				break;
+			}
+		}
+		if (hasFoundAllItemsRoom1) {
+			m_HasFoundAllItemsRoom1 = true;
+			AttemptDoorUnlock ();
+			return true;
+		}
+		return false;
+	}
+
+	private bool CheckForDoorOpenItems ()
+	{
+		bool hasFoundStairwellItemsRoom1 = false;
+		foreach (var item in m_Room1OpenDoorItems) {
+			if (m_HasInteracted.ContainsKey (item) && m_HasInteracted [item] == true) {
+				hasFoundStairwellItemsRoom1 = true;
+			} else {
+				hasFoundStairwellItemsRoom1 = false;
+				break;
+			}
+		}
+		if (hasFoundStairwellItemsRoom1) {
+			m_HasFoundStairwellItemsRoom1 = true;
+			AttemptDoorUnlock ();
+			return true;
+			;
+		}
+
+		return false;
+	}
+
+	private void AttemptDoorUnlock ()
+	{
+		if (!m_DoorUnlocked) {
+			m_DoorUnlocked = true;
+			var InvokeDoorUnlockedEvent = DoorUnlockedEvent;
+			if (InvokeDoorUnlockedEvent != null) {
+				InvokeDoorUnlockedEvent ();
+			}
 		}
 	}
 
