@@ -118,7 +118,7 @@ public class PlayerInteractionController : MonoBehaviour
 
 		if (hitInteractable) {
 			CurrentTarget = hit.collider.GetComponentInParent<Interactable> ();
-			if (CurrentTarget != null) {
+			if (CurrentTarget != null && CurrentTarget.enabled) {
 				CurrentTarget.Highlight ();
 				if (m_PromptText != null && !string.IsNullOrEmpty (CurrentTarget.PromptText) && m_InfoPanel != null && !m_InfoPanel.IsShowing) {
 					m_PromptText.enabled = true;
