@@ -444,11 +444,14 @@ public class GameController : MonoBehaviour
 
 	private void OnBedroomTeleport_BedroomTeleportEvent ()
 	{
+		Debug.Log ("OnBedroomTeleport_BedroomTeleportEvent");
 		Player player;
 		if (Player.TryGetInstance (out player)) {
 			Transform pTransform = player.GetComponent<Transform> ();
 			pTransform.position = m_BedroomTeleportTransform.position;
 		}
+
+		EnterStairWell ();
 	}
 
 	private void OnReenterRoom_ReenterRoomEvent ()

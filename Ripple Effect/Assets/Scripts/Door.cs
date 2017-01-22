@@ -118,7 +118,7 @@ public class Door : MonoBehaviour
 
 		if (m_Interactable != null && m_Interactable.ID == i.ID && gameController.IsInStairwell) {
 			if (gameController != null) {
-				Debug.LogFormat ("Teleporting room from stairwell {0}/{1}", gameController.NextRoomGameObject, gameController.NextRoom);
+				Debug.LogFormat ("Door {2} is calling for room {0}/{1}", gameController.NextRoomGameObject, gameController.NextRoom, name);
 				gameController.NextRoomGameObject.SetActive (true);
 				gameController.NextRoomGameObject.transform.position = m_Transform.position;
 				gameController.NextRoomGameObject.transform.rotation = m_Transform.rotation;
