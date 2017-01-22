@@ -11,10 +11,15 @@ public class Interactable : MonoBehaviour
 	private static readonly string kInteractText = "Press 'E' to {0} {1}";
 
 	public static readonly string kInteractableTag = "Item";
+	public static readonly string kDoorTag = "Door";
 
 	#endregion
 
 	#region Events
+
+	public delegate void OnDoInteractHandler (Interactable i);
+
+	public static event OnDoInteractHandler DoInteractEvent;
 
 	#endregion
 
@@ -31,7 +36,7 @@ public class Interactable : MonoBehaviour
 			return string.Format (kInteractText, m_InteractionText, name);
 		}
 	}
-		
+
 	public string TextToDisplay {
 		get {
 			return m_TextToDisplay;
@@ -86,7 +91,9 @@ public class Interactable : MonoBehaviour
 	protected void Start ()
 	{
 		m_StartColor = m_Renderer.material.color;
-		tag = kInteractableTag;
+		if (string.IsNullOrEmpty (tag)) {
+			tag = kInteractableTag;
+		}
 	}
 
 	protected void Update ()
@@ -131,6 +138,14 @@ public class Interactable : MonoBehaviour
 	public void Unhighlight ()
 	{
 		m_Renderer.material.color = m_StartColor;
+	}
+
+	public void DoInteract ()
+	{
+		var InvokeDoInteractEvent = DoInteractEvent;
+		if (InvokeDoInteractEvent != null) {
+			InvokeDoInteractEvent (this);
+		}
 	}
 
 	#endregion

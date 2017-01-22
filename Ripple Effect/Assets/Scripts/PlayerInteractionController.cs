@@ -69,9 +69,29 @@ public class PlayerInteractionController : MonoBehaviour
 		if (m_InfoPanel == null) {
 			Debug.LogWarning ("m_InfoPanel is null");
 		}
+
+		Interactable.DoInteractEvent += HandleOnDoInteractHandler;
 	}
 
-	void Update ()
+	private void HandleOnDoInteractHandler (Interactable i)
+	{
+		if (i.tag == Interactable.kInteractableTag) {
+			Debug.Log ("tag");
+			m_PromptText.enabled = false;
+			m_InfoPanel.Show (CurrentTarget.TextToDisplay);
+			m_Player.KillControls ();
+		} else if (i.tag == Interactable.kDoorTag) {
+			Debug.Log ("Hit door");
+			i.GetComponentInParent<Animator> ().enabled = true;
+		}
+	}
+
+	private void OnDestroy ()
+	{
+		Interactable.DoInteractEvent -= HandleOnDoInteractHandler;
+	}
+
+	private void Update ()
 	{
 		if (Input.anyKeyDown && m_InfoPanel.IsShowing) {
 			m_InfoPanel.Hide ();
@@ -100,10 +120,8 @@ public class PlayerInteractionController : MonoBehaviour
 					m_PromptText.text = CurrentTarget.PromptText;
 				}
 				if (Input.GetButtonDown ("Fire1")) {
+					CurrentTarget.DoInteract ();
 					Debug.Log ("I hit my target");
-					m_PromptText.enabled = false;
-					m_InfoPanel.Show (CurrentTarget.TextToDisplay);
-					m_Player.KillControls ();
 				}
 			} else {
 				m_PromptText.enabled = false;
