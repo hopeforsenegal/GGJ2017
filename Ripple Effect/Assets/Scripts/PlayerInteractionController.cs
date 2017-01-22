@@ -77,14 +77,8 @@ public class PlayerInteractionController : MonoBehaviour
 	{
 		if (i.tag == Interactable.kInteractableTag) {
 			Debug.Log ("tag");
-			if ( m_PromptText != null )
-			{
-				m_PromptText.enabled = false;
-			}
-			if ( m_InfoPanel != null )
-			{
-				m_InfoPanel.Show( CurrentTarget.TextToDisplay );
-			}
+			m_PromptText.enabled = false;
+			m_InfoPanel.Show (CurrentTarget.TextToShowsOnInteraction);
 			m_Player.KillControls ();
 		} else if (i.tag == Interactable.kDoorTag) {
 			Debug.Log ("Hit door");
@@ -100,7 +94,7 @@ public class PlayerInteractionController : MonoBehaviour
 
 	private void Update ()
 	{
-		if ( Input.anyKeyDown && m_InfoPanel != null && m_InfoPanel.IsShowing) {
+		if (Input.anyKeyDown && m_InfoPanel.IsShowing) {
 			m_InfoPanel.Hide ();
 			m_Player.EnableControls ();
 			return;
@@ -119,10 +113,10 @@ public class PlayerInteractionController : MonoBehaviour
 		bool hitInteractable = Physics.Raycast (ray, out hit, 10.0f, collisionMask);
 
 		if (hitInteractable) {
-			CurrentTarget = hit.collider.GetComponent<Interactable> ();
+			CurrentTarget = hit.collider.GetComponentInParent<Interactable> ();
 			if (CurrentTarget != null) {
 				CurrentTarget.Highlight ();
-				if ( m_PromptText != null && !string.IsNullOrEmpty (CurrentTarget.PromptText) && m_InfoPanel != null && !m_InfoPanel.IsShowing) {
+				if (!string.IsNullOrEmpty (CurrentTarget.PromptText) && !m_InfoPanel.IsShowing) {
 					m_PromptText.enabled = true;
 					m_PromptText.text = CurrentTarget.PromptText;
 				}
@@ -130,10 +124,10 @@ public class PlayerInteractionController : MonoBehaviour
 					CurrentTarget.DoInteract ();
 					Debug.Log ("I hit my target");
 				}
-			} else if ( m_PromptText != null ) {
+			} else {
 				m_PromptText.enabled = false;
 			}
-		} else if ( m_PromptText != null ) {
+		} else {
 			m_PromptText.enabled = false;
 		}
 	}
@@ -148,18 +142,15 @@ public class PlayerInteractionController : MonoBehaviour
 	void OnTriggerEnter (Collider coll)
 	{
 		if (coll.tag == Interactable.kInteractableTag) {
-			Interactable interact = coll.GetComponent<Interactable> ();
+			Interactable interact = coll.GetComponentInChildren<Interactable> ();
 		}
 	}
 
 	void OnTriggerExit (Collider coll)
 	{
 		if (coll.tag == Interactable.kInteractableTag) {
-			Interactable interact = coll.GetComponent<Interactable> ();
-			if ( m_PromptText != null )
-			{
-				m_PromptText.text = string.Empty;
-			}
+			Interactable interact = coll.GetComponentInChildren<Interactable> ();
+			m_PromptText.text = string.Empty;
 		}
 	}
 
