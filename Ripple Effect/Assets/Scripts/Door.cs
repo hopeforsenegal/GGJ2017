@@ -108,7 +108,8 @@ public class Door : MonoBehaviour
 	{
 		GameController gameController;
 		if (GameController.TryGetInstance (out gameController)) {
-			if (this.m_Interactable.ID == gameController.FirstRoomDoor.m_Interactable.ID) {
+			bool isFirstRoomDoor = this.m_Interactable.ID == gameController.FirstRoomDoor.m_Interactable.ID;
+			if (isFirstRoomDoor && !gameController.IsInStairwell) {
 				return;
 			}
 		}
