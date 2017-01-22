@@ -25,7 +25,7 @@ public class Interactable : MonoBehaviour
 
 	#region Properties
 
-	public int ID {
+	public string ID {
 		get {
 			return m_ID;
 		}
@@ -76,7 +76,7 @@ public class Interactable : MonoBehaviour
 	private float m_FocusDurationRemaining;
 	private Renderer m_Renderer;
 	private Color m_StartColor;
-	private int m_ID;
+	private string m_ID;
 
 	#endregion
 
@@ -85,10 +85,7 @@ public class Interactable : MonoBehaviour
 	protected void Awake ()
 	{
 		m_Renderer = GetComponent<Renderer> ();
-		if ( m_IDHash != string.Empty )
-		{
-			m_ID = m_IDHash.GetHashCode();
-		}
+		m_ID = System.Guid.NewGuid().ToString();
 
 		Debug.Assert (m_Renderer != null);
 	}
