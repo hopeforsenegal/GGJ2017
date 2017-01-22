@@ -128,6 +128,10 @@ public class GameController : MonoBehaviour
 	[SerializeField]
 	private InfoPanel m_InfoPanel;
 
+	[Tooltip ("")]
+	[SerializeField]
+	private OnReenterRoom m_OnReenterRoom;
+
 	#endregion
 
 	#region Private Member Variables
@@ -191,6 +195,9 @@ public class GameController : MonoBehaviour
 			Debug.LogWarning ("m_Room3 is null");
 		} else {
 			m_Room3.SetActive (false);
+		}
+		if (m_OnReenterRoom == null) {
+			Debug.LogWarning ("m_OnReenterRoom is null");
 		}
 
 		Interactable.DoInteractEvent += Interactable_DoInteractEvent;
@@ -276,6 +283,7 @@ public class GameController : MonoBehaviour
 		m_IsInStairwell = true;
 		m_FirstPersonController.IsInStairwell = true;
 		m_DoorUnlocked = false;
+		m_OnReenterRoom.enabled = true;
 
 		Debug.LogFormat ("EnterStairWell m_Room:{0} m_HasFoundStairwellItemsRoom1:{1} m_HasFoundAllItemsRoom1:{2}", m_CurrentRoom, m_HasFoundStairwellItemsRoom1, m_HasFoundAllItemsRoom1);
 		
