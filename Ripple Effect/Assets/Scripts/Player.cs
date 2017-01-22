@@ -183,10 +183,11 @@ public class Player : MonoBehaviour
 		}
 		if (!soundPlayed)
 		{
-			AudioSource soundSource = gameObject.AddComponent<AudioSource>();
-			soundSource.clip = audio;
-			soundSource.Play();
-			m_AudioSources = GetComponents<AudioSource>();
+			if (m_AudioSources != null && m_AudioSources.Length > 0)
+			{
+				m_AudioSources[0].clip = audio;
+				m_AudioSources[0].Play();
+			}
 		}
 	}
 	#endregion
