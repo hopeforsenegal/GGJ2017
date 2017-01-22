@@ -276,8 +276,12 @@ public class GameController : MonoBehaviour
 		}
 	}
 
+	private bool m_IsLoading = false;
+
 	private void Lost ()
 	{
+		if (m_IsLoading)
+			return;
 		Player player;
 		if (Player.TryGetInstance (out player)) {
 
@@ -287,13 +291,14 @@ public class GameController : MonoBehaviour
 			player.PlaySoundDelay (m_LooseVO, 2f);
 			player.PlaySoundDelay (m_LooseSFX, 4f);
 
-			SceneManager.LoadScene ("lose");
+			StartCoroutine (LoadScene ("lose"));
 		}
-
 	}
 
 	private void Win ()
 	{
+		if (m_IsLoading)
+			return;
 		Player player;
 		if (Player.TryGetInstance (out player)) {
 			Debug.Log ("Game over");
@@ -301,9 +306,16 @@ public class GameController : MonoBehaviour
 			player.PlaySoundDelay (m_WinVO, 0f);
 			player.PlaySoundDelay (m_WinSFX, 2f);
 
-			SceneManager.LoadScene ("win");
+			StartCoroutine (LoadScene ("win"));
 		}
+	}
 
+	private IEnumerator LoadScene (string scene)
+	{
+		m_IsLoading = true;
+		yield return new WaitForSeconds (6);
+		StopAllCoroutines ();
+		SceneManager.LoadScene (scene);
 	}
 
 	protected void OnEnable ()

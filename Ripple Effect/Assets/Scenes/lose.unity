@@ -322,7 +322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_sceneToLoad: main_menu
-  m_LoopTime: 7
+  m_LoopTime: 14
   m_TransitionAfterClip: 1
 --- !u!114 &789865772
 MonoBehaviour:
