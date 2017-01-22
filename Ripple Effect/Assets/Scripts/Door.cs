@@ -118,7 +118,7 @@ public class Door : MonoBehaviour
 
 		if (m_Interactable != null && m_Interactable.ID == i.ID && gameController.IsInStairwell) {
 			if (gameController != null) {
-				Debug.LogFormat ("Teleporting room {0}/{1}", gameController.NextRoomGameObject, gameController.NextRoom);
+				Debug.LogFormat ("Teleporting room from stairwell {0}/{1}", gameController.NextRoomGameObject, gameController.NextRoom);
 				gameController.NextRoomGameObject.SetActive (true);
 				gameController.NextRoomGameObject.transform.position = m_Transform.position;
 				gameController.NextRoomGameObject.transform.rotation = m_Transform.rotation;
@@ -177,9 +177,15 @@ public class Door : MonoBehaviour
 
 	private void OnReenterRoom_ReenterRoomEvent ()
 	{
+		StartCoroutine (ReenterRoomCloseDoorTask ());
+	}
+
+	private IEnumerator ReenterRoomCloseDoorTask ()
+	{
+		yield return null;
 		GameController gameController;
 		if (GameController.TryGetInstance (out gameController)) {
-			if (gameController.IsInStairwell) {
+			if (!gameController.IsInStairwell) {
 				CloseDoor ();
 			}
 		}
