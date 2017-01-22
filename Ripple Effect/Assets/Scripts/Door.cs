@@ -59,6 +59,7 @@ public class Door : MonoBehaviour
 
 		Interactable.DoInteractEvent += Interactable_DoInteractEvent;
 		GameController.DoorUnlockedEvent += GameController_DoorUnlockedEvent;
+		OnStairWell.EnterStairWellEvent += OnStairWell_EnterStairWellEvent;
 	}
 
 	protected void Start ()
@@ -79,6 +80,7 @@ public class Door : MonoBehaviour
 
 	protected void OnDestroy ()
 	{
+		OnStairWell.EnterStairWellEvent -= OnStairWell_EnterStairWellEvent;
 		Interactable.DoInteractEvent -= Interactable_DoInteractEvent;
 		GameController.DoorUnlockedEvent -= GameController_DoorUnlockedEvent;
 	}
@@ -154,6 +156,18 @@ public class Door : MonoBehaviour
 		yield return new WaitForSeconds (1.2f);
 		m_Animator.SetBool ("OpenDoor", true);
 		m_IsDoorOpen = true;
+	}
+
+	private void OnStairWell_EnterStairWellEvent ()
+	{
+		Debug.Log ("CloseDoor");
+		if (m_Animator != null && m_Animator.isActiveAndEnabled) {
+			if (m_IsDoorOpen) {
+				m_Animator.SetBool ("OpenDoor", false);
+				m_IsDoorOpen = false;
+			}
+			m_Animator.Update (0.0f);
+		}
 	}
 
 	#endregion
