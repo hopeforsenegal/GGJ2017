@@ -83,6 +83,7 @@ public class PlayerInteractionController : MonoBehaviour
 		} else if (i.tag == Interactable.kDoorTag) {
 			Debug.Log ("Hit door");
 			i.GetComponentInParent<Animator> ().enabled = true;
+			m_Player.WalkForward ();
 		}
 	}
 
