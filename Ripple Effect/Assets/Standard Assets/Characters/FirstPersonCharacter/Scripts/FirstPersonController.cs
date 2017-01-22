@@ -9,6 +9,17 @@ namespace UnityStandardAssets.Characters.FirstPerson
     [RequireComponent(typeof (CharacterController))]
     public class FirstPersonController : MonoBehaviour
     {
+		public bool inputSwitcher {
+			get {
+				return m_inputSwitcher;
+			}
+			set {
+				m_inputSwitcher = value;
+			}
+		}
+
+		private bool m_inputSwitcher;
+
         [SerializeField] private bool m_IsWalking;
         [SerializeField] private float m_WalkSpeed;
         [SerializeField] private float m_RunSpeed;
@@ -89,7 +100,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private void FixedUpdate()
         {
             float speed;
-            GetInput(out speed);
+			if (m_inputSwitcher) {
+				ForceInput (out speed);
+			} else {
+				GetInput (out speed);
+			}
             // always move along the camera forward as it is the direction that it being aimed at
             Vector3 desiredMove = transform.forward*m_Input.y + transform.right*m_Input.x;
 
@@ -189,6 +204,27 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Camera.transform.localPosition = newCameraPosition;
         }
 
+		private void ForceInput(out float speed)
+		{
+			// set the desired speed to be walking or running
+			speed = m_IsWalking ? m_WalkSpeed : m_RunSpeed;
+			m_Input = new Vector2(0f, 1f);
+
+			// normalize input if it exceeds 1 in combined length:
+			if (m_Input.sqrMagnitude > 1)
+			{
+				m_Input.Normalize();
+			}
+
+			Debug.LogFormat ("m_UseFovKick:{0} sqrMagnitude:{1}",m_UseFovKick, m_CharacterController.velocity.sqrMagnitude);
+			// handle speed change to give an fov kick
+			// only if the player is going to a run, is running and the fovkick is to be used
+			if (m_UseFovKick && m_CharacterController.velocity.sqrMagnitude > 0)
+			{
+				StopAllCoroutines();
+				StartCoroutine(!m_IsWalking ? m_FovKick.FOVKickUp() : m_FovKick.FOVKickDown());
+			}
+		}
 
         private void GetInput(out float speed)
         {

@@ -35,6 +35,7 @@ public class Player : MonoBehaviour
 	#region Private Member Variables
 
 	private float m_FocusDurationRemaining;
+	private float m_WalkDurationRemaining;
 
 	#endregion
 
@@ -60,13 +61,23 @@ public class Player : MonoBehaviour
 	protected void Update ()
 	{
 		m_FocusDurationRemaining -= Time.deltaTime;
+		m_WalkDurationRemaining -= Time.deltaTime;
 
 		if (m_FocusDurationRemaining <= 0f) {
 			m_FocusDurationRemaining = 0f;
 		}
 
+		if (m_WalkDurationRemaining <= 0f) {
+			m_WalkDurationRemaining = 0f;
+			m_FirstPersonController.inputSwitcher = false;
+		}
+
 		if (m_FocusCamera.enabled && Mathf.Approximately (m_FocusDurationRemaining, 0f)) {
 			UnFocusCamera ();
+		}
+
+		if (m_WalkDurationRemaining > 0f) {
+			m_FirstPersonController.inputSwitcher = true;
 		}
 	}
 
@@ -98,14 +109,26 @@ public class Player : MonoBehaviour
 		EnableControls ();
 	}
 
-	public void KillControls()
+	public void KillControls ()
 	{
 		m_FirstPersonController.enabled = false;
 	}
 
-	public void EnableControls()
+	public void EnableControls ()
 	{
 		m_FirstPersonController.enabled = true;
+	}
+
+	public void WalkForward ()
+	{
+		Debug.Log ("WalkForward");
+		StartCoroutine(WalkForwardFunc());
+	}
+
+	private IEnumerator WalkForwardFunc()
+	{
+		yield return new WaitForSeconds(1.5f);
+		m_WalkDurationRemaining = 1f;
 	}
 
 	#endregion
