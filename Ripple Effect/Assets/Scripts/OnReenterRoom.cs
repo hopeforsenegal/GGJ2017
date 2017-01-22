@@ -46,6 +46,7 @@ public class OnReenterRoom : MonoBehaviour
 
 	protected void OnEnable ()
 	{
+		Debug.Log ("I was turned on!");
 	}
 
 	protected void OnDisable ()
