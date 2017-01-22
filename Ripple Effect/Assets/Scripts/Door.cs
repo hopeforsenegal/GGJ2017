@@ -118,17 +118,17 @@ public class Door : MonoBehaviour
 
 		if (m_Interactable != null && m_Interactable.ID == i.ID && gameController.IsInStairwell) {
 			if (gameController != null) {
-				Debug.LogFormat ("Teleporting room {0}", gameController.CurrentRoom);
-				gameController.CurrentRoom.SetActive (true);
-				gameController.CurrentRoom.transform.position = m_Transform.position;
-				gameController.CurrentRoom.transform.rotation = m_Transform.rotation;
-				gameController.CurrentRoom.transform.localScale = m_Transform.localScale;
+				Debug.LogFormat ("Teleporting room {0}/{1}", gameController.NextRoomGameObject, gameController.NextRoom);
+				gameController.NextRoomGameObject.SetActive (true);
+				gameController.NextRoomGameObject.transform.position = m_Transform.position;
+				gameController.NextRoomGameObject.transform.rotation = m_Transform.rotation;
+				gameController.NextRoomGameObject.transform.localScale = m_Transform.localScale;
 			}
-			OpenDoor ();
+			ToggleDoor ();
 		}
 	}
 
-	private void OpenDoor ()
+	private void ToggleDoor ()
 	{
 		Debug.Log ( "OpenDoorState" );
 		if (m_Animator != null && m_Animator.isActiveAndEnabled) {
@@ -147,7 +147,7 @@ public class Door : MonoBehaviour
 		GameController gameController;
 		if (GameController.TryGetInstance (out gameController)) {
 			if (m_Interactable.ID == gameController.FirstRoomDoor.m_Interactable.ID) {
-				OpenDoor ();
+				ToggleDoor ();
 			}
 		}
 	}

@@ -4,17 +4,17 @@ using UnityEngine;
 using System.Collections;
 
 [DisallowMultipleComponent]
-public class OnReenterRoom : MonoBehaviour
+public class OnBedroomTeleport : MonoBehaviour
 {
 	#region Enums and Constants
 
 	#endregion
 
 	#region Events
+	
+	public delegate void OnBedroomTeleportHandler ();
 
-	public delegate void OnReenterRoomHandler ();
-
-	public static event OnReenterRoomHandler ReenterRoomEvent;
+	public static event OnBedroomTeleportHandler BedroomTeleportEvent;
 
 	#endregion
 
@@ -46,7 +46,6 @@ public class OnReenterRoom : MonoBehaviour
 
 	protected void OnEnable ()
 	{
-		Debug.Log ("I was turned on!");
 	}
 
 	protected void OnDisable ()
@@ -57,19 +56,19 @@ public class OnReenterRoom : MonoBehaviour
 
 	protected void OnTriggerEnter (Collider coll)
 	{
-		Debug.Log ("===OnTriggerEnter");
+		Debug.Log ("OnTriggerEnter---");
 		if (!enabled)
 			return;
 
-		Debug.Log ("===OnTriggerEnter2");
+		Debug.Log ("OnTriggerEnter2---");
 		Player player = coll.gameObject.GetComponentInChildren<Player> ();
 		if (player != null) {
 
-			Debug.Log ("===OnTriggerEnter3");
+			Debug.Log ("OnTriggerEnter3---");
 
-			var InvokeReenterRoomEvent = ReenterRoomEvent;
-			if (InvokeReenterRoomEvent != null) {
-				InvokeReenterRoomEvent ();
+			var InvokeBedroomTeleportEvent = BedroomTeleportEvent;
+			if (InvokeBedroomTeleportEvent != null) {
+				InvokeBedroomTeleportEvent ();
 			}
 
 			enabled = false;

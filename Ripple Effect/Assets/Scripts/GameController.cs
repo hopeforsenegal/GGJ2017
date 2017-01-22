@@ -56,9 +56,9 @@ public class GameController : MonoBehaviour
 		}
 	}
 
-	public GameObject CurrentRoom {
+	public GameObject NextRoomGameObject {
 		get {
-			switch (m_CurrentRoom) {
+			switch (m_NextRoom) {
 			case ERoomStates.Room_1:
 			case ERoomStates.Room_1_Loop:
 				return m_Room1;
@@ -321,7 +321,6 @@ public class GameController : MonoBehaviour
 		m_DoorUnlocked = false;
 		m_IsInStairwell = false;
 		m_FirstPersonController.IsInStairwell = false;
-		m_CurrentRoom =	m_NextRoom;
 	}
 
 	#endregion
