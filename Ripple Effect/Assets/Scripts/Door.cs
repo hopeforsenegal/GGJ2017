@@ -104,6 +104,12 @@ public class Door : MonoBehaviour
 				m_Animator.Update( 0.0f );
 			}
 		}
+
+		GameController gameController;
+		if (GameController.TryGetInstance (out gameController)) {
+			gameController.CurrentRoom.transform.position = m_Transform.position;
+			gameController.CurrentRoom.transform.rotation = m_Transform.rotation;
+			gameController.CurrentRoom.transform.localScale = m_Transform.localScale;
 	}
 	#endregion
 }

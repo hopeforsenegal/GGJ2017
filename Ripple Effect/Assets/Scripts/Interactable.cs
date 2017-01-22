@@ -37,15 +37,27 @@ public class Interactable : MonoBehaviour
 		}
 	}
 
-	public string TextToDisplay {
+	public string TextToShowsOnInteraction {
 		get {
-			return m_TextToDisplay;
+			return m_TextToShowsOnInteraction;
 		}
 	}
 
-	public AudioClip InteractSound {
+	public string TextToShowsOnInteraction2 {
 		get {
-			return m_InteractSound;
+			return m_TextToShowsOnInteraction2;
+		}
+	}
+
+	public AudioClip AudioToPlayOnInteraction {
+		get {
+			return m_AudioToPlayOnInteraction;
+		}
+	}
+
+	public AudioClip AudioToPlayOnInteraction2 {
+		get {
+			return m_AudioToPlayOnInteraction2;
 		}
 	}
 
@@ -63,11 +75,19 @@ public class Interactable : MonoBehaviour
 
 	[Tooltip ("Text that shows when the player interacts")]
 	[SerializeField]
-	private string m_TextToDisplay;
+	private string m_TextToShowsOnInteraction;
 
-	[Tooltip ("")]
+	[Tooltip ("Text that shows when the player interacts")]
 	[SerializeField]
-	private AudioClip m_InteractSound;
+	private string m_TextToShowsOnInteraction2;
+
+	[Tooltip ("Audio that plays when the player interacts")]
+	[SerializeField]
+	private AudioClip m_AudioToPlayOnInteraction;
+
+	[Tooltip ("Audio that plays when the player interacts")]
+	[SerializeField]
+	private AudioClip m_AudioToPlayOnInteraction2;
 
 	#endregion
 
