@@ -1,6 +1,7 @@
 ﻿
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityStandardAssets.Characters.FirstPerson;
 
 [DisallowMultipleComponent]
@@ -40,6 +41,10 @@ public class GameController : MonoBehaviour
 	#endregion
 
 	#region Events
+
+	public delegate void OnDoorUnlockedHandler ();
+
+	public static event OnDoorUnlockedHandler DoorUnlockedEvent;
 
 	#endregion
 
@@ -88,12 +93,18 @@ public class GameController : MonoBehaviour
 	[SerializeField]
 	private GameObject m_Room3;
 
+	[Tooltip ("The Room1 To Room2 Progress Items")]
+	[SerializeField]
+	private Interactable[] m_Room1ToRoom2ProgressItems;
+
 	#endregion
 
 	#region Private Member Variables
 
-	private ERoom m_Room = ERoom.Room_1;
 	private bool m_IsInStairwell;
+	private bool m_DoorUnlocked = false;
+	private ERoom m_Room = ERoom.Room_1;
+	private Dictionary<Interactable, bool> m_HasInteracted = new Dictionary<Interactable, bool> ();
 
 	#endregion
 
@@ -116,12 +127,31 @@ public class GameController : MonoBehaviour
 		if (m_FirstPersonController == null) {
 			Debug.LogWarning ("m_FirstPersonController is null");
 		}
+		if (m_Room1ToRoom2ProgressItems == null || m_Room1ToRoom2ProgressItems.Length < 0) {
+			Debug.LogWarning ("m_Room1ToRoom2ProgressItems is null");
+		}
+
+		Interactable.DoInteractEvent += Interactable_DoInteractEvent;
 	}
 
 	protected void Update ()
 	{
 		switch (m_Room) {
 		case ERoom.Room_1:
+			bool hasFoundStairwellItems = false;
+			foreach (var item in m_Room1ToRoom2ProgressItems) {
+				if (m_HasInteracted.ContainsKey (item) && m_HasInteracted [item] == true) {
+					hasFoundStairwellItems = true;
+				}
+			}
+			if (hasFoundStairwellItems) {
+				m_DoorUnlocked = true;
+				var InvokeDoorUnlockedEvent = DoorUnlockedEvent;
+				if (InvokeDoorUnlockedEvent != null) {
+					InvokeDoorUnlockedEvent ();
+				}
+				return;
+			}
 			break;
 		case ERoom.Room_2:
 			break;
@@ -142,6 +172,8 @@ public class GameController : MonoBehaviour
 
 	protected void OnDestroy ()
 	{
+		Interactable.DoInteractEvent -= Interactable_DoInteractEvent;
+
 		if (sInstance == this) {
 			sInstance = null;
 		}
@@ -166,6 +198,14 @@ public class GameController : MonoBehaviour
 	#endregion
 
 	#region Private Methods
+
+
+	private void Interactable_DoInteractEvent (Interactable i)
+	{
+		if (i.tag == Interactable.kInteractableTag) {
+			m_HasInteracted [i] = true;
+		}
+	}
 
 	#endregion
 }
