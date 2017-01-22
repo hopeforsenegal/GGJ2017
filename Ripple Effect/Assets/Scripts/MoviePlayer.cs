@@ -39,8 +39,8 @@ public class MoviePlayer : MonoBehaviour
 	}
 
 	protected void Start ()
-	{        
-		m_MovieTexture.Play ();
+	{
+		StartCoroutine (PlayMovieTask ());
 	}
 
 	protected void Update ()
@@ -72,6 +72,15 @@ public class MoviePlayer : MonoBehaviour
 	#endregion
 
 	#region Private Methods
+
+	private IEnumerator PlayMovieTask ()
+	{
+		m_MovieTexture.Play ();
+		yield return new WaitForSeconds (10f);
+		m_MovieTexture.Stop ();
+		yield return null;
+		StartCoroutine (PlayMovieTask ());
+	}
 
 	#endregion
 }
