@@ -2620,6 +2620,21 @@ Prefab:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 225705460}
+    - target: {fileID: 114688414046765810, guid: 9264f3f6ad6d2c04da5591ef74a6e878,
+        type: 2}
+      propertyPath: m_TextToShowsOnInteraction
+      value: Door is locked
+      objectReference: {fileID: 0}
+    - target: {fileID: 114688414046765810, guid: 9264f3f6ad6d2c04da5591ef74a6e878,
+        type: 2}
+      propertyPath: m_TextToShowsOnInteraction2
+      value: Door is locked
+      objectReference: {fileID: 0}
+    - target: {fileID: 114688414046765810, guid: 9264f3f6ad6d2c04da5591ef74a6e878,
+        type: 2}
+      propertyPath: m_InteractionText
+      value: 'open door.                                                              '
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9264f3f6ad6d2c04da5591ef74a6e878, type: 2}
   m_IsPrefabParent: 0

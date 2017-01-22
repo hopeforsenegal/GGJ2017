@@ -147,6 +147,4 @@ public class PlayerInteractionController : MonoBehaviour
 			m_PromptText.text = string.Empty;
 		}
 	}
-
-
 }
