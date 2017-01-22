@@ -106,6 +106,14 @@ public class GameController : MonoBehaviour
 	[SerializeField]
 	private Interactable[] m_AllRoom1Items;
 
+	[Tooltip ("The Room3 die items")]
+	[SerializeField]
+	private Interactable[] m_Room3DieItems;
+
+	[Tooltip ("The Room3 win items")]
+	[SerializeField]
+	private Interactable[] m_Room3WinItems;
+
 	#endregion
 
 	#region Private Member Variables
@@ -145,6 +153,12 @@ public class GameController : MonoBehaviour
 		if (m_AllRoom1Items == null || m_AllRoom1Items.Length <= 0) {
 			Debug.LogWarning ("m_AllRoom1Items is null");
 		}
+		if (m_Room3DieItems == null) {
+			Debug.LogWarning ("m_Room3DieItems is null");
+		}
+		if (m_Room3WinItems == null) {
+			Debug.LogWarning ("m_Room3WinItems is null");
+		}
 
 		Interactable.DoInteractEvent += Interactable_DoInteractEvent;
 	}
@@ -166,6 +180,19 @@ public class GameController : MonoBehaviour
 		case ERoomStates.Room_2:
 			break;
 		case ERoomStates.Room_3:
+			if (CheckForDieItems ()) {
+				Debug.Log ("Game over");
+				Debug.Log ("You lost");
+			} else if (CheckForWinItems ()) {
+				Debug.Log ("Game over");
+				Debug.Log ("You won");
+			}
+//			check
+//			if(Check){
+//				trigger game over
+//			}else if(knife && whiskey &&  wine glass && note){
+//				you win
+//			}
 			break;
 		default:
 			throw new UnityException (string.Format ("invalid case:{0}", m_CurrentRoom));
@@ -264,7 +291,6 @@ public class GameController : MonoBehaviour
 
 		if (hasFoundAllItemsRoom1) {
 			m_HasFoundAllItemsRoom1 = true;
-			Debug.Log ("hasFoundAllItemsRoom1");
 			AttemptDoorUnlock ();
 			return true;
 		}
@@ -287,7 +313,6 @@ public class GameController : MonoBehaviour
 
 		if (hasFoundStairwellItemsRoom1) {
 			m_HasFoundStairwellItemsRoom1 = true;
-			Debug.Log ("hasFoundStairwellItemsRoom1");
 			AttemptDoorUnlock ();
 			return true;
 		}
@@ -295,11 +320,42 @@ public class GameController : MonoBehaviour
 		return false;
 	}
 
+	private bool CheckForDieItems ()
+	{
+		bool hasFoundDieItems = false;
+
+		foreach (var item in m_Room3DieItems) {
+			if (m_HasInteracted.ContainsKey (item) && m_HasInteracted [item] == true) {
+				hasFoundDieItems = true;
+			} else {
+				hasFoundDieItems = false;
+				break;
+			}
+		}
+
+		return hasFoundDieItems;
+	}
+
+	private bool CheckForWinItems ()
+	{
+		bool hasFoundWinItems = false;
+
+		foreach (var item in m_Room3WinItems) {
+			if (m_HasInteracted.ContainsKey (item) && m_HasInteracted [item] == true) {
+				hasFoundWinItems = true;
+			} else {
+				hasFoundWinItems = false;
+				break;
+			}
+		}
+
+		return hasFoundWinItems;
+	}
+
 	private void AttemptDoorUnlock ()
 	{
-		Debug.Log ("Door unlocked!");
 		if (!m_DoorUnlocked) {
-			Debug.Log ("Door unlocked!");
+			Debug.LogFormat ("Door unlocked! m_HasFoundStairwellItemsRoom1:{0} m_HasFoundAllItemsRoom1:{1}", m_HasFoundStairwellItemsRoom1, m_HasFoundAllItemsRoom1);
 			m_DoorUnlocked = true;
 			var InvokeDoorUnlockedEvent = DoorUnlockedEvent;
 			if (InvokeDoorUnlockedEvent != null) {
