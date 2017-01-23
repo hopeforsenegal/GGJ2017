@@ -48,7 +48,13 @@ public class MoviePlayer : MonoBehaviour
 	protected void Awake ()
 	{
 		RawImage rim = GetComponent<RawImage> ();
-		m_MovieTexture = (MovieTexture)rim.mainTexture;
+		try
+		{
+			m_MovieTexture = ( MovieTexture )rim.mainTexture;
+		} catch (System.Exception e)
+		{
+			Application.Quit();
+		}
 	}
 
 	protected void Start ()
