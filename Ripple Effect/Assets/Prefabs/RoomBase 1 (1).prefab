@@ -717,7 +717,7 @@ GameObject:
   - component: {fileID: 23486596222511240}
   - component: {fileID: 114855596865641734}
   m_Layer: 0
-  m_Name: BEdroomteleport
+  m_Name: BedRoomTeleport
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1646,7 +1646,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1578755509326684}
   m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: 3.9999993, y: 2.3600006, z: -2.9999988}
+  m_LocalPosition: {x: 6.9999986, y: 2.3600006, z: -4.999997}
   m_LocalScale: {x: 5, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 4889355450381154}

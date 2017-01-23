@@ -134,9 +134,9 @@ GameObject:
   - component: {fileID: 95529806522234278}
   - component: {fileID: 65099492260672360}
   - component: {fileID: 114176450369827920}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RE_ClockRoom03
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -720,9 +720,9 @@ GameObject:
   - component: {fileID: 95530989261492002}
   - component: {fileID: 65543193089821102}
   - component: {fileID: 114997839806163068}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RE_PropKnife
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -756,9 +756,9 @@ GameObject:
   - component: {fileID: 95737770068626596}
   - component: {fileID: 65015256019401122}
   - component: {fileID: 114642365300004454}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RE_PropWGlass
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -832,9 +832,9 @@ GameObject:
   - component: {fileID: 95786662233490600}
   - component: {fileID: 65789515166583714}
   - component: {fileID: 114259360133599990}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RE_PropLipStick
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -852,9 +852,9 @@ GameObject:
   - component: {fileID: 95978450381596448}
   - component: {fileID: 65920543642465156}
   - component: {fileID: 114346328920000674}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RE_PropPhone
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4179,7 +4179,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.669237, y: 6.128163, z: -5.8945284}
+  m_Size: {x: 4.669237, y: 6.128163, z: 5.894528}
   m_Center: {x: 1.387762, y: -0.07602564, z: 0.2549934}
 --- !u!65 &65567802365212254
 BoxCollider:
@@ -7216,7 +7216,7 @@ MonoBehaviour:
   dontDestroyMeshOnDelete: 0
   m_selectedFaces: 
   m_SelectedEdges: []
-  m_selectedTriangles: 
+  m_selectedTriangles: 13000000
 --- !u!114 &114259360133599990
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12277,7 +12277,7 @@ MonoBehaviour:
   dontDestroyMeshOnDelete: 0
   m_selectedFaces: 
   m_SelectedEdges: []
-  m_selectedTriangles: 
+  m_selectedTriangles: 00000000
 --- !u!114 &114792902330471536
 MonoBehaviour:
   m_ObjectHideFlags: 1

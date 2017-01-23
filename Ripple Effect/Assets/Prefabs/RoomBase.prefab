@@ -313,7 +313,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1453207294750658
 GameObject:
   m_ObjectHideFlags: 0
@@ -757,7 +757,6 @@ GameObject:
   - component: {fileID: 23737185175385268}
   - component: {fileID: 114569209613173608}
   - component: {fileID: 64258694621482468}
-  - component: {fileID: 82597685441014488}
   m_Layer: 0
   m_Name: RoomBase
   m_TagString: Untagged
@@ -1082,9 +1081,9 @@ GameObject:
   - component: {fileID: 95209010350046826}
   - component: {fileID: 114426728459525580}
   - component: {fileID: 65755642957377830}
-  m_Layer: 0
-  m_Name: RE_CellDeadBody
-  m_TagString: Untagged
+  m_Layer: 8
+  m_Name: Dead Body
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1574,15 +1573,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1991292889689398}
-  m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: 19.63, y: 1.1660004, z: -9.893}
+  m_LocalRotation: {x: -0.31737733, y: -0.6318795, z: -0.6318795, w: 0.31737733}
+  m_LocalPosition: {x: 19.63, y: 0.973, z: -8.91}
   m_LocalScale: {x: 7.369457, y: 3.004475, z: 3.0022104}
   m_Children:
   - {fileID: 4876961056555840}
   - {fileID: 4334116485633004}
   m_Father: {fileID: 4650041132920428}
   m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: -126.662}
 --- !u!4 &4598850852044724
 Transform:
   m_ObjectHideFlags: 1
@@ -4023,7 +4022,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1249691366108846}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -4131,11 +4130,11 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1991292889689398}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.23633403, y: 1.0272714, z: 0.29234588}
-  m_Center: {x: 0.06992592, y: -0.23314032, z: 0.132182}
+  m_Size: {x: 0.23633403, y: 1.0272714, z: 0.28995347}
+  m_Center: {x: 0.06987069, y: -0.23295967, z: 0.13098493}
 --- !u!65 &65803726539515640
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -4143,7 +4142,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1733648497422250}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.6394519, y: 1.8587108, z: 2.0497386}
@@ -4208,86 +4207,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0888805, y: 0.90365577, z: 1.4616187}
   m_Center: {x: -0.000000059604645, y: 0.00000028312212, z: 0.7393949}
---- !u!82 &82597685441014488
-AudioSource:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1773838810487840}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 76c59b958de410e45b09de75f5c32d62, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
 --- !u!95 &95037523706317660
 Animator:
   serializedVersion: 3
@@ -5012,9 +4931,9 @@ Light:
   serializedVersion: 7
   m_Type: 0
   m_Color: {r: 0.94263214, g: 0.9705882, b: 0.46388406, a: 1}
-  m_Intensity: 6.22
-  m_Range: 3.4913423
-  m_SpotAngle: 77.626625
+  m_Intensity: 8
+  m_Range: 6.63951
+  m_SpotAngle: 84.5
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -5033,7 +4952,7 @@ Light:
     m_Bits: 4294967295
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 2.93
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!108 &108256081179581068
@@ -13021,6 +12940,380 @@ MonoBehaviour:
     areaError: 15
   asset_guid: 
   dontDestroyMeshOnDelete: 0
-  m_selectedFaces: 
-  m_SelectedEdges: []
+  m_selectedFaces: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c0000001d0000001e0000001f000000200000002100000022000000230000002400000025000000260000002700000028000000290000002a0000002b0000002c0000002d000000
+  m_SelectedEdges:
+  - x: 2
+    y: 3
+  - x: 3
+    y: 1
+  - x: 1
+    y: 0
+  - x: 0
+    y: 2
+  - x: 7
+    y: 4
+  - x: 4
+    y: 5
+  - x: 5
+    y: 6
+  - x: 6
+    y: 7
+  - x: 11
+    y: 8
+  - x: 8
+    y: 9
+  - x: 9
+    y: 10
+  - x: 10
+    y: 11
+  - x: 14
+    y: 15
+  - x: 15
+    y: 12
+  - x: 12
+    y: 13
+  - x: 13
+    y: 14
+  - x: 17
+    y: 18
+  - x: 18
+    y: 19
+  - x: 19
+    y: 16
+  - x: 16
+    y: 17
+  - x: 24
+    y: 20
+  - x: 22
+    y: 23
+  - x: 23
+    y: 24
+  - x: 21
+    y: 22
+  - x: 20
+    y: 21
+  - x: 25
+    y: 26
+  - x: 27
+    y: 28
+  - x: 26
+    y: 27
+  - x: 28
+    y: 29
+  - x: 29
+    y: 25
+  - x: 34
+    y: 30
+  - x: 30
+    y: 31
+  - x: 31
+    y: 32
+  - x: 32
+    y: 33
+  - x: 33
+    y: 34
+  - x: 35
+    y: 36
+  - x: 37
+    y: 35
+  - x: 36
+    y: 38
+  - x: 38
+    y: 37
+  - x: 39
+    y: 40
+  - x: 41
+    y: 39
+  - x: 40
+    y: 42
+  - x: 42
+    y: 41
+  - x: 43
+    y: 44
+  - x: 45
+    y: 43
+  - x: 44
+    y: 46
+  - x: 46
+    y: 45
+  - x: 47
+    y: 48
+  - x: 49
+    y: 47
+  - x: 48
+    y: 50
+  - x: 50
+    y: 49
+  - x: 51
+    y: 52
+  - x: 53
+    y: 51
+  - x: 52
+    y: 54
+  - x: 54
+    y: 53
+  - x: 55
+    y: 56
+  - x: 57
+    y: 55
+  - x: 56
+    y: 58
+  - x: 58
+    y: 57
+  - x: 59
+    y: 60
+  - x: 61
+    y: 59
+  - x: 60
+    y: 62
+  - x: 62
+    y: 61
+  - x: 63
+    y: 64
+  - x: 65
+    y: 63
+  - x: 64
+    y: 66
+  - x: 66
+    y: 65
+  - x: 67
+    y: 68
+  - x: 69
+    y: 67
+  - x: 68
+    y: 70
+  - x: 70
+    y: 69
+  - x: 71
+    y: 72
+  - x: 73
+    y: 71
+  - x: 72
+    y: 74
+  - x: 74
+    y: 73
+  - x: 75
+    y: 76
+  - x: 77
+    y: 75
+  - x: 76
+    y: 78
+  - x: 78
+    y: 77
+  - x: 79
+    y: 80
+  - x: 81
+    y: 79
+  - x: 80
+    y: 82
+  - x: 82
+    y: 81
+  - x: 83
+    y: 84
+  - x: 85
+    y: 83
+  - x: 84
+    y: 86
+  - x: 86
+    y: 85
+  - x: 87
+    y: 88
+  - x: 89
+    y: 87
+  - x: 88
+    y: 90
+  - x: 90
+    y: 89
+  - x: 91
+    y: 92
+  - x: 93
+    y: 91
+  - x: 92
+    y: 94
+  - x: 94
+    y: 93
+  - x: 95
+    y: 96
+  - x: 97
+    y: 95
+  - x: 96
+    y: 98
+  - x: 98
+    y: 97
+  - x: 99
+    y: 100
+  - x: 101
+    y: 99
+  - x: 100
+    y: 102
+  - x: 102
+    y: 101
+  - x: 103
+    y: 104
+  - x: 105
+    y: 103
+  - x: 104
+    y: 106
+  - x: 106
+    y: 105
+  - x: 107
+    y: 108
+  - x: 109
+    y: 107
+  - x: 108
+    y: 110
+  - x: 110
+    y: 109
+  - x: 111
+    y: 112
+  - x: 113
+    y: 111
+  - x: 112
+    y: 114
+  - x: 114
+    y: 113
+  - x: 115
+    y: 116
+  - x: 117
+    y: 115
+  - x: 116
+    y: 118
+  - x: 118
+    y: 117
+  - x: 119
+    y: 120
+  - x: 121
+    y: 119
+  - x: 120
+    y: 122
+  - x: 122
+    y: 121
+  - x: 123
+    y: 124
+  - x: 125
+    y: 123
+  - x: 124
+    y: 126
+  - x: 126
+    y: 125
+  - x: 127
+    y: 128
+  - x: 129
+    y: 127
+  - x: 128
+    y: 130
+  - x: 130
+    y: 129
+  - x: 131
+    y: 132
+  - x: 133
+    y: 131
+  - x: 132
+    y: 134
+  - x: 134
+    y: 133
+  - x: 135
+    y: 136
+  - x: 137
+    y: 135
+  - x: 136
+    y: 138
+  - x: 138
+    y: 137
+  - x: 139
+    y: 140
+  - x: 141
+    y: 139
+  - x: 140
+    y: 142
+  - x: 142
+    y: 141
+  - x: 143
+    y: 144
+  - x: 145
+    y: 143
+  - x: 144
+    y: 146
+  - x: 146
+    y: 145
+  - x: 147
+    y: 148
+  - x: 149
+    y: 147
+  - x: 148
+    y: 150
+  - x: 150
+    y: 149
+  - x: 151
+    y: 152
+  - x: 153
+    y: 151
+  - x: 152
+    y: 154
+  - x: 154
+    y: 153
+  - x: 155
+    y: 156
+  - x: 157
+    y: 155
+  - x: 156
+    y: 158
+  - x: 158
+    y: 157
+  - x: 159
+    y: 160
+  - x: 161
+    y: 159
+  - x: 160
+    y: 162
+  - x: 162
+    y: 161
+  - x: 163
+    y: 164
+  - x: 165
+    y: 163
+  - x: 164
+    y: 166
+  - x: 166
+    y: 165
+  - x: 167
+    y: 168
+  - x: 169
+    y: 167
+  - x: 168
+    y: 170
+  - x: 170
+    y: 169
+  - x: 171
+    y: 172
+  - x: 173
+    y: 171
+  - x: 172
+    y: 174
+  - x: 174
+    y: 173
+  - x: 175
+    y: 176
+  - x: 177
+    y: 175
+  - x: 176
+    y: 178
+  - x: 178
+    y: 177
+  - x: 179
+    y: 180
+  - x: 181
+    y: 179
+  - x: 180
+    y: 182
+  - x: 182
+    y: 181
+  - x: 183
+    y: 184
+  - x: 185
+    y: 183
+  - x: 184
+    y: 186
+  - x: 186
+    y: 185
   m_selectedTriangles: 

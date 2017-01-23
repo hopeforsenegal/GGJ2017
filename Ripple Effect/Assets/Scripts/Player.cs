@@ -51,6 +51,9 @@ public class Player : MonoBehaviour
 	[Tooltip ("")]
 	[SerializeField]
 	private FocusCamera m_FocusCamera;
+	[Tooltip ("")]
+	[SerializeField]
+	private BlurCamera m_BlurCamera;
 
 	#endregion
 
@@ -83,6 +86,10 @@ public class Player : MonoBehaviour
 		if (m_FocusCamera == null) {
 			Debug.LogWarning ("m_FocusCamera is null");
 		}
+		if (m_BlurCamera == null) {
+			Debug.LogWarning ("m_BlurCamera is null");
+		}
+
 		m_AudioSources = GetComponents<AudioSource>();
 	}
 
@@ -125,6 +132,11 @@ public class Player : MonoBehaviour
 	#endregion
 
 	#region Public Methods
+
+	public void BlurCamera()
+	{
+		m_BlurCamera.BlurVision ();
+	}
 
 	public void FocusCamera ()
 	{
