@@ -57,6 +57,11 @@ public class OnReenterRoom : MonoBehaviour
 
 	protected void OnTriggerEnter (Collider coll)
 	{
+		GameController gameController;
+		if (GameController.TryGetInstance (out gameController)) {
+			if (!gameController.IsInStairwell)
+				return;
+		}
 		Debug.Log ("===OnTriggerEnter");
 		Player player = coll.gameObject.GetComponentInChildren<Player> ();
 		if (player != null) {
