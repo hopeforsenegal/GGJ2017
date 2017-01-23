@@ -143,6 +143,10 @@ public class GameController : MonoBehaviour
 
 	[Tooltip ("")]
 	[SerializeField]
+	private AudioSource m_AudioSource;
+
+	[Tooltip ("")]
+	[SerializeField]
 	private AudioClip m_TeleportSound;
 
 	[Tooltip ("")]
@@ -515,7 +519,8 @@ public class GameController : MonoBehaviour
 		if (Player.TryGetInstance (out player)) {
 			Transform pTransform = player.GetComponent<Transform> ();
 			pTransform.position = m_BedroomTeleportTransform.position;
-			player.PlaySound (m_TeleportSound);
+			m_AudioSource.clip = m_TeleportSound;
+			m_AudioSource.Play ();
 			player.BlurCamera ();
 		}
 
