@@ -2499,6 +2499,11 @@ Prefab:
       propertyPath: m_TagString
       value: Item
       objectReference: {fileID: 0}
+    - target: {fileID: 65543193089821102, guid: 4fa0c746b4ce64cd4af1c30af22560dd,
+        type: 2}
+      propertyPath: m_Size.z
+      value: 5.894528
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4fa0c746b4ce64cd4af1c30af22560dd, type: 2}
   m_IsPrefabParent: 0
