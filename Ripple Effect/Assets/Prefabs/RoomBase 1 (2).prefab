@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 65099492260672360}
   - component: {fileID: 114176450369827920}
   m_Layer: 8
-  m_Name: RE_ClockRoom03
+  m_Name: Clock
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -721,7 +721,7 @@ GameObject:
   - component: {fileID: 65543193089821102}
   - component: {fileID: 114997839806163068}
   m_Layer: 8
-  m_Name: RE_PropKnife
+  m_Name: Knife
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -757,7 +757,7 @@ GameObject:
   - component: {fileID: 65015256019401122}
   - component: {fileID: 114642365300004454}
   m_Layer: 8
-  m_Name: RE_PropWGlass
+  m_Name: Wine Glass
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -833,7 +833,7 @@ GameObject:
   - component: {fileID: 65789515166583714}
   - component: {fileID: 114259360133599990}
   m_Layer: 8
-  m_Name: RE_PropLipStick
+  m_Name: LipStick
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -853,7 +853,7 @@ GameObject:
   - component: {fileID: 65920543642465156}
   - component: {fileID: 114346328920000674}
   m_Layer: 8
-  m_Name: RE_PropPhone
+  m_Name: Phone
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1286,13 +1286,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1080888229876200}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: -0.56546247, y: 0.42456123, z: -0.56546247, w: 0.42456123}
   m_LocalPosition: {x: 8.508997, y: 4.035, z: -5.6689973}
   m_LocalScale: {x: 0.1135987, y: 0.11359872, z: 0.1135987}
   m_Children: []
   m_Father: {fileID: 4899198891991672}
   m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: -106.2}
 --- !u!4 &4157667510840376
 Transform:
   m_ObjectHideFlags: 1
@@ -5779,10 +5779,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionText: Look at
-  m_TextToShowsOnInteraction: Time flies...
-  m_TextToShowsOnInteraction2: Later then I thought...
-  m_AudioToPlayOnInteraction: {fileID: 0}
-  m_AudioToPlayOnInteraction2: {fileID: 0}
+  m_TextToShowsOnInteraction: 7:38...
+  m_TextToShowsOnInteraction2: 7:38...
+  m_AudioToPlayOnInteraction: {fileID: 8300000, guid: e04939accf00527449ae00ccd69d7898,
+    type: 3}
+  m_AudioToPlayOnInteraction2: {fileID: 8300000, guid: e04939accf00527449ae00ccd69d7898,
+    type: 3}
 --- !u!114 &114254141206360904
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7249,10 +7251,8 @@ MonoBehaviour:
   m_InteractionText: Use
   m_TextToShowsOnInteraction: "Hm. Phone\u2019s dead."
   m_TextToShowsOnInteraction2: "Phone doesn\u2019t appear to be working at all."
-  m_AudioToPlayOnInteraction: {fileID: 8300000, guid: 34cea2e863a31fc449ea562289067cb9,
-    type: 3}
-  m_AudioToPlayOnInteraction2: {fileID: 8300000, guid: 3de9272f366eb394d890d957a30dcfaf,
-    type: 3}
+  m_AudioToPlayOnInteraction: {fileID: 0}
+  m_AudioToPlayOnInteraction2: {fileID: 0}
 --- !u!114 &114461801122973594
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13295,7 +13295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionText: Inspect
-  m_TextToShowsOnInteraction: Inlodged in his throat...
-  m_TextToShowsOnInteraction2: Brutal...
+  m_TextToShowsOnInteraction: Sharp...
+  m_TextToShowsOnInteraction2: Looks pretty clean...
   m_AudioToPlayOnInteraction: {fileID: 0}
   m_AudioToPlayOnInteraction2: {fileID: 0}
