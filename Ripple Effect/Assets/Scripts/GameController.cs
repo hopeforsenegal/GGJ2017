@@ -181,16 +181,13 @@ public class GameController : MonoBehaviour
 	{
 		if (sInstance == null) {
 			sInstance = this;
-		} else if (sInstance != this) {
-			DestroyObject (gameObject);
-			return;
 		}
-
-		DontDestroyOnLoad (gameObject);
 	}
 
 	protected void Start ()
 	{
+		m_IsLoading = false;
+
 		if (m_FirstPersonController == null) {
 			Debug.LogWarning ("m_FirstPersonController is null");
 		}
@@ -320,10 +317,12 @@ public class GameController : MonoBehaviour
 
 	protected void OnEnable ()
 	{
+		m_IsLoading = false;
 	}
 
 	protected void OnDisable ()
 	{
+		m_IsLoading = false;
 	}
 
 	protected void OnDestroy ()
@@ -332,9 +331,7 @@ public class GameController : MonoBehaviour
 		OnStairWell.EnterStairWellEvent -= OnStairWell_EnterStairWellEvent;
 		OnBedroomTeleport.BedroomTeleportEvent -= OnBedroomTeleport_BedroomTeleportEvent;
 
-		if (sInstance == this) {
-			sInstance = null;
-		}
+		sInstance = null;
 	}
 
 	#endregion
