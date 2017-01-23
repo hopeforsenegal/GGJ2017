@@ -441,6 +441,11 @@ Prefab:
       propertyPath: m_Volume
       value: 0.75
       objectReference: {fileID: 0}
+    - target: {fileID: 114515896700856824, guid: 5e9e851c0e142814dac026a256ba2ac0,
+        type: 2}
+      propertyPath: m_BlurCamera
+      value: 
+      objectReference: {fileID: 314422456}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
   m_IsPrefabParent: 0
@@ -1190,6 +1195,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 887097335}
   m_Script: {fileID: 11500000, guid: b2414594949784681bdc3ca1a6177169, type: 3}
+--- !u!114 &314422456 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114246169430316012, guid: 5e9e851c0e142814dac026a256ba2ac0,
+    type: 2}
+  m_PrefabInternal: {fileID: 91515978}
+  m_Script: {fileID: 11500000, guid: 58799754c378a4cbcb6d697f20c78f99, type: 3}
 --- !u!114 &333582973 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114346328920000674, guid: 4fa0c746b4ce64cd4af1c30af22560dd,
